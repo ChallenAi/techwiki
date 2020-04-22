@@ -1,10 +1,17 @@
 .card {
+  min-width: 440px;
+  max-width: 948px;
   box-sizing: border-box;
-  width: 440px;
-  height: 270px;
-  padding: 46px;
+  padding: 44px 46px 42px;
   background-color: #ffffff;
   box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05);
+}
+
+.headerrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .header {

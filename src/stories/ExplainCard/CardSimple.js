@@ -1,11 +1,19 @@
 import React from "react";
-import styles from "./explaincard.module.css";
+import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
+import IosMore from "react-ionicons/lib/IosMore";
 
-const CardStandard = () => (
+const CardSimple = () => (
   <article className={styles.card} onClick={action("clicked")}>
-    <header className={styles.header}>ACM</header>
+    <div className={styles.headerrow}>
+      <header className={styles.header}>ACM</header>
+      <IosMore
+        onClick={action("clicked icons")}
+        fontSize="26px"
+        color="#C7C9D0"
+      />
+    </div>
     <p className={styles.content}>
       “大学生程序设计竞赛。关键词：算法，编程，竞赛”
     </p>
@@ -30,4 +38,4 @@ const CardStandard = () => (
   </article>
 );
 
-export default CardStandard;
+export default CardSimple;

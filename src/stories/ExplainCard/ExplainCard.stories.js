@@ -1,12 +1,12 @@
 import React from "react";
-import CardStandard from "./CardStandard";
+import CardSimple from "./CardSimple";
 
 export default {
   title: "ExplainCard",
 };
 
-export const Standard = () => (
-  <div style={{ margin: "120px 400px" }}>
-    <CardStandard />
+export const Simple = () => (
+  <div style={{ margin: "80px 200px" }}>
+    <CardSimple />
   </div>
 );

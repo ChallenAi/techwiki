@@ -31,3 +31,7 @@ module.exports = {
   },
 };
 ```
+
+- 添加 ionicons 字体支持
+  npm install --save react-ionicons
+  https://github.com/zamarrowski/react-ionicons
