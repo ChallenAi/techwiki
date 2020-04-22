@@ -1,6 +1,6 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
-// import styles from "./2-ExplainCard.module.css";
+import styles from "./explaincard.module.css";
 // import "./explaincard.module.css";
 
 export default {
@@ -8,7 +8,7 @@ export default {
 };
 
 export const CardStandard = () => (
-  <article onClick={action("clicked")}>
+  <article className={styles.card} onClick={action("clicked")}>
     <span role="img" aria-label="so cool">
       av
     </span>
