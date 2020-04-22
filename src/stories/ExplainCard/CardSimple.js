@@ -26,15 +26,15 @@ const CardSimple = ({ cardInfo }) => (
     </div>
     <p className={styles.content}>{cardInfo.content}</p>
     <section className={styles.footer}>
-      <div className={styles.footerunit}>
+      <div className={styles.footerbox}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
         <span className={styles.footertext}>{cardInfo.username}</span>
       </div>
-      <div className={`${styles.footerunit} ${styles.gotoright}`}>
+      <div className={`${styles.footerbox} ${styles.gotoright}`}>
         <div className={`${styles.dot} ${styles.dotlike}`}></div>
         <span className={styles.footertext}>13k 赞</span>
       </div>
-      <div className={styles.footerunit}>
+      <div className={styles.footerbox}>
         <div
           className={`${`${styles.dot} ${styles.dotcollect}`} ${
             styles.space_left

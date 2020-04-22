@@ -37,3 +37,10 @@ module.exports = {
   https://github.com/zamarrowski/react-ionicons
   图标搜索参考
   https://zamarrowski.github.io/react-ionicons/
+
+- storybook 的图片问题
+  图片放 public 文件夹，直接这样引用就可以了
+
+```
+<img src="/city.jpeg" className={styles.cover} />
+```
