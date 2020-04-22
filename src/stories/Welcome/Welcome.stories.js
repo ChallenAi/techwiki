@@ -1,14 +1,10 @@
 import React from "react";
-import { linkTo } from "@storybook/addon-links";
-import { Welcome } from "@storybook/react/demo";
+import "./base.css";
 
 export default {
   title: "Welcome",
-  component: Welcome,
 };
 
-export const ToStorybook = () => <Welcome showApp={linkTo("Button")} />;
-
-ToStorybook.story = {
-  name: "to Storybook",
-};
+export const SettingBaseStyle = () => (
+  <article>设置global样式，如margin、字体</article>
+);
