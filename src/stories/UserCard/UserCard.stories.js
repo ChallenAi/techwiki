@@ -2,7 +2,7 @@ import React from "react";
 import CardSimple from "./CardSimple";
 
 export default {
-  title: "CollectionCard",
+  title: "UserCard",
 };
 
 export const Simple = () => (

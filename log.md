@@ -44,3 +44,13 @@ module.exports = {
 ```
 <img src="/city.jpeg" className={styles.cover} />
 ```
+
+- react 图片占位(可以替换成加载动画 xx.gif)
+  <img
+  src="/images/city.jpeg"
+  onError={(e) => {
+  e.target.onerror = null;
+  e.target.src = "/images/placeholder.jpg";
+  }}
+  className={styles.cover}
+  />

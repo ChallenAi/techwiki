@@ -4,6 +4,7 @@ import CardImaged from "./CardImaged";
 
 export default {
   title: "ExplainCard",
+  component: [CardSimple, CardImaged],
 };
 
 const info = [

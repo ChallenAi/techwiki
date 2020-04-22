@@ -1,0 +1,2 @@
+- ExplainCard
+  - 实现 Simple 和 Imaged 的 username 过长省略
