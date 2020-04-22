@@ -4,23 +4,31 @@ import styles from "./simple.module.css";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
 
-const CardSimple = () => (
+// type cardInfo interface {
+//   expid,
+//   word,
+//   content,
+//   userid,
+//   username,
+//   likeCnt,
+//   collectCnt,
+// };
+
+const CardSimple = ({ cardInfo }) => (
   <article className={styles.card} onClick={action("clicked")}>
     <div className={styles.headerrow}>
-      <header className={styles.header}>ACM</header>
+      <header className={styles.header}>{cardInfo.word}</header>
       <IosMore
         onClick={action("clicked icons")}
         fontSize="26px"
         color="#C7C9D0"
       />
     </div>
-    <p className={styles.content}>
-      “大学生程序设计竞赛。关键词：算法，编程，竞赛”
-    </p>
+    <p className={styles.content}>{cardInfo.content}</p>
     <section className={styles.footer}>
       <div className={styles.footerunit}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
-        <span className={styles.footertext}>哎呦小仙女</span>
+        <span className={styles.footertext}>{cardInfo.username}</span>
       </div>
       <div className={`${styles.footerunit} ${styles.gotoright}`}>
         <div className={`${styles.dot} ${styles.dotlike}`}></div>
