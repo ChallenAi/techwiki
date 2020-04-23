@@ -15,8 +15,8 @@ const NotificationSimple = ({ notificationInfo }) => (
       className={styles.avatar}
     />
     <div className={styles.userinfo}>
-      <span className={styles.username}>Challen</span>
-      <span className={styles.usertitle}>刚刚关注了你</span>
+      <span className={styles.username}>{notificationInfo.username}</span>
+      <span className={styles.usertitle}>{notificationInfo.msg}</span>
     </div>
   </article>
 );
