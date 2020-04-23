@@ -1,0 +1,87 @@
+.card {
+  width: 446px;
+  height: 282px;
+  box-sizing: border-box;
+  padding: 28px 30px 52px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05);
+}
+
+.userbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  margin-right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: auto;
+  display: flex;
+}
+
+.username {
+  margin-bottom: 3px;
+  font-size: 16px;
+  color: #131721;
+  user-select: none;
+}
+
+.usertitle {
+  font-size: 14px;
+  color: #858997;
+  user-select: none;
+}
+
+.countbox {
+  padding: 38px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.counttext {
+  font-size: 17;
+  color: #8b8b8b;
+  user-select: none;
+}
+
+.buttonbox {
+  padding: 8px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buttons {
+  outline: none;
+  width: 94px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 17px;
+}
+
+.btnfollow {
+  color: white;
+  border: none;
+  background-image: linear-gradient(#465de2, #764ba2);
+}
+
+.btnmessage {
+  color: #223333;
+  background-color: #ffffff;
+  border: 1px solid #223333;
+}

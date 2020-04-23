@@ -4,3 +4,8 @@ body {
   font-family: "Roboto", "Open Sans", "Helvetica Neue", Arial,
     "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
+
+button {
+  /* 删除点击后出现的蓝框 */
+  outline: none;
+}
