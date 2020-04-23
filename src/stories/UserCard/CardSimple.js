@@ -4,8 +4,13 @@ import styles from "./simple.module.css";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
 
-const CardSimple = ({ userInfo }) => (
-  <article className={styles.card}>
+const CardSimple = ({ userInfo, cssStyle, onMouseOver, onMouseLeave }) => (
+  <article
+    className={styles.card}
+    style={cssStyle}
+    onMouseOver={onMouseOver}
+    onMouseLeave={onMouseLeave}
+  >
     <section className={styles.userbox}>
       <img
         src="/images/avatar.png"

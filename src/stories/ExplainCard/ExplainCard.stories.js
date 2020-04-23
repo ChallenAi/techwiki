@@ -32,13 +32,13 @@ const info = [
 ];
 
 export const Simple = () => (
-  <div style={{ margin: "80px 200px" }}>
+  <div style={{ margin: "180px 200px" }}>
     <CardSimple cardInfo={info[0]} />
   </div>
 );
 
 export const Imaged = () => (
-  <div style={{ margin: "80px 200px" }}>
+  <div style={{ margin: "180px 200px" }}>
     <CardImaged cardInfo={info[1]} />
   </div>
 );
