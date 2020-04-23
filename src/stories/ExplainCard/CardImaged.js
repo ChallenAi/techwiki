@@ -28,6 +28,7 @@ const CardImaged = ({ cardInfo }) => (
       <div className={styles.headerrow}>
         <header className={styles.header}>{cardInfo.word}</header>
         <IosMore
+          style={{ cursor: "pointer" }}
           onClick={action("clicked icons")}
           fontSize="26px"
           color="#C7C9D0"

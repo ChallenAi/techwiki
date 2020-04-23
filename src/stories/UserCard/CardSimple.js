@@ -20,6 +20,7 @@ const CardSimple = ({ userInfo }) => (
         <span className={styles.usertitle}>游戏星球主宰</span>
       </div>
       <IosMore
+        style={{ cursor: "pointer" }}
         onClick={action("clicked icons")}
         fontSize="26px"
         color="#C7C9D0"
@@ -35,7 +36,8 @@ const CardSimple = ({ userInfo }) => (
         className={`${styles.buttons} ${styles.btnfollow}`}
         onClick={action("clicked")}
       >
-        关注
+        <div className={styles.btnfollowbg}></div>
+        <div className={styles.btnfollowtext}>关注</div>
       </button>
       <button
         className={`${styles.buttons} ${styles.btnmessage}`}
