@@ -26,7 +26,7 @@ const CardSimple = ({ userInfo, cssStyle, onMouseOver, onMouseLeave }) => (
       </div>
       <IosMore
         style={{ cursor: "pointer" }}
-        onClick={action("clicked icons")}
+        onClick={action("更多")}
         fontSize="26px"
         color="#C7C9D0"
       />
@@ -39,14 +39,14 @@ const CardSimple = ({ userInfo, cssStyle, onMouseOver, onMouseLeave }) => (
     <section className={styles.buttonbox}>
       <button
         className={`${styles.buttons} ${styles.btnfollow}`}
-        onClick={action("clicked")}
+        onClick={action("关注")}
       >
         <div className={styles.btnfollowbg}></div>
         <div className={styles.btnfollowtext}>关注</div>
       </button>
       <button
         className={`${styles.buttons} ${styles.btnmessage}`}
-        onClick={action("clicked")}
+        onClick={action("发消息")}
       >
         发消息
       </button>
