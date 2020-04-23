@@ -1,13 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./simple.module.css";
 
+import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
+import UserCardSimple from "../UserCard/CardSimple";
 
-const CardSimple = ({ cardInfo }) => (
-  <article className={styles.card} onClick={action("clicked")}>
-    Simple
-  </article>
-);
+const CardSimple = ({ cardInfo }) => {
+  const inactiveCardInfo = { show: false, left: 0, top: 0 };
+  const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
+  const setCardInfo = debounce(setUserCard, 150);
+  const onShowUserCard = (e) => {
+    const rect = e.getBoundingClientRect();
+    setCardInfo({
+      show: true,
+      left: rect.x + rect.width / 2, // add half the width of the button for centering
+      top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
+    });
+  };
+
+  return (
+    <article className={styles.card} onClick={action("clicked")}>
+      <div className={styles.part}>
+        <div className={styles.logorow}>
+          <img
+            src="/images/logot.png"
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = "/images/logot.png";
+            }}
+            className={styles.logo}
+          />
+          <IosMore
+            style={{ cursor: "pointer" }}
+            onClick={action("clicked icons")}
+            fontSize="26px"
+            color="#C7C9D0"
+          />
+        </div>
+        <header className={styles.header}>{cardInfo.name}</header>
+        <p className={styles.content}>{cardInfo.citeContent}</p>
+      </div>
+      <div className={styles.part}>
+        <div className={styles.authorrow}>
+          <span
+            style={{ cursor: "pointer" }}
+            className={styles.username}
+            onMouseOver={(e) => onShowUserCard(e.target)}
+            onMouseLeave={() => setCardInfo(inactiveCardInfo)}
+          >
+            — {cardInfo.username}
+          </span>
+          {userCardInfo.show && (
+            <UserCardSimple
+              cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
+              onMouseOver={(e) => onShowUserCard(e.target)}
+              onMouseLeave={() => setCardInfo(inactiveCardInfo)}
+            />
+          )}
+        </div>
+
+        <section className={styles.footer}>
+          <div className={styles.footerbox}>
+            <div className={`${styles.dot} ${styles.dotexp}`}></div>
+            <span className={styles.footertext}>264k 碎片</span>
+          </div>
+          <div className={styles.footerbox}>
+            <div className={`${styles.dot} ${styles.dotmember}`}></div>
+            <span className={styles.footertext}>14.2k 成员</span>
+          </div>
+        </section>
+      </div>
+    </article>
+  );
+};
 
 export default CardSimple;
