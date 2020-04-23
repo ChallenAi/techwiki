@@ -21,6 +21,7 @@
   width: 60px;
   height: 60px;
   border-radius: 30px;
+  user-select: none;
 }
 
 .userinfo {
@@ -98,10 +99,12 @@
 .btnfollowtext {
   z-index: 2;
   color: #ffffff;
+  user-select: none;
 }
 
 .btnmessage {
   color: #223333;
   background-color: #ffffff;
   border: 1px solid #223333;
+  user-select: none;
 }
