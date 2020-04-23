@@ -1,6 +1,7 @@
 import React from "react";
 import CardSimple from "./CardSimple";
 import CardImaged from "./CardImaged";
+import CardStandard from "./CardStandard";
 
 export default {
   title: "ExplainCard",
@@ -29,6 +30,18 @@ const info = [
     likeCnt: 32210,
     collectCnt: 3619,
   },
+  {
+    expid: 3,
+    word: "IPO",
+    content:
+      "“上市为什么能造富？\n上市后公司估值提高，所以公司拥有者能分到很多钱。“",
+    image: "",
+    userid: 3,
+    username: "Anna Yates",
+    likeCnt: 710,
+    collectCnt: 69,
+    timestring: "昨天下午3:10",
+  },
 ];
 
 export const Simple = () => (
@@ -40,5 +53,11 @@ export const Simple = () => (
 export const Imaged = () => (
   <div style={{ margin: "180px 200px" }}>
     <CardImaged cardInfo={info[1]} />
+  </div>
+);
+
+export const Standard = () => (
+  <div style={{ margin: "280px 200px" }}>
+    <CardStandard cardInfo={info[2]} />
   </div>
 );

@@ -1,0 +1,79 @@
+.card {
+  width: 446px;
+  box-sizing: border-box;
+  padding: 25px 26px 40px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05);
+}
+
+.userbox {
+  margin-bottom: 39px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  cursor: pointer;
+  margin-right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 30px;
+}
+
+.userinfo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: auto;
+  display: flex;
+}
+
+.username {
+  cursor: pointer;
+  margin-bottom: 3px;
+  font-size: 16px;
+  color: #131721;
+  user-select: none;
+}
+
+.timestring {
+  font-size: 13px;
+  color: #858997;
+  user-select: none;
+}
+
+.header {
+  font-size: 23px;
+  font-weight: medium;
+  color: #4e4e4e;
+  user-select: none;
+}
+
+.content {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-size: 17px;
+  line-height: 27px;
+  color: #8b8b8b;
+  user-select: none;
+}
+
+.footerbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.likecnt {
+  cursor: pointer;
+  margin-left: 7px;
+  font-size: 17px;
+  color: #131721;
+  user-select: none;
+}
