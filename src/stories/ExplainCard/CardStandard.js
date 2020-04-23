@@ -31,7 +31,15 @@ const CardStandard = ({ cardInfo }) => {
   };
 
   return (
-    <article className={styles.card} onClick={action("clicked")}>
+    <article
+      className={styles.card}
+      onDoubleClick={(e) => {
+        // console.log(e.target.nodeName);
+        if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
+          action("双击(可以切换喜欢/收藏)")();
+        }
+      }}
+    >
       <section className={styles.userbox}>
         <img
           src="/images/avatarph.jpg"
@@ -61,7 +69,7 @@ const CardStandard = ({ cardInfo }) => {
         </div>
         <IosMore
           style={{ cursor: "pointer" }}
-          onClick={action("clicked icons")}
+          onClick={action("更多")}
           fontSize="26px"
           color="#C7C9D0"
         />
@@ -71,7 +79,7 @@ const CardStandard = ({ cardInfo }) => {
       <div className={styles.footerbox}>
         <MdThumbsUp
           style={{ cursor: "pointer" }}
-          onClick={action("clicked icons")}
+          onClick={action("赞")}
           fontSize="25px"
           color="#5D6BE5"
         />

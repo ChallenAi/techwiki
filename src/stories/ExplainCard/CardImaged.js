@@ -29,7 +29,15 @@ const CardImaged = ({ cardInfo }) => {
     });
   };
   return (
-    <article className={styles.card} onClick={action("clicked")}>
+    <article
+      className={styles.card}
+      onDoubleClick={(e) => {
+        // console.log(e.target.nodeName);
+        if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
+          action("双击(可以切换喜欢/收藏)")();
+        }
+      }}
+    >
       <img
         src="/images/city.jpeg"
         onError={(e) => {
@@ -43,7 +51,7 @@ const CardImaged = ({ cardInfo }) => {
           <header className={styles.header}>{cardInfo.word}</header>
           <IosMore
             style={{ cursor: "pointer" }}
-            onClick={action("clicked icons")}
+            onClick={action("更多")}
             fontSize="26px"
             color="#C7C9D0"
           />
