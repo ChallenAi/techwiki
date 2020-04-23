@@ -7,7 +7,7 @@ import IosMore from "react-ionicons/lib/IosMore";
 const NotificationSimple = ({ notificationInfo }) => (
   <article className={styles.box} onClick={action("clicked")}>
     <img
-      src="/images/avatar.png"
+      src={notificationInfo.avatar}
       onError={(e) => {
         e.target.onerror = null;
         e.target.src = "/images/avatarph.jpg";

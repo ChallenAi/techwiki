@@ -8,18 +8,24 @@ export default {
 
 const infos = [
   {
+    userid: 1,
     username: "Challen",
+    avatar: "/images/avatar.png",
     msg: "刚刚关注了你",
     link: "/abc",
   },
   {
+    userid: 2,
     username: "Anna Yates",
-    msg: "刚刚赞了 Taylor Swift",
+    avatar: "/images/avatar.png",
+    msg: "刚刚收藏了 通货膨胀",
     link: "/abc",
   },
   {
+    userid: 3,
     username: "老是失眠的のの",
-    msg: "刚刚收藏了 通货膨胀",
+    avatar: "/images/avatarph.jpg",
+    msg: "刚刚赞了 Taylor Swift",
     link: "/abc",
   },
 ];
