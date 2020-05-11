@@ -12,11 +12,15 @@
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
-  transition: opacity;
-  transition-duration: 0.5s;
+  /* 动画属性 | 持续时间 | interplote函数 | 等几秒开始 */
+  transition: opacity 0.5s 2.5s;
 }
 
-.endshow {
+.boxactive .progressbar {
+  width: 100%;
+}
+
+.boxactive {
   opacity: 0;
 }
 
@@ -27,13 +31,7 @@
   width: 0;
   height: 4px;
   background-color: #03a9f4;
-  transition: width;
-  transition-duration: 3s;
-  transition-timing-function: cubic-bezier(0.36, 0.55, 0.63, 0.48);
-}
-
-.activebar {
-  width: 100%;
+  transition: width 2.5s linear;
 }
 
 .avatar {
