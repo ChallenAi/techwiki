@@ -33,12 +33,12 @@ const CardAnimated = ({ cardInfo, toggleLike }) => {
   return (
     <article
       className={styles.card}
-      onDoubleClick={(e) => {
-        // console.log(e.target.nodeName);
-        if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
-          action("双击(可以切换喜欢/收藏)")();
-        }
-      }}
+      // onDoubleClick={(e) => {
+      //   // console.log(e.target.nodeName);
+      //   if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
+      //     action("双击(可以切换喜欢/收藏)")();
+      //   }
+      // }}
     >
       <div className={styles.headerrow}>
         <header

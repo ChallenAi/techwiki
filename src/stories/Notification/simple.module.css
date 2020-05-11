@@ -1,15 +1,39 @@
 .box {
+  margin-bottom: 30px;
+  position: relative;
   width: 377px;
   height: 90px;
   box-sizing: border-box;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05);
-
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  overflow: hidden;
+  transition: opacity;
+  transition-duration: 0.5s;
+}
+
+.endshow {
+  opacity: 0;
+}
+
+.progressbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background-color: #03a9f4;
+  transition: width;
+  transition-duration: 3s;
+  transition-timing-function: cubic-bezier(0.36, 0.55, 0.63, 0.48);
+}
+
+.activebar {
+  width: 100%;
 }
 
 .avatar {
@@ -41,4 +65,11 @@
   font-size: 14px;
   color: #858997;
   user-select: none;
+}
+
+.closebox {
+  margin-right: 28px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
 }
