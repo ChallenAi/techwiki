@@ -40,7 +40,12 @@ const CardSimple = ({ cardInfo }) => {
       }}
     >
       <div className={styles.headerrow}>
-        <header className={styles.header}>{cardInfo.word}</header>
+        <header
+          className={styles.header}
+          title={cardInfo.word.length > 13 ? cardInfo.word : ""}
+        >
+          {cardInfo.word}
+        </header>
         <IosMore
           style={{ cursor: "pointer" }}
           onClick={action("更多")}
@@ -54,7 +59,7 @@ const CardSimple = ({ cardInfo }) => {
           <div className={`${styles.dot} ${styles.dotuser}`}></div>
           <span
             style={{ cursor: "pointer" }}
-            className={styles.footertext}
+            className={`${styles.footertext} ${styles.nametext}`}
             onMouseOver={(e) => onShowUserCard(e.target)}
             onMouseLeave={() => setCardInfo(inactiveCardInfo)}
           >

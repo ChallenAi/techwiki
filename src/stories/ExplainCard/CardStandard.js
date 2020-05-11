@@ -74,7 +74,12 @@ const CardStandard = ({ cardInfo }) => {
           color="#C7C9D0"
         />
       </section>
-      <header className={styles.header}>{cardInfo.word}</header>
+      <header
+        className={styles.header}
+        title={cardInfo.word.length > 13 ? cardInfo.word : ""}
+      >
+        {cardInfo.word}
+      </header>
       <p className={styles.content}>{cardInfo.content}</p>
       <div className={styles.footerbox}>
         <MdThumbsUp

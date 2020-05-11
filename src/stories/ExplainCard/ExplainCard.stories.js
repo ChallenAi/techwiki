@@ -15,7 +15,7 @@ const info = [
     content: "“大学生程序设计竞赛。关键词：算法，编程，竞赛”",
     image: "",
     userid: 1,
-    username: "哎呦小仙女",
+    username: "哎呦小仙女小仙女小仙女小仙女小仙女",
     likeCnt: 13210,
     collectCnt: 1100,
   },
