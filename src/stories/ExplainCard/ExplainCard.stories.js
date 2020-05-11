@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import CardSimple from "./CardSimple";
+import CardAnimated from "./CardAnimated";
 import CardImaged from "./CardImaged";
 import CardStandard from "./CardStandard";
 
@@ -50,11 +51,43 @@ const info = [
   },
 ];
 
-export const Simple = () => (
-  <div style={{ margin: "180px 200px" }}>
-    <CardSimple cardInfo={info[0]} />
-  </div>
-);
+export const Simple = () => {
+  const [exps, setexps] = useState(info);
+  return (
+    <div style={{ margin: "180px 200px" }}>
+      <CardSimple
+        cardInfo={exps[0]}
+        toggleLike={(expid) => {
+          exps.map((el) => {
+            if (el.expid == expid) {
+              el.isLiked = !el.isLiked;
+            }
+          });
+          setexps([...exps]);
+        }}
+      />
+    </div>
+  );
+};
+
+export const Animated = () => {
+  const [exps, setexps] = useState(info);
+  return (
+    <div style={{ margin: "180px 200px" }}>
+      <CardAnimated
+        cardInfo={exps[0]}
+        toggleLike={(expid) => {
+          exps.map((el) => {
+            if (el.expid == expid) {
+              el.isLiked = !el.isLiked;
+            }
+          });
+          setexps([...exps]);
+        }}
+      />
+    </div>
+  );
+};
 
 export const Imaged = () => (
   <div style={{ margin: "180px 200px" }}>

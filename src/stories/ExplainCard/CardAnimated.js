@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import styles from "./simple.module.css";
+import styles from "./animated.module.css";
 
 import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
 import UserCardSimple from "../UserCard/CardSimple";
+import { LikeIcon } from "../Animations/LikeBtn";
 
 // type cardInfo interface {
 //   expid,
@@ -16,7 +17,7 @@ import UserCardSimple from "../UserCard/CardSimple";
 //   collectCnt,
 // };
 
-const CardSimple = ({ cardInfo }) => {
+const CardAnimated = ({ cardInfo, toggleLike }) => {
   const inactiveCardInfo = { show: false, left: 0, top: 0 };
   const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
   const setCardInfo = debounce(setUserCard, 150);
@@ -73,11 +74,14 @@ const CardSimple = ({ cardInfo }) => {
             />
           )}
         </div>
-        <div className={`${styles.footerbox} ${styles.gotoright}`}>
-          <div className={`${styles.dot} ${styles.dotlike}`}></div>
-          <span className={styles.footertext} onClick={action("赞")}>
-            13k 赞
-          </span>
+        <div
+          className={`${styles.footerbox} ${styles.gotoright}`}
+          onClick={() => toggleLike(cardInfo.expid)}
+        >
+          <div style={{ position: "relative", top: 0, marginRight: 4 }}>
+            <LikeIcon iconInfo={{ isLiked: cardInfo.isLiked }} />
+          </div>
+          <span className={styles.footertext}>13k 赞</span>
         </div>
         <div className={styles.footerbox}>
           <div
@@ -92,4 +96,4 @@ const CardSimple = ({ cardInfo }) => {
   );
 };
 
-export default CardSimple;
+export default CardAnimated;
