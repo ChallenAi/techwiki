@@ -74,8 +74,17 @@ const CardSimple = ({ cardInfo }) => {
           )}
         </div>
         <div className={`${styles.footerbox} ${styles.gotoright}`}>
-          <div className={`${styles.dot} ${styles.dotlike}`}></div>
-          <span className={styles.footertext}>13k 赞</span>
+          <div
+            className={`${styles.dot} ${styles.dotlike}`}
+            style={{
+              backgroundImage: cardInfo.isLiked
+                ? "linear-gradient(#f98282, #d02f55)"
+                : "linear-gradient(#6b9eb8, #373e54)",
+            }}
+          ></div>
+          <span className={styles.footertext} onClick={action("赞")}>
+            13k 赞
+          </span>
         </div>
         <div className={styles.footerbox}>
           <div

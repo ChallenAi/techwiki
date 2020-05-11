@@ -18,6 +18,8 @@ const info = [
     username: "哎呦小仙女小仙女小仙女小仙女小仙女",
     likeCnt: 13210,
     collectCnt: 1100,
+    isLiked: true,
+    isCollected: false,
   },
   {
     expid: 2,
@@ -29,6 +31,8 @@ const info = [
     username: "皮皮虾天敌蟆蟆蛤",
     likeCnt: 32210,
     collectCnt: 3619,
+    isLiked: true,
+    isCollected: false,
   },
   {
     expid: 3,
@@ -41,6 +45,8 @@ const info = [
     likeCnt: 710,
     collectCnt: 69,
     timestring: "昨天下午3:10",
+    isLiked: true,
+    isCollected: false,
   },
 ];
 
