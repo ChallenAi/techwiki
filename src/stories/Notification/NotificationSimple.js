@@ -4,29 +4,35 @@ import styles from "./simple.module.css";
 import { action } from "@storybook/addon-actions";
 import IosClose from "react-ionicons/lib/IosClose";
 
-const NotificationSimple = ({ notificationInfo, playAnimation }) => {
-  const [isShown, start] = useState(false);
-  const [isEnd, end] = useState(false);
+const NotificationSimple = ({
+  notificationInfo,
+  disableAnimation,
+  closeNotification,
+}) => {
+  const [isRunning, start] = useState(false);
 
   useEffect(() => {
-    if (playAnimation) {
-      setTimeout(() => {
+    let timer, timer2;
+    if (!disableAnimation) {
+      timer = setTimeout(() => {
         start(true);
       }, 100);
-      setTimeout(() => {
-        end(true);
+      timer2 = setTimeout(() => {
+        closeNotification(notificationInfo.notiId);
       }, 3000);
     }
+    return () => {
+      clearTimeout(timer);
+      clearTimeout(timer2);
+    };
   }, []);
 
   return (
     <article
-      className={`${styles.box} ${isEnd ? styles.endshow : ""}`}
+      className={`${styles.box} ${isRunning ? styles.boxactive : ""}`}
       onClick={action("clicked")}
     >
-      <div
-        className={`${styles.progressbar} ${isShown ? styles.activebar : ""}`}
-      ></div>
+      <div className={`${styles.progressbar}`}></div>
       <img
         src={notificationInfo.avatar}
         onError={(e) => {
@@ -42,7 +48,7 @@ const NotificationSimple = ({ notificationInfo, playAnimation }) => {
       <div className={styles.closebox}>
         <IosClose
           style={{ cursor: "pointer" }}
-          onClick={action("close")}
+          onClick={() => closeNotification(notificationInfo.notiId)}
           fontSize="26px"
           color="#C7C9D0"
         />

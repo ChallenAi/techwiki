@@ -13,7 +13,7 @@
   align-items: center;
   overflow: hidden;
   /* 动画属性 | 持续时间 | interplote函数 | 等几秒开始 */
-  transition: opacity 0.5s 2.5s;
+  transition: opacity 0.5s 2.5s, margin 0.5s 2.5s;
 }
 
 .boxactive .progressbar {
@@ -22,6 +22,7 @@
 
 .boxactive {
   opacity: 0;
+  margin-bottom: -90px;
 }
 
 .progressbar {
