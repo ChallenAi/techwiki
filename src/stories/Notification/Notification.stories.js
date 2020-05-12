@@ -12,7 +12,7 @@ const infos = [
     userid: 6,
     username: "莉莉Ya",
     avatar: "/images/avatarph.jpg",
-    msg: "测试固定显示的 通知",
+    msg: "固定显示的通知,需要手动移除",
     link: "/abc",
     isRunning: false, // 一旦开始运行，会运行一组动画直到结束,运行中的通知条不会被props打断
   },
@@ -87,7 +87,7 @@ export const Simple = () => {
   };
 
   return (
-    <div style={{ margin: "80px 200px" }}>
+    <div style={{ position: "fixed", top: 20, right: 20 }}>
       {notis.map((el) => (
         <NotificationSimple
           key={el.notiId}
