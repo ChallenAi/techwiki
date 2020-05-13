@@ -27,7 +27,7 @@ const CardSimple = ({ userId, cssStyle, onMouseOver, onMouseLeave }) => {
   }, [userId]);
 
   return (
-    <div className={styles.card}>
+    <div style={cssStyle} className={styles.card}>
       {userinfo.isLoading ? (
         <div className={styles.ph}>
           <div className={styles.phitem1}></div>
@@ -41,7 +41,6 @@ const CardSimple = ({ userId, cssStyle, onMouseOver, onMouseLeave }) => {
       ) : (
         <article
           className={styles.main}
-          style={cssStyle}
           onMouseOver={onMouseOver}
           onMouseLeave={onMouseLeave}
         >
