@@ -42,7 +42,7 @@ export const FooterAnimated = () => {
   return (
     <div style={{ margin: "280px 300px" }}>
       {infosList.map((infos) => (
-        <Card boxStyles={{ marginBottom: 40 }}>
+        <Card key={infos.expid} boxStyles={{ marginBottom: 40 }}>
           <ExpFooterAnimated
             boxStyles={{ padding: "44px 46px 42px" }}
             infos={infos}

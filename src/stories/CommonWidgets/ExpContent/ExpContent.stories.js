@@ -14,8 +14,8 @@ const contentList = [
 
 export const Content = () => (
   <div style={{ margin: "280px 300px" }}>
-    {contentList.map((content) => (
-      <Card boxStyles={{ marginBottom: 40 }}>
+    {contentList.map((content, idx) => (
+      <Card key={idx} boxStyles={{ marginBottom: 40 }}>
         <ExpContent
           boxStyles={{ padding: "44px 46px 42px" }}
           content={content}
