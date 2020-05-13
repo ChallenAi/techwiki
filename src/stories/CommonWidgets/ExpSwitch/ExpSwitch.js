@@ -11,7 +11,11 @@ const ExpSwitch = ({ expsList, boxStyles }) => (
     <span className={styles.title}>选择一个碎片</span>
     <ul className={styles.list}>
       {expsList.map((exp) => (
-        <li className={styles.item} onClick={action("选择碎片")}>
+        <li
+          key={exp.expid}
+          className={styles.item}
+          onClick={action("选择碎片")}
+        >
           <div className={styles.left}>
             <ExpContent boxStyles={{ marginTop: 24 }} content={exp.content} />
             <ExpFooterView boxStyles={{ marginTop: 60 }} infos={exp} />

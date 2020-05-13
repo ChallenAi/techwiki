@@ -1,5 +1,6 @@
 .list {
-  z-index: 2;
+  /* 用户信息卡片 1-9， menu 11-19 */
+  z-index: 11;
   width: 200px;
   padding: 0;
   /* border-radius: 5px; */

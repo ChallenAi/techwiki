@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
-import IosMore from "react-ionicons/lib/IosMore";
+import MoreBtn from "../Menu/MoreBtn";
 
 const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   const [userinfo, setUser] = useState({
@@ -58,12 +58,7 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
               <span className={styles.username}>{userinfo.username}</span>
               <span className={styles.usertitle}>{userinfo.usertitle}</span>
             </div>
-            <IosMore
-              style={{ cursor: "pointer" }}
-              onClick={action("更多")}
-              fontSize="26px"
-              color="#C7C9D0"
-            />
+            <MoreBtn />
           </section>
           <section className={styles.countbox}>
             <span className={styles.counttext}>{userinfo.likeCnt} 赞</span>

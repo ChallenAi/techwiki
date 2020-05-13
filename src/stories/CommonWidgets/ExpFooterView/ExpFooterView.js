@@ -1,46 +1,26 @@
 import React, { useState } from "react";
 import styles from "./footer.module.css";
 
-import debounce from "lodash/debounce";
-import UserCardSimple from "../UserCard/CardSimple";
+import UsernameCarded from "../UserCard/UsernameCarded";
 
 const ExpFooterView = ({ boxStyles, infos }) => {
-  const [showUserCard, setUserCard] = useState(false);
-  const setBuffered = debounce(setUserCard, 150);
-  const open = () => setBuffered(true);
-  const close = () => setBuffered(false);
-
   return (
     <section style={boxStyles} className={styles.footer}>
-      <div className={styles.footerbox}>
-        <div className={`${styles.dot} ${styles.dotuser}`}></div>
-        <span
-          style={{ cursor: "pointer" }}
-          className={`${styles.footertext} ${styles.nametext}`}
-          onMouseOver={open}
-          onMouseLeave={close}
-        >
-          {infos.username}
-        </span>
-        {showUserCard && (
-          <UserCardSimple
-            boxStyles={{ position: "absolute", bottom: 38, left: -140 }}
-            onMouseOver={open}
-            onMouseLeave={close}
-          />
-        )}
+      <div className={`${styles.footerbox} ${styles.collectbox}`}>
+        <div className={`${`${styles.dot} ${styles.dotcollect}`}`}></div>
+        <span className={styles.footertext}>{infos.collectCnt} 引用</span>
       </div>
-      <div className={`${styles.footerbox} ${styles.gotoright}`}>
+      <div className={`${styles.footerbox} ${styles.likebox}`}>
         <div className={`${styles.dot} ${styles.dotlike}`}></div>
-        <span className={styles.footertext}>13k 赞</span>
+        <span className={styles.footertext}>{infos.likeCnt} 赞</span>
       </div>
-      <div className={styles.footerbox}>
-        <div
-          className={`${`${styles.dot} ${styles.dotcollect}`} ${
-            styles.spaceleft
-          }`}
-        ></div>
-        <span className={styles.footertext}>1.1k 引用</span>
+      <div className={`${styles.footerbox} ${styles.usernamebox}`}>
+        <div className={`${styles.dot} ${styles.dotuser}`}></div>
+        <UsernameCarded
+          username={infos.username}
+          boxStyles={{ marginLeft: 7 }}
+          width="100%"
+        />
       </div>
     </section>
   );

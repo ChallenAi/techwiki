@@ -1,16 +1,20 @@
-.footer {
-  /* margin-top: 60px; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .footerbox {
-  max-width: 50%;
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.collectbox {
+  float: right;
+  margin-left: 18px;
+}
+
+.likebox {
+  float: right;
+}
+
+.usernamebox {
+  margin-right: 210px;
 }
 
 .dot {
@@ -21,6 +25,7 @@
   opacity: 0.65;
   /* 防止球被压扁 */
   min-width: 14px;
+  overflow: hidden;
 }
 
 .dotuser {
@@ -44,16 +49,4 @@
   white-space: nowrap;
   overflow: hidden;
   /* cursor: pointer; */
-}
-
-.nametext {
-  text-overflow: ellipsis;
-}
-
-.gotoright {
-  margin-left: auto;
-}
-
-.spaceleft {
-  margin-left: 18px;
 }

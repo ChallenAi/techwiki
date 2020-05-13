@@ -1,0 +1,12 @@
+.username {
+  /* 使ellipsis生效 */
+  display: block;
+  font-size: 15px;
+  line-height: 20px;
+  color: #8b8b8b;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
