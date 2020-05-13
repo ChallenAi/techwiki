@@ -4,8 +4,8 @@ import styles from "./animated.module.css";
 import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
-import UserCardSimple from "../UserCard/CardSimple";
-import { LikeIcon } from "../Animations/LikeBtn";
+import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
+import ExpContent from "../CommonWidgets/ExpContent/ExpContent";
 
 // type cardInfo interface {
 //   expid,
@@ -18,18 +18,6 @@ import { LikeIcon } from "../Animations/LikeBtn";
 // };
 
 const CardAnimated = ({ cardInfo, toggleLike }) => {
-  const inactiveCardInfo = { show: false, left: 0, top: 0 };
-  const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
-  const setCardInfo = debounce(setUserCard, 150);
-  const onShowUserCard = (e) => {
-    const rect = e.getBoundingClientRect();
-    setCardInfo({
-      show: true,
-      left: rect.x + rect.width / 2, // add half the width of the button for centering
-      top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
-    });
-  };
-
   return (
     <article
       className={styles.card}
@@ -54,44 +42,12 @@ const CardAnimated = ({ cardInfo, toggleLike }) => {
           color="#C7C9D0"
         />
       </div>
-      <p className={styles.content}>{cardInfo.content}</p>
-      <section className={styles.footer}>
-        <div className={styles.footerbox}>
-          <div className={`${styles.dot} ${styles.dotuser}`}></div>
-          <span
-            style={{ cursor: "pointer" }}
-            className={`${styles.footertext} ${styles.nametext}`}
-            onMouseOver={(e) => onShowUserCard(e.target)}
-            onMouseLeave={() => setCardInfo(inactiveCardInfo)}
-          >
-            {cardInfo.username}
-          </span>
-          {userCardInfo.show && (
-            <UserCardSimple
-              cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
-              onMouseOver={(e) => onShowUserCard(e.target)}
-              onMouseLeave={() => setCardInfo(inactiveCardInfo)}
-            />
-          )}
-        </div>
-        <div
-          className={`${styles.footerbox} ${styles.gotoright}`}
-          onClick={() => toggleLike(cardInfo.expid)}
-        >
-          <div style={{ position: "relative", top: 0, marginRight: 4 }}>
-            <LikeIcon iconInfo={{ isLiked: cardInfo.isLiked }} />
-          </div>
-          <span className={styles.footertext}>13k 赞</span>
-        </div>
-        <div className={styles.footerbox}>
-          <div
-            className={`${`${styles.dot} ${styles.dotcollect}`} ${
-              styles.space_left
-            }`}
-          ></div>
-          <span className={styles.footertext}>1.1k 引用</span>
-        </div>
-      </section>
+      <ExpContent boxStyles={{ marginTop: 24 }} content={cardInfo.content} />
+      <ExpFooterAnimated
+        boxStyles={{ marginTop: 60 }}
+        infos={cardInfo}
+        toggleLike={toggleLike}
+      />
     </article>
   );
 };

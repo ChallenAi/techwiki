@@ -4,7 +4,7 @@ import styles from "./simple.module.css";
 import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
-import UserCardSimple from "../UserCard/CardSimple";
+import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 
 const CardSimple = ({ cardInfo }) => {
   const inactiveCardInfo = { show: false, left: 0, top: 0 };

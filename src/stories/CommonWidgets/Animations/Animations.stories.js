@@ -2,7 +2,7 @@ import React from "react";
 import { LikeIcon, LikeBtn } from "./LikeBtn";
 
 export default {
-  title: "Animations",
+  title: "Widgets.Animations",
 };
 
 // const info = [

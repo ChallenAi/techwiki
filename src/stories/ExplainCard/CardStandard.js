@@ -5,7 +5,7 @@ import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
 import MdThumbsUp from "react-ionicons/lib/MdThumbsUp";
-import UserCardSimple from "../UserCard/CardSimple";
+import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 
 // type cardInfo interface {
 //   expid,

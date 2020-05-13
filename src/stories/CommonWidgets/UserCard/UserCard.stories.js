@@ -2,10 +2,10 @@ import React from "react";
 import CardSimple from "./CardSimple";
 
 export default {
-  title: "UserCard",
+  title: "Widgets",
 };
 
-export const Simple = () => (
+export const UserCard = () => (
   <div style={{ margin: "80px 200px" }}>
     <CardSimple />
   </div>

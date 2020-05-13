@@ -4,7 +4,7 @@ import styles from "./imaged.module.css";
 import debounce from "lodash/debounce";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
-import UserCardSimple from "../UserCard/CardSimple";
+import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 
 // type cardInfo interface {
 //   expid,

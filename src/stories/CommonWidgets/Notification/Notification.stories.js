@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import NotificationSimple from "./NotificationSimple";
 
 export default {
-  title: "Notification",
+  title: "Widgets",
   component: NotificationSimple,
 };
 
@@ -45,7 +45,7 @@ const infos = [
   },
 ];
 
-export const Simple = () => {
+export const Notification = () => {
   const [notis, setNotis] = useState([infos[0]]);
   useEffect(() => {
     let counter = 1;
