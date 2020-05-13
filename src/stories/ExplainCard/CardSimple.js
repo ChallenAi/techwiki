@@ -3,30 +3,14 @@ import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
+import IosLock from "react-ionicons/lib/MdLock";
+import MdSync from "react-ionicons/lib/MdSync";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 import ExpContent from "../CommonWidgets/ExpContent/ExpContent";
 
-// type cardInfo interface {
-//   expid,
-//   word,
-//   content,
-//   userid,
-//   username,
-//   likeCnt,
-//   collectCnt,
-// };
-
-const CardSimple = ({ cardInfo }) => {
+const CardSimple = ({ cardInfo, setExp }) => {
   return (
-    <article
-      className={styles.card}
-      // onDoubleClick={(e) => {
-      //   // console.log(e.target.nodeName);
-      //   if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
-      //     action("双击(可以切换喜欢/收藏)")();
-      //   }
-      // }}
-    >
+    <article className={styles.card}>
       <div className={styles.headerrow}>
         <header
           className={styles.header}
@@ -34,6 +18,18 @@ const CardSimple = ({ cardInfo }) => {
         >
           {cardInfo.word}
         </header>
+        {/* <MdSync
+          style={{ cursor: "pointer", marginLeft: "auto", marginRight: 36 }}
+          onClick={action("保存")}
+          fontSize="24px"
+          color="#C7C9D0"
+        /> */}
+        <IosLock
+          style={{ cursor: "pointer", marginLeft: "auto", marginRight: 36 }}
+          onClick={action("锁定")}
+          fontSize="24px"
+          color="#C7C9D0"
+        />
         <IosMore
           style={{ cursor: "pointer" }}
           onClick={action("更多")}
@@ -48,3 +44,20 @@ const CardSimple = ({ cardInfo }) => {
 };
 
 export default CardSimple;
+
+// type cardInfo interface {
+//   expid,
+//   word,
+//   content,
+//   userid,
+//   username,
+//   likeCnt,
+//   collectCnt,
+// };
+
+// onDoubleClick={(e) => {
+//   // console.log(e.target.nodeName);
+//   if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
+//     action("双击(可以切换喜欢/收藏)")();
+//   }
+// }}
