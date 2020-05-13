@@ -1,11 +1,58 @@
+/* :root {} */
+
 .card {
   width: 446px;
   height: 282px;
   box-sizing: border-box;
-  padding: 28px 30px 52px;
   border-radius: 10px;
   background-color: #ffffff;
   box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05);
+}
+
+.ph {
+  /* width: 100%; */
+  padding: 28px 30px 52px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.phitem1 {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+  background-color: #fafafa;
+}
+
+.phitem2 {
+  width: 300px;
+  height: 25px;
+  background-color: #fafafa;
+}
+
+.phitem22 {
+  margin-top: 10px;
+  width: 300px;
+  height: 25px;
+  background-color: #fafafa;
+}
+
+.phitem3 {
+  margin-top: 20px;
+  width: 380px;
+  height: 40px;
+  background-color: #fafafa;
+}
+
+.phitem4 {
+  margin-top: 20px;
+  width: 380px;
+  height: 65px;
+  background-color: #fafafa;
+}
+
+.main {
+  padding: 28px 30px 52px;
 }
 
 .userbox {
