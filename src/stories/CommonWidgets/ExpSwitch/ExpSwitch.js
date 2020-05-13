@@ -1,26 +1,20 @@
 import React from "react";
 import styles from "./switch.module.css";
 
-import { action } from "@storybook/addon-actions";
+// import { action } from "@storybook/addon-actions";
+import ExpFooterView from "../ExpFooterView/ExpFooterView";
+import ExpContent from "../ExpContent/ExpContent";
 
-const ExpSwitch = ({ menuInfo, cssStyle, onMouseOver, onMouseLeave }) => (
-  <section
-    className={styles.card}
-    style={cssStyle}
-    onMouseOver={onMouseOver}
-    onMouseLeave={onMouseLeave}
-  >
+const ExpSwitch = ({ expsList, boxStyles }) => (
+  <section className={styles.card} style={boxStyles}>
     <span className={styles.title}>选择一个碎片</span>
     <ul className={styles.list}>
-      <li className={styles.item}>
-        碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1碎片1
-      </li>
-      <li className={styles.item}>
-        碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2碎片2
-      </li>
-      <li className={styles.item}>
-        碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3碎片3
-      </li>
+      {expsList.map((exp) => (
+        <li className={styles.item}>
+          <ExpContent boxStyles={{ marginTop: 24 }} content={exp.content} />
+          <ExpFooterView boxStyles={{ marginTop: 60 }} infos={exp} />
+        </li>
+      ))}
     </ul>
   </section>
 );
