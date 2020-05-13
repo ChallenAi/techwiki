@@ -12,13 +12,13 @@ const UsernameCarded = ({ boxStyles, username, width }) => {
   const close = () => setBuffered(false);
 
   return (
-    <div style={{ ...boxStyles, width }}>
+    <div style={{ ...boxStyles, width }} className={styles.usernamebox}>
       <span className={styles.username} onMouseOver={open} onMouseLeave={close}>
         {username}
       </span>
       {showUserCard && (
         <UserCardSimple
-          boxStyles={{ position: "absolute", bottom: 38, left: -140 }}
+          boxStyles={{ position: "absolute", bottom: 38, left: -185 }}
           onMouseOver={open}
           onMouseLeave={close}
         />

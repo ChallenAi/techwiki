@@ -1,3 +1,7 @@
+.usernamebox {
+  position: relative;
+}
+
 .username {
   /* 使ellipsis生效 */
   display: block;
