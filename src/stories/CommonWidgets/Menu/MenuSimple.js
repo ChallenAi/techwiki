@@ -3,13 +3,8 @@ import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
 
-const MenuSimple = ({ menuInfo, cssStyle, onMouseOver, onMouseLeave }) => (
-  <ul
-    className={styles.list}
-    style={cssStyle}
-    onMouseOver={onMouseOver}
-    onMouseLeave={onMouseLeave}
-  >
+const MenuSimple = ({ menuInfo, boxStyles, closeMenu }) => (
+  <ul className={styles.list} style={boxStyles} onClick={closeMenu}>
     <li className={styles.item}>options 1</li>
     <li className={styles.item}>options 2</li>
     <li className={styles.item}>options 3</li>

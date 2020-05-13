@@ -42,7 +42,7 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
         </span>
         {userCardInfo.show && (
           <UserCardSimple
-            cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
+            boxStyles={{ position: "absolute", bottom: 38, left: -140 }}
             onMouseOver={(e) => onShowUserCard(e.target)}
             onMouseLeave={() => setCardInfo(inactiveCardInfo)}
           />

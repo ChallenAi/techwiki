@@ -43,6 +43,7 @@
   user-select: none;
   white-space: nowrap;
   overflow: hidden;
+  /* cursor: pointer; */
 }
 
 .nametext {

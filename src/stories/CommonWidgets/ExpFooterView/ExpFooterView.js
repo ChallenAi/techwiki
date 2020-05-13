@@ -2,21 +2,13 @@ import React, { useState } from "react";
 import styles from "./footer.module.css";
 
 import debounce from "lodash/debounce";
-import { action } from "@storybook/addon-actions";
 import UserCardSimple from "../UserCard/CardSimple";
 
 const ExpFooterView = ({ boxStyles, infos }) => {
-  const inactiveCardInfo = { show: false, left: 0, top: 0 };
-  const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
-  const setCardInfo = debounce(setUserCard, 150);
-  const onShowUserCard = (e) => {
-    const rect = e.getBoundingClientRect();
-    setCardInfo({
-      show: true,
-      left: rect.x + rect.width / 2, // add half the width of the button for centering
-      top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
-    });
-  };
+  const [showUserCard, setUserCard] = useState(false);
+  const setBuffered = debounce(setUserCard, 150);
+  const open = () => setBuffered(true);
+  const close = () => setBuffered(false);
 
   return (
     <section style={boxStyles} className={styles.footer}>
@@ -25,24 +17,22 @@ const ExpFooterView = ({ boxStyles, infos }) => {
         <span
           style={{ cursor: "pointer" }}
           className={`${styles.footertext} ${styles.nametext}`}
-          onMouseOver={(e) => onShowUserCard(e.target)}
-          onMouseLeave={() => setCardInfo(inactiveCardInfo)}
+          onMouseOver={open}
+          onMouseLeave={close}
         >
           {infos.username}
         </span>
-        {userCardInfo.show && (
+        {showUserCard && (
           <UserCardSimple
-            cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
-            onMouseOver={(e) => onShowUserCard(e.target)}
-            onMouseLeave={() => setCardInfo(inactiveCardInfo)}
+            boxStyles={{ position: "absolute", bottom: 38, left: -140 }}
+            onMouseOver={open}
+            onMouseLeave={close}
           />
         )}
       </div>
       <div className={`${styles.footerbox} ${styles.gotoright}`}>
         <div className={`${styles.dot} ${styles.dotlike}`}></div>
-        <span className={styles.footertext} onClick={action("赞")}>
-          13k 赞
-        </span>
+        <span className={styles.footertext}>13k 赞</span>
       </div>
       <div className={styles.footerbox}>
         <div
@@ -57,3 +47,14 @@ const ExpFooterView = ({ boxStyles, infos }) => {
 };
 
 export default ExpFooterView;
+
+// const onShowUserCard = (e) => {
+//   // 获取用户名容器的位置，用来计算UserCard的位置, 利用absolute则完全不需要了。。。
+//   // 保存下来防止以后需要
+//   const rect = e.target.getBoundingClientRect();
+//   setCardInfo({
+//     show: true,
+//     left: rect.x + rect.width / 2, // add half the width of the button for centering
+//     top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
+//   });
+// };

@@ -4,7 +4,7 @@ import styles from "./simple.module.css";
 import { action } from "@storybook/addon-actions";
 import IosMore from "react-ionicons/lib/IosMore";
 
-const CardSimple = ({ userId, cssStyle, onMouseOver, onMouseLeave }) => {
+const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   const [userinfo, setUser] = useState({
     isLoading: true,
     userId: userId,
@@ -27,7 +27,12 @@ const CardSimple = ({ userId, cssStyle, onMouseOver, onMouseLeave }) => {
   }, [userId]);
 
   return (
-    <div style={cssStyle} className={styles.card}>
+    <div
+      style={boxStyles}
+      className={styles.card}
+      onMouseOver={onMouseOver}
+      onMouseLeave={onMouseLeave}
+    >
       {userinfo.isLoading ? (
         <div className={styles.ph}>
           <div className={styles.phitem1}></div>
@@ -39,11 +44,7 @@ const CardSimple = ({ userId, cssStyle, onMouseOver, onMouseLeave }) => {
           <div className={styles.phitem4}></div>
         </div>
       ) : (
-        <article
-          className={styles.main}
-          onMouseOver={onMouseOver}
-          onMouseLeave={onMouseLeave}
-        >
+        <article className={styles.main}>
           <section className={styles.userbox}>
             <img
               src={userinfo.avatar}

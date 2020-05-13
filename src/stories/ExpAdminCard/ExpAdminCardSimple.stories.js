@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import CardAnimated from "./CardAnimated";
-import CardImaged from "./CardImaged";
-import CardStandard from "./CardStandard";
+import ExpAdminCardSimple from "./ExpAdminCardSimple";
 
 export default {
-  title: "ExplainCard",
-  component: [CardAnimated, CardImaged, CardStandard],
+  title: "ExplainAdminCard",
+  component: [ExpAdminCardSimple],
 };
 
 const info = [
@@ -18,8 +16,6 @@ const info = [
     username: "哎呦小仙女小仙女小仙女小仙女小仙女",
     likeCnt: 13210,
     collectCnt: 1100,
-    isLiked: true,
-    isCollected: false,
     isLock: false,
   },
   {
@@ -32,8 +28,6 @@ const info = [
     username: "皮皮虾天敌蟆蟆蛤",
     likeCnt: 32210,
     collectCnt: 3619,
-    isLiked: true,
-    isCollected: false,
     isLock: true,
   },
   {
@@ -47,17 +41,15 @@ const info = [
     likeCnt: 710,
     collectCnt: 69,
     timestring: "昨天下午3:10",
-    isLiked: true,
-    isCollected: false,
     isLock: true,
   },
 ];
 
-export const Animated = () => {
+export const Simple = () => {
   const [exps, setexps] = useState(info);
   return (
     <div style={{ margin: "180px 200px" }}>
-      <CardAnimated
+      <ExpAdminCardSimple
         cardInfo={exps[0]}
         toggleLike={(expid) => {
           exps.map((el) => {
@@ -71,15 +63,3 @@ export const Animated = () => {
     </div>
   );
 };
-
-export const Imaged = () => (
-  <div style={{ margin: "180px 200px" }}>
-    <CardImaged cardInfo={info[1]} />
-  </div>
-);
-
-export const Standard = () => (
-  <div style={{ margin: "280px 200px" }}>
-    <CardStandard cardInfo={info[2]} />
-  </div>
-);

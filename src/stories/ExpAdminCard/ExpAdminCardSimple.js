@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import styles from "./simple.module.css";
+import styles from "./admin.module.css";
 
 import { action } from "@storybook/addon-actions";
-import IosMore from "react-ionicons/lib/IosMore";
+import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import IosLock from "react-ionicons/lib/MdLock";
 import MdSync from "react-ionicons/lib/MdSync";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 import ExpContent from "../CommonWidgets/ExpContent/ExpContent";
 
-const CardSimple = ({ cardInfo, setExp }) => {
+const ExpAdminCardSimple = ({ cardInfo, setExp }) => {
   return (
     <article className={styles.card}>
       <div className={styles.headerrow}>
@@ -30,12 +30,7 @@ const CardSimple = ({ cardInfo, setExp }) => {
           fontSize="24px"
           color="#C7C9D0"
         />
-        <IosMore
-          style={{ cursor: "pointer" }}
-          onClick={action("更多")}
-          fontSize="26px"
-          color="#C7C9D0"
-        />
+        <MoreBtn />
       </div>
       <ExpContent boxStyles={{ marginTop: 24 }} content={cardInfo.content} />
       <ExpFooterView boxStyles={{ marginTop: 60 }} infos={cardInfo} />
@@ -43,7 +38,7 @@ const CardSimple = ({ cardInfo, setExp }) => {
   );
 };
 
-export default CardSimple;
+export default ExpAdminCardSimple;
 
 // type cardInfo interface {
 //   expid,
