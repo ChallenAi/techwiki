@@ -1,5 +1,9 @@
-import React from "react";
-import { LikeIcon, LikeBtn } from "./LikeBtn";
+import React, { useState } from "react";
+import LikeIcon from "./Like";
+import CollectBtn from "./Collect";
+import DeleteBtn from "./Delete";
+import HeartBtn from "./Heart";
+import HelloBtn from "./Hello";
 
 export default {
   title: "Widgets.Animations",
@@ -18,10 +22,43 @@ export default {
 //   },
 // ];
 
-export const Like = () => (
+export const Like = () => {
+  const [isLiked, toggleLike] = useState(Boolean);
+  return (
+    <div
+      style={{ margin: "180px 200px" }}
+      onClick={() => {
+        toggleLike(!isLiked);
+      }}
+    >
+      <LikeIcon active={isLiked} />
+      <div style={{ marginTop: 30 }}></div>
+    </div>
+  );
+};
+
+export const Collect = () => {
+  const [isCollected, toggleCollct] = useState(false);
+  return (
+    <div
+      style={{ margin: "180px 200px" }}
+      onClick={() => {
+        toggleCollct(!isCollected);
+      }}
+    >
+      <CollectBtn active={isCollected} />
+    </div>
+  );
+};
+
+export const Hello = () => (
   <div style={{ margin: "180px 200px" }}>
-    <LikeIcon iconInfo={{ isLiked: true }} />
-    <div style={{ marginTop: 30 }}></div>
-    <LikeBtn />
+    <HelloBtn />
+  </div>
+);
+
+export const Delete = () => (
+  <div style={{ margin: "180px 200px" }}>
+    <DeleteBtn />
   </div>
 );

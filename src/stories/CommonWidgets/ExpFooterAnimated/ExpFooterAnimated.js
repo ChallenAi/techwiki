@@ -3,7 +3,7 @@ import styles from "./footer.module.css";
 
 import debounce from "lodash/debounce";
 import UserCardSimple from "../UserCard/CardSimple";
-import { LikeIcon } from "../Animations/LikeBtn";
+import LikeIcon from "../Animations/Like";
 
 // type cardInfo interface {
 //   expid,
@@ -53,7 +53,7 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
         onClick={() => toggleLike(infos.expid)}
       >
         <div style={{ position: "relative", top: 0, marginRight: 4 }}>
-          <LikeIcon iconInfo={{ isLiked: infos.isLiked }} />
+          <LikeIcon active={infos.isLiked} />
         </div>
         <span className={styles.footertext}>13k 赞</span>
       </div>

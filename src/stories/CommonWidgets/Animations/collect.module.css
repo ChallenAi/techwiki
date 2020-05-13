@@ -1,0 +1,46 @@
+.collectbox {
+  cursor: pointer;
+  width: 16px;
+}
+
+.collectbox path {
+  fill: #bbc1e1;
+  transition: 0.5s linear;
+}
+
+.active path {
+  fill: #ea4673;
+}
+
+/* 轨迹动画,太复杂了，bili的微ani也被调整了，所以也放弃复杂动画 */
+/* .collectbox path {
+  fill: #bbc1e1;
+  stroke-width: 10;
+  stroke: #bbc1e1;
+}
+
+.collectbox svg path {
+  stroke-dasharray: 1810;
+  stroke-dashoffset: 0;
+}
+
+.collectbox:hover path {
+  animation: animated-collect 2s linear forwards;
+}
+
+@keyframes animated-collect {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  40% {
+    stroke-dashoffset: 1810;
+  }
+  80% {
+    stroke-dashoffset: 3620;
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 3620;
+    fill: #ea4673;
+  }
+} */
