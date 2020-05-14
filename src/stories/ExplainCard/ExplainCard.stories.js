@@ -59,10 +59,10 @@ export const Animated = () => {
     <div style={{ margin: "180px 200px" }}>
       <CardAnimated
         cardInfo={exps[0]}
-        toggleLike={(expid) => {
-          exps.map((el) => {
-            if (el.expid == expid) {
-              el.isLiked = !el.isLiked;
+        setCardInfo={(info) => {
+          exps.map((el, idx) => {
+            if (el.expid == info.expid) {
+              exps[idx] = info;
             }
           });
           setexps([...exps]);
@@ -78,10 +78,10 @@ export const Imaged = () => {
     <div style={{ margin: "180px 200px" }}>
       <CardImaged
         cardInfo={exps[1]}
-        toggleLike={(expid) => {
-          exps.map((el) => {
-            if (el.expid == expid) {
-              el.isLiked = !el.isLiked;
+        setCardInfo={(info) => {
+          exps.map((el, idx) => {
+            if (el.expid == info.expid) {
+              exps[idx] = info;
             }
           });
           setexps([...exps]);

@@ -7,7 +7,10 @@ import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
 
-const CardAnimated = ({ cardInfo, toggleLike }) => {
+const CardAnimated = ({ cardInfo, setCardInfo }) => {
+  const toggleLike = () => {
+    setCardInfo({ ...cardInfo, isLiked: !cardInfo.isLiked });
+  };
   return (
     <Card
       boxStyles={{

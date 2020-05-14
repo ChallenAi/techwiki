@@ -51,10 +51,10 @@ export const Simple = () => {
     <div style={{ margin: "180px 200px" }}>
       <ExpAdminCardSimple
         cardInfo={exps[0]}
-        toggleLike={(expid) => {
-          exps.map((el) => {
-            if (el.expid == expid) {
-              el.isLiked = !el.isLiked;
+        setCardInfo={(info) => {
+          exps.map((el, idx) => {
+            if (el.expid == info.expid) {
+              exps[idx] = info;
             }
           });
           setexps([...exps]);

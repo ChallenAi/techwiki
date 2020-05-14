@@ -10,7 +10,10 @@ import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 
-const ExpAdminCardSimple = ({ cardInfo, setExp }) => {
+const ExpAdminCardSimple = ({ cardInfo, setCardInfo }) => {
+  const toggleLock = () => {
+    setCardInfo({ ...cardInfo, isLock: !cardInfo.isLock });
+  };
   return (
     <Card
       boxStyles={{
@@ -27,10 +30,15 @@ const ExpAdminCardSimple = ({ cardInfo, setExp }) => {
           color="#C7C9D0"
         /> */}
         <IosLock
-          style={{ cursor: "pointer", marginLeft: "auto", marginRight: 36 }}
-          onClick={action("锁定")}
+          style={{
+            cursor: "pointer",
+            marginLeft: "auto",
+            marginRight: 36,
+            userSelect: "none",
+          }}
+          onClick={toggleLock}
           fontSize="24px"
-          color="#C7C9D0"
+          color={cardInfo.isLock ? "#000" : "#C7C9D0"}
         />
         <MoreBtn />
       </div>
