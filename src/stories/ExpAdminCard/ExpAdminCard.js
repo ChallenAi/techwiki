@@ -10,7 +10,7 @@ import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 
-const ExpAdminCardSimple = ({ cardInfo, setCardInfo }) => {
+const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
   const toggleLock = () => {
     setCardInfo({ ...cardInfo, isLock: !cardInfo.isLock });
   };
@@ -51,7 +51,7 @@ const ExpAdminCardSimple = ({ cardInfo, setCardInfo }) => {
   );
 };
 
-export default ExpAdminCardSimple;
+export default ExpAdminCard;
 
 // type cardInfo interface {
 //   expid,

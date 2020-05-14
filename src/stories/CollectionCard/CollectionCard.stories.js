@@ -2,7 +2,7 @@ import React from "react";
 import CardSimple from "./CardSimple";
 
 export default {
-  title: "CollectionCard",
+  title: "InfoCard",
 };
 
 const info = [
@@ -28,7 +28,7 @@ const info = [
   },
 ];
 
-export const Simple = () => (
+export const SimpleCollection = () => (
   <div style={{ margin: "180px 200px" }}>
     <CardSimple cardInfo={info[0]} />
   </div>

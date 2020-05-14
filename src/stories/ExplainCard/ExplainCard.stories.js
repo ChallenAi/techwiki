@@ -4,7 +4,7 @@ import CardImaged from "./CardImaged";
 import CardStandard from "./CardStandard";
 
 export default {
-  title: "ExplainCard",
+  title: "InfoCard",
   component: [CardAnimated, CardImaged, CardStandard],
 };
 
@@ -16,8 +16,8 @@ const info = [
     image: "",
     userid: 1,
     username: "哎呦小仙女小仙女小仙女小仙女小仙女",
-    likeCnt: 13210,
-    collectCnt: 1100,
+    likeCnt: "13k",
+    collectCnt: "1.1k",
     isLiked: true,
     isCollected: false,
     isLock: false,
@@ -30,8 +30,8 @@ const info = [
     image: "",
     userid: 2,
     username: "皮皮虾天敌蟆蟆蛤",
-    likeCnt: 32210,
-    collectCnt: 3619,
+    likeCnt: "32k",
+    collectCnt: "3.6k",
     isLiked: true,
     isCollected: false,
     isLock: true,
@@ -44,8 +44,8 @@ const info = [
     image: "",
     userid: 3,
     username: "Anna Yates",
-    likeCnt: 710,
-    collectCnt: 69,
+    likeCnt: "710",
+    collectCnt: "136",
     timestring: "昨天下午3:10",
     isLiked: true,
     isCollected: false,
@@ -53,7 +53,7 @@ const info = [
   },
 ];
 
-export const Animated = () => {
+export const AnimatedExplain = () => {
   const [exps, setexps] = useState(info);
   return (
     <div style={{ margin: "180px 200px" }}>
@@ -72,7 +72,7 @@ export const Animated = () => {
   );
 };
 
-export const Imaged = () => {
+export const ImagedExplain = () => {
   const [exps, setexps] = useState(info);
   return (
     <div style={{ margin: "180px 200px" }}>
@@ -91,7 +91,7 @@ export const Imaged = () => {
   );
 };
 
-export const Standard = () => (
+export const StandardExplain = () => (
   <div style={{ margin: "280px 200px" }}>
     <CardStandard cardInfo={info[2]} />
   </div>

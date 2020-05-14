@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../Card/Card";
-import CollectionFooterView from "./CollectionFooterView";
+import CollectionFooterView2 from "./CollectionFooterView";
 
 export default {
-  title: "Widgets.CollectionCard",
+  title: "Widgets.Card",
 };
 
 const infosList = [
@@ -29,11 +29,11 @@ const infosList = [
   },
 ];
 
-export const FooterView = () => (
+export const CollectionFooterView = () => (
   <div style={{ margin: "280px 300px" }}>
     {infosList.map((infos) => (
-      <Card key={infos.expid} boxStyles={{ marginBottom: 40 }}>
-        <CollectionFooterView
+      <Card key={infos.collectionid} boxStyles={{ marginBottom: 40 }}>
+        <CollectionFooterView2
           boxStyles={{ padding: "44px 46px 42px" }}
           infos={infos}
         />

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ExpAdminCardSimple from "./ExpAdminCardSimple";
+import ExpAdminCard from "./ExpAdminCard";
 
 export default {
-  title: "ExplainAdminCard",
-  component: [ExpAdminCardSimple],
+  title: "InfoCard",
+  component: [ExpAdminCard],
 };
 
 const info = [
@@ -45,11 +45,11 @@ const info = [
   },
 ];
 
-export const Simple = () => {
+export const AdminExplain = () => {
   const [exps, setexps] = useState(info);
   return (
     <div style={{ margin: "180px 200px" }}>
-      <ExpAdminCardSimple
+      <ExpAdminCard
         cardInfo={exps[0]}
         setCardInfo={(info) => {
           exps.map((el, idx) => {

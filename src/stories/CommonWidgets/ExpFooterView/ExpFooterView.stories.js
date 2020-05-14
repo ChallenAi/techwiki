@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import ExpFooterView from "./ExpFooterView";
 
 export default {
-  title: "Widgets.ExplainCard",
+  title: "Widgets.Card",
 };
 
 const infosList = [
@@ -36,7 +36,7 @@ const infosList = [
   },
 ];
 
-export const FooterView = () => (
+export const ExplainFooterView = () => (
   <div style={{ margin: "280px 300px" }}>
     {infosList.map((infos) => (
       <Card key={infos.expid} boxStyles={{ marginBottom: 40 }}>
