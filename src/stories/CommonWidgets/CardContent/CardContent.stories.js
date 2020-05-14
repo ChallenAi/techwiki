@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "../Card/Card";
-import ExpContent from "./ExpContent";
+import CardContentView from "./CardContentView";
 
 export default {
-  title: "Widgets.ExplainCard",
+  title: "Widgets.Card",
 };
 
 const contentList = [
@@ -12,11 +12,11 @@ const contentList = [
   "“上市为什么能造富？\n上市后公司估值提高，所以公司拥有者能分到很多钱。“",
 ];
 
-export const Content = () => (
+export const ContentView = () => (
   <div style={{ margin: "280px 300px" }}>
     {contentList.map((content, idx) => (
       <Card key={idx} boxStyles={{ marginBottom: 40 }}>
-        <ExpContent
+        <CardContentView
           boxStyles={{ padding: "44px 46px 42px" }}
           content={content}
         />

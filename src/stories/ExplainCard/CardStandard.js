@@ -7,15 +7,12 @@ import IosMore from "react-ionicons/lib/IosMore";
 import MdThumbsUp from "react-ionicons/lib/MdThumbsUp";
 import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 
-// type cardInfo interface {
-//   expid,
-//   word,
-//   content,
-//   userid,
-//   username,
-//   likeCnt,
-//   collectCnt,
-// };
+import Card from "../CommonWidgets/Card/Card";
+import CardHeader from "../CommonWidgets/CardHeader";
+import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
+import CardContentView from "../CommonWidgets/CardContent/CardContentView";
+import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
+import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 
 const CardStandard = ({ cardInfo }) => {
   const inactiveCardInfo = { show: false, left: 0, top: 0 };
@@ -50,14 +47,12 @@ const CardStandard = ({ cardInfo }) => {
           className={styles.avatar}
         />
         <div className={styles.userinfo}>
-          <span
-            style={{ cursor: "pointer" }}
-            className={styles.username}
-            onMouseOver={(e) => onShowUserCard(e.target)}
-            onMouseLeave={() => setCardInfo(inactiveCardInfo)}
-          >
-            {cardInfo.username}
-          </span>
+          <UsernameCarded
+            username={cardInfo.username}
+            boxStyles={{ marginBottom: 3 }}
+            width="100%"
+            fontStyles={{ fontSize: 16, color: "#131721" }}
+          />
           <span className={styles.timestring}>{cardInfo.timestring}</span>
           {userCardInfo.show && (
             <UserCardSimple
@@ -67,20 +62,13 @@ const CardStandard = ({ cardInfo }) => {
             />
           )}
         </div>
-        <IosMore
-          style={{ cursor: "pointer" }}
-          onClick={action("更多")}
-          fontSize="26px"
-          color="#C7C9D0"
-        />
+        <MoreBtn />
       </section>
-      <header
-        className={styles.header}
-        title={cardInfo.word.length > 13 ? cardInfo.word : ""}
-      >
-        {cardInfo.word}
-      </header>
-      <p className={styles.content}>{cardInfo.content}</p>
+      <CardHeader boxStyles={{}} title={cardInfo.word} />
+      <CardContentView
+        boxStyles={{ marginTop: 20, marginBottom: 40 }}
+        content={cardInfo.content}
+      />
       <div className={styles.footerbox}>
         <MdThumbsUp
           style={{ cursor: "pointer" }}
@@ -95,3 +83,13 @@ const CardStandard = ({ cardInfo }) => {
 };
 
 export default CardStandard;
+
+// type cardInfo interface {
+//   expid,
+//   word,
+//   content,
+//   userid,
+//   username,
+//   likeCnt,
+//   collectCnt,
+// };

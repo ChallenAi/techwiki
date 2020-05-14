@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import ExpFooterAnimated from "./ExpFooterAnimated";
 
 export default {
-  title: "Widgets.ExplainCard",
+  title: "Widgets.Card",
 };
 
 const infosList = [
@@ -11,8 +11,8 @@ const infosList = [
     expid: 1,
     userid: 1,
     username: "哎呦小仙女小仙女小仙女小仙女小仙女",
-    likeCnt: 13210,
-    collectCnt: 1100,
+    likeCnt: "13k",
+    collectCnt: "1.1k",
     isLiked: true,
     isCollected: false,
   },
@@ -20,8 +20,8 @@ const infosList = [
     expid: 2,
     userid: 2,
     username: "皮皮虾天敌蟆蟆蛤",
-    likeCnt: 32210,
-    collectCnt: 3619,
+    likeCnt: "32k",
+    collectCnt: "3.6k",
     isLiked: true,
     isCollected: false,
   },
@@ -29,14 +29,14 @@ const infosList = [
     expid: 3,
     userid: 3,
     username: "Anna Yates",
-    likeCnt: 710,
-    collectCnt: 69,
+    likeCnt: "710",
+    collectCnt: "69",
     isLiked: true,
     isCollected: false,
   },
 ];
 
-export const FooterAnimated = () => {
+export const ExplainFooterAnimated = () => {
   const [exps, setexps] = useState(infosList);
 
   return (

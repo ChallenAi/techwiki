@@ -1,16 +1,20 @@
-.footer {
-  /* margin-top: 60px; */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .footerbox {
-  max-width: 50%;
-  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.collectbox {
+  float: right;
+  margin-left: 18px;
+}
+
+.likebox {
+  float: right;
+}
+
+.usernamebox {
+  margin-right: 210px;
 }
 
 .dot {
@@ -21,15 +25,12 @@
   opacity: 0.65;
   /* 防止球被压扁 */
   min-width: 14px;
+  overflow: hidden;
 }
 
 .dotuser {
   background-image: linear-gradient(#6b9eb8, #373e54);
 }
-
-/* .dotlike {
-  background-image: linear-gradient(#82a2f9, #2f58d0);
-} */
 
 .dotcollect {
   background-image: linear-gradient(#a4a8b4, #2f58d0);
@@ -43,21 +44,9 @@
   user-select: none;
   white-space: nowrap;
   overflow: hidden;
+  /* cursor: pointer; */
+}
+
+.liketext {
   cursor: pointer;
-}
-
-.footertext:hover {
-  color: #82a2f9;
-}
-
-.nametext {
-  text-overflow: ellipsis;
-}
-
-.gotoright {
-  margin-left: auto;
-}
-
-.spaceleft {
-  margin-left: 18px;
 }

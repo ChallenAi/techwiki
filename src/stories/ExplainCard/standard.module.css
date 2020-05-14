@@ -27,7 +27,6 @@
 .userinfo {
   /* 限制用户名长度 */
   max-width: 61%;
-  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,40 +35,9 @@
   display: flex;
 }
 
-.username {
-  width: 100%;
-  cursor: pointer;
-  margin-bottom: 3px;
-  font-size: 16px;
-  color: #131721;
-  user-select: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
 .timestring {
   font-size: 13px;
   color: #858997;
-  user-select: none;
-}
-
-.header {
-  font-size: 23px;
-  font-weight: medium;
-  color: #4e4e4e;
-  user-select: none;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.content {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  font-size: 17px;
-  line-height: 27px;
-  color: #8b8b8b;
   user-select: none;
 }
 

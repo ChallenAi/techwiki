@@ -3,7 +3,7 @@ import styles from "./switch.module.css";
 
 import { action } from "@storybook/addon-actions";
 import ExpFooterView from "../ExpFooterView/ExpFooterView";
-import ExpContent from "../ExpContent/ExpContent";
+import CardContentView from "../CardContent/CardContentView";
 import MdTrash from "react-ionicons/lib/MdTrash";
 
 const ExpSwitch = ({ expsList, boxStyles }) => (
@@ -17,7 +17,10 @@ const ExpSwitch = ({ expsList, boxStyles }) => (
           onClick={action("选择碎片")}
         >
           <div className={styles.left}>
-            <ExpContent boxStyles={{ marginTop: 24 }} content={exp.content} />
+            <CardContentView
+              boxStyles={{ marginTop: 24 }}
+              content={exp.content}
+            />
             <ExpFooterView boxStyles={{ marginTop: 60 }} infos={exp} />
           </div>
           <div className={styles.right}>

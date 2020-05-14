@@ -1,23 +1,25 @@
 import React, { useState } from "react";
 import styles from "./admin.module.css";
-
-import { action } from "@storybook/addon-actions";
-import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import IosLock from "react-ionicons/lib/MdLock";
 import MdSync from "react-ionicons/lib/MdSync";
+import { action } from "@storybook/addon-actions";
+
+import Card from "../CommonWidgets/Card/Card";
+import CardHeader from "../CommonWidgets/CardHeader";
+import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
+import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
-import ExpContent from "../CommonWidgets/ExpContent/ExpContent";
 
 const ExpAdminCardSimple = ({ cardInfo, setExp }) => {
   return (
-    <article className={styles.card}>
+    <Card
+      boxStyles={{
+        boxSizing: "border-box",
+        padding: "44px 46px 42px",
+      }}
+    >
       <div className={styles.headerrow}>
-        <header
-          className={styles.header}
-          title={cardInfo.word.length > 13 ? cardInfo.word : ""}
-        >
-          {cardInfo.word}
-        </header>
+        <CardHeader boxStyles={{}} title={cardInfo.word} />
         {/* <MdSync
           style={{ cursor: "pointer", marginLeft: "auto", marginRight: 36 }}
           onClick={action("保存")}
@@ -32,9 +34,12 @@ const ExpAdminCardSimple = ({ cardInfo, setExp }) => {
         />
         <MoreBtn />
       </div>
-      <ExpContent boxStyles={{ marginTop: 24 }} content={cardInfo.content} />
+      <CardContentView
+        boxStyles={{ marginTop: 24 }}
+        content={cardInfo.content}
+      />
       <ExpFooterView boxStyles={{ marginTop: 60 }} infos={cardInfo} />
-    </article>
+    </Card>
   );
 };
 

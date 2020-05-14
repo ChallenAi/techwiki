@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./likeb.module.css";
 
-export const LikeBtn = ({ btnInfo }) => {
+const LikeBtn = ({ active }) => {
   const [isLiked, toggleLike] = useState(false);
   return (
     <button
@@ -17,3 +17,5 @@ export const LikeBtn = ({ btnInfo }) => {
     </button>
   );
 };
+
+export default LikeBtn;

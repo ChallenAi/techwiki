@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import styles from "./content.module.css";
+import styles from "./view.module.css";
 
 // import { action } from "@storybook/addon-actions";
 
-const ExpContent = ({ boxStyles, content }) => {
+const CardContentView = ({ boxStyles, content }) => {
   return (
     <p style={boxStyles} className={styles.content}>
       {content}
@@ -11,4 +11,4 @@ const ExpContent = ({ boxStyles, content }) => {
   );
 };
 
-export default ExpContent;
+export default CardContentView;

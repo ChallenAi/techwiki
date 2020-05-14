@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LikeIcon from "./Like";
 import CollectBtn from "./Collect";
 import DeleteBtn from "./Delete";
-import HeartBtn from "./Heart";
+import LikebBtn from "./Likeb";
 import HelloBtn from "./Hello";
 
 export default {
@@ -33,6 +33,14 @@ export const Like = () => {
     >
       <LikeIcon active={isLiked} />
       <div style={{ marginTop: 30 }}></div>
+    </div>
+  );
+};
+
+export const Like2 = () => {
+  return (
+    <div style={{ margin: "180px 200px" }}>
+      <LikebBtn />
     </div>
   );
 };

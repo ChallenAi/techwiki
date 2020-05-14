@@ -72,11 +72,24 @@ export const Animated = () => {
   );
 };
 
-export const Imaged = () => (
-  <div style={{ margin: "180px 200px" }}>
-    <CardImaged cardInfo={info[1]} />
-  </div>
-);
+export const Imaged = () => {
+  const [exps, setexps] = useState(info);
+  return (
+    <div style={{ margin: "180px 200px" }}>
+      <CardImaged
+        cardInfo={exps[1]}
+        toggleLike={(expid) => {
+          exps.map((el) => {
+            if (el.expid == expid) {
+              el.isLiked = !el.isLiked;
+            }
+          });
+          setexps([...exps]);
+        }}
+      />
+    </div>
+  );
+};
 
 export const Standard = () => (
   <div style={{ margin: "280px 200px" }}>
