@@ -1,0 +1,45 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  user-select: none;
+}
+
+.footerbox {
+  margin-right: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footertext {
+  margin-left: 7px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #8b8b8b;
+  user-select: none;
+}
+
+.exptext {
+  cursor: pointer;
+}
+
+.exptext:hover {
+  color: #82a2f9;
+}
+
+.dot {
+  transform: rotate(15deg);
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  opacity: 0.65;
+}
+
+.dotexp {
+  background-image: linear-gradient(#82a2f9, #2f58d0);
+}
+
+.dotmember {
+  background-image: linear-gradient(#6b9eb8, #373e54);
+}

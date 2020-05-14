@@ -1,11 +1,12 @@
 import React from "react";
-import CardSimple from "./CardSimple";
+import Card from "../Card/Card";
+import CollectionFooterView from "./CollectionFooterView";
 
 export default {
-  title: "CollectionCard",
+  title: "Widgets.CollectionCard",
 };
 
-const info = [
+const infosList = [
   {
     collectionid: 1,
     name: "美妆",
@@ -28,8 +29,15 @@ const info = [
   },
 ];
 
-export const Simple = () => (
-  <div style={{ margin: "180px 200px" }}>
-    <CardSimple cardInfo={info[0]} />
+export const FooterView = () => (
+  <div style={{ margin: "280px 300px" }}>
+    {infosList.map((infos) => (
+      <Card key={infos.expid} boxStyles={{ marginBottom: 40 }}>
+        <CollectionFooterView
+          boxStyles={{ padding: "44px 46px 42px" }}
+          infos={infos}
+        />
+      </Card>
+    ))}
   </div>
 );

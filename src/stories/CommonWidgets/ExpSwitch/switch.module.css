@@ -53,3 +53,17 @@
 .item:hover {
   background-color: #f8f8f8;
 }
+
+.deleteicon {
+  width: 30px;
+  /* cursor: pointer; */
+}
+
+.deleteicon path {
+  fill: #dadada;
+  transition: 0.5s ease-out;
+}
+
+.deleteicon:hover path {
+  fill: #aaaaaa;
+}

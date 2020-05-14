@@ -1,34 +1,13 @@
 import React, { useState } from "react";
 import styles from "./simple.module.css";
 
-import debounce from "lodash/debounce";
-import { action } from "@storybook/addon-actions";
-import IosMore from "react-ionicons/lib/IosMore";
-import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
+import CollectionFooterView from "../CommonWidgets/CollectionFooterView/CollectionFooterView";
+import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
+import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 
 const CardSimple = ({ cardInfo }) => {
-  const inactiveCardInfo = { show: false, left: 0, top: 0 };
-  const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
-  const setCardInfo = debounce(setUserCard, 150);
-  const onShowUserCard = (e) => {
-    const rect = e.getBoundingClientRect();
-    setCardInfo({
-      show: true,
-      left: rect.x + rect.width / 2, // add half the width of the button for centering
-      top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
-    });
-  };
-
   return (
-    <article
-      className={styles.card}
-      onDoubleClick={(e) => {
-        // console.log(e.target.nodeName);
-        if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
-          action("双击(可以切换喜欢/收藏)")();
-        }
-      }}
-    >
+    <article className={styles.card}>
       <div className={styles.part}>
         <div className={styles.logorow}>
           <img
@@ -39,45 +18,23 @@ const CardSimple = ({ cardInfo }) => {
             }}
             className={styles.logo}
           />
-          <IosMore
-            style={{ cursor: "pointer" }}
-            onClick={action("更多")}
-            fontSize="26px"
-            color="#C7C9D0"
-          />
+          <MoreBtn />
         </div>
         <header className={styles.header}>{cardInfo.name}</header>
         <p className={styles.content}>{cardInfo.citeContent}</p>
       </div>
       <div className={styles.part}>
-        <div className={styles.authorrow}>
-          <span
-            style={{ cursor: "pointer" }}
-            className={styles.username}
-            onMouseOver={(e) => onShowUserCard(e.target)}
-            onMouseLeave={() => setCardInfo(inactiveCardInfo)}
-          >
-            — {cardInfo.username}
-          </span>
-          {userCardInfo.show && (
-            <UserCardSimple
-              cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
-              onMouseOver={(e) => onShowUserCard(e.target)}
-              onMouseLeave={() => setCardInfo(inactiveCardInfo)}
+        <div className={styles.gotoright}>
+          —
+          <div>
+            <UsernameCarded
+              username={cardInfo.username}
+              boxStyles={{ marginLeft: 8, maxWidth: 180 }}
+              width="100%"
             />
-          )}
+          </div>
         </div>
-
-        <section className={styles.footer}>
-          <div className={styles.footerbox}>
-            <div className={`${styles.dot} ${styles.dotexp}`}></div>
-            <span className={styles.footertext}>264k 碎片</span>
-          </div>
-          <div className={styles.footerbox}>
-            <div className={`${styles.dot} ${styles.dotmember}`}></div>
-            <span className={styles.footertext}>14.2k 成员</span>
-          </div>
-        </section>
+        <CollectionFooterView boxStyles={{ marginTop: 6 }} infos={cardInfo} />
       </div>
     </article>
   );
