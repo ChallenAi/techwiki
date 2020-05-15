@@ -14,8 +14,6 @@ const CardSimple = ({ cardInfo }) => {
       boxStyles={{
         boxSizing: "border-box",
         padding: "30px 46px 40px",
-        width: "440px",
-        height: "379px",
         display: "flex",
         flexDirection: "column",
         justifyontent: "space-between",

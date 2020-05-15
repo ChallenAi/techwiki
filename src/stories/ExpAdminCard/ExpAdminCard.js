@@ -32,13 +32,14 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
         <IosLock
           style={{
             cursor: "pointer",
+            marginTop: 3,
             marginLeft: "auto",
-            marginRight: 36,
+            marginRight: 32,
             userSelect: "none",
           }}
           onClick={toggleLock}
-          fontSize="24px"
-          color={cardInfo.isLock ? "#000" : "#C7C9D0"}
+          fontSize="20px"
+          color={cardInfo.isLock ? "#8b8b8b" : "#C7C9D0"}
         />
         <MoreBtn />
       </div>
