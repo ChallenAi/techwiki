@@ -12,7 +12,7 @@ import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 
 const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
   const toggleLock = () => {
-    setCardInfo({ ...cardInfo, isLock: !cardInfo.isLock });
+    setCardInfo({ ...cardInfo, isLocked: !cardInfo.isLocked });
   };
   return (
     <Card
@@ -39,7 +39,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
           }}
           onClick={toggleLock}
           fontSize="20px"
-          color={cardInfo.isLock ? "#8b8b8b" : "#C7C9D0"}
+          color={cardInfo.isLocked ? "#8b8b8b" : "#C7C9D0"}
         />
         <MoreBtn />
       </div>

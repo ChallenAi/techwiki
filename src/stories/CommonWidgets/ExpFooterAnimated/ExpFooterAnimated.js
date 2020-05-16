@@ -13,7 +13,7 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
       </div>
       <div
         className={`${styles.footerbox} ${styles.likebox}`}
-        onClick={() => toggleLike(infos.expid)}
+        onClick={() => toggleLike(infos.expId)}
       >
         <div style={{ position: "relative", top: -1, marginRight: 4 }}>
           <LikeIcon active={infos.isLiked} />
@@ -26,7 +26,7 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
       <div className={`${styles.footerbox} ${styles.usernamebox}`}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
         <UsernameCarded
-          username={infos.username}
+          username={infos.author.name}
           boxStyles={{ marginLeft: 7 }}
           width="100%"
         />

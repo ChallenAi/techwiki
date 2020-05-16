@@ -36,13 +36,3 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
 };
 
 export default CardAnimated;
-
-// type cardInfo interface {
-//   expid,
-//   word,
-//   content,
-//   userid,
-//   username,
-//   likeCnt,
-//   collectCnt,
-// };

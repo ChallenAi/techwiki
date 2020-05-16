@@ -17,7 +17,7 @@ const ExpFooterView = ({ boxStyles, infos }) => {
       <div className={`${styles.footerbox} ${styles.usernamebox}`}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
         <UsernameCarded
-          username={infos.username}
+          username={infos.author.name}
           boxStyles={{ marginLeft: 7 }}
           width="100%"
         />

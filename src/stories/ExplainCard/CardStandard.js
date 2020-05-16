@@ -15,18 +15,6 @@ import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnima
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 
 const CardStandard = ({ cardInfo }) => {
-  const inactiveCardInfo = { show: false, left: 0, top: 0 };
-  const [userCardInfo, setUserCard] = useState(inactiveCardInfo); // 获取用户名容器的位置，用来计算UserCard的位置
-  const setCardInfo = debounce(setUserCard, 150);
-  const onShowUserCard = (e) => {
-    const rect = e.getBoundingClientRect();
-    setCardInfo({
-      show: true,
-      left: rect.x + rect.width / 2, // add half the width of the button for centering
-      top: rect.y + window.scrollY, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
-    });
-  };
-
   return (
     <article
       className={styles.card}
@@ -48,19 +36,12 @@ const CardStandard = ({ cardInfo }) => {
         />
         <div className={styles.userinfo}>
           <UsernameCarded
-            username={cardInfo.username}
+            username={cardInfo.author.name}
             boxStyles={{ marginBottom: 3 }}
             width="100%"
             fontStyles={{ fontSize: 16, color: "#131721" }}
           />
           <span className={styles.timestring}>{cardInfo.timestring}</span>
-          {userCardInfo.show && (
-            <UserCardSimple
-              cssStyle={{ position: "absolute", bottom: 38, left: -140 }}
-              onMouseOver={(e) => onShowUserCard(e.target)}
-              onMouseLeave={() => setCardInfo(inactiveCardInfo)}
-            />
-          )}
         </div>
         <MoreBtn />
       </section>
