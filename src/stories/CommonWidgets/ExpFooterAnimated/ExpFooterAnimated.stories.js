@@ -8,31 +8,37 @@ export default {
 
 const infosList = [
   {
-    expid: 1,
-    userid: 1,
-    username: "哎呦小仙女小仙女小仙女小仙女小仙女",
+    expId: 1,
     likeCnt: "13k",
     collectCnt: "1.1k",
     isLiked: true,
     isCollected: false,
+    author: {
+      userId: 1,
+      name: "哎呦小仙女小仙女小仙女小仙女小仙女",
+    },
   },
   {
-    expid: 2,
-    userid: 2,
-    username: "皮皮虾天敌蟆蟆蛤",
+    expId: 2,
     likeCnt: "32k",
     collectCnt: "3.6k",
     isLiked: true,
     isCollected: false,
+    author: {
+      userId: 2,
+      name: "皮皮虾天敌蟆蟆蛤",
+    },
   },
   {
-    expid: 3,
-    userid: 3,
-    username: "Anna Yates",
+    expId: 3,
     likeCnt: "710",
     collectCnt: "69",
     isLiked: true,
     isCollected: false,
+    author: {
+      userId: 3,
+      name: "Anna Yates",
+    },
   },
 ];
 
@@ -42,13 +48,13 @@ export const ExplainFooterAnimated = () => {
   return (
     <div style={{ margin: "280px 300px" }}>
       {infosList.map((infos) => (
-        <Card key={infos.expid} boxStyles={{ marginBottom: 40 }}>
+        <Card key={infos.expId} boxStyles={{ marginBottom: 40 }}>
           <ExpFooterAnimated
             boxStyles={{ padding: "44px 46px 42px" }}
             infos={infos}
-            toggleLike={(expid) => {
+            toggleLike={(expId) => {
               exps.map((el) => {
-                if (el.expid == expid) {
+                if (el.expId == expId) {
                   el.isLiked = !el.isLiked;
                 }
               });
