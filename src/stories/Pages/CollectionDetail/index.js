@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import ExpAdminCard from "../../ExpAdminCard/ExpAdminCard";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
+import { fetchRecommendExps } from "../../../services/recommend";
 import styles from "./detail.module.css";
 
 const infos = [
@@ -109,6 +110,12 @@ const infos = [
 
 const CollectionDetailPage = ({}) => {
   const [exps, setexps] = useState(infos);
+  useEffect(() => {
+    fetchRecommendExps({})
+      .then((data) => setexps(data))
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <div className={styles.page}>
       <div className={styles.searchbox}>
