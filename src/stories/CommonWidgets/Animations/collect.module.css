@@ -1,11 +1,12 @@
 .collectbox {
   cursor: pointer;
-  width: 16px;
+  width: 17px;
+  user-select: none;
 }
 
 .collectbox path {
   fill: #bbc1e1;
-  transition: 0.5s linear;
+  transition: 0.3s linear;
 }
 
 .active path {

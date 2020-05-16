@@ -8,9 +8,10 @@ import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
 
 const CardAnimated = ({ cardInfo, setCardInfo }) => {
-  const toggleLike = () => {
+  const toggleLike = () =>
     setCardInfo({ ...cardInfo, isLiked: !cardInfo.isLiked });
-  };
+  const toggleCollect = () =>
+    setCardInfo({ ...cardInfo, isCollected: !cardInfo.isCollected });
   return (
     <Card
       boxStyles={{
@@ -30,6 +31,7 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
         boxStyles={{ marginTop: 60 }}
         infos={cardInfo}
         toggleLike={toggleLike}
+        toggleCollect={toggleCollect}
       />
     </Card>
   );

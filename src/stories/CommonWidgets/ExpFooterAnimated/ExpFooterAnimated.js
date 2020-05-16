@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import styles from "./footer.module.css";
 
+import CollectIcon from "../Animations/Collect";
 import LikeIcon from "../Animations/Like";
 import UsernameCarded from "../UserCard/UsernameCarded";
 
-const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
+const ExpFooterAnimated = ({ boxStyles, infos, toggleLike, toggleCollect }) => {
   return (
     <section style={boxStyles} className={styles.footer}>
-      <div className={`${styles.footerbox} ${styles.collectbox}`}>
-        <div className={`${`${styles.dot} ${styles.dotcollect}`}`}></div>
+      <div
+        className={`${styles.footerbox} ${styles.collectbox}`}
+        onClick={() => toggleCollect(infos.expId)}
+      >
+        <CollectIcon active={infos.isCollected} />
         <span className={styles.footertext}>{infos.collectCnt} 引用</span>
       </div>
       <div
         className={`${styles.footerbox} ${styles.likebox}`}
         onClick={() => toggleLike(infos.expId)}
       >
-        <div style={{ position: "relative", top: -1, marginRight: 4 }}>
+        <div style={{ position: "relative", top: -1, marginRight: 6 }}>
           <LikeIcon active={infos.isLiked} />
         </div>
         <span className={`${styles.footertext} ${styles.liketext}`}>

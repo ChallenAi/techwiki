@@ -1,10 +1,7 @@
 import React, { useState } from "react";
 import styles from "./collect.module.css";
 
-// import debounce from "lodash/debounce";
-// import { action } from "@storybook/addon-actions";
-
-const CollectBtn = ({ active }) => {
+const CollectIcon = ({ active }) => {
   return (
     <div className={`${styles.collectbox} ${active ? styles.active : ""}`}>
       <svg viewBox="-5 -10 521.99143 511" xmlns="http://www.w3.org/2000/svg">
@@ -14,4 +11,4 @@ const CollectBtn = ({ active }) => {
   );
 };
 
-export default CollectBtn;
+export default CollectIcon;
