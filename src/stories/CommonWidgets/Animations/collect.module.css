@@ -10,6 +10,7 @@
 }
 
 .active path {
+  width: 18px;
   fill: #ea4673;
 }
 
