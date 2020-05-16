@@ -26,6 +26,7 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike }) => {
       <div className={`${styles.footerbox} ${styles.usernamebox}`}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
         <UsernameCarded
+          userId={infos.author.userId}
           username={infos.author.name}
           boxStyles={{ marginLeft: 7 }}
           width="100%"

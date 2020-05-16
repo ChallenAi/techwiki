@@ -3,6 +3,7 @@ import globalToken from "../utils/token";
 import axios from "axios";
 
 const handleRequestError = (res) => {
+  console.log(res);
   if (res.status >= 500) {
     const error = new Error("serverError");
     error["type"] = "server";
@@ -28,74 +29,42 @@ const headers = {
   "Content-Type": "application/json",
 };
 
-const requestFactoryWithBody = (type) => {
-  return (url, body) => {
-    // if (__DEV__) {
-    //   console.info(`${type} ${url}`)
-    // }
+export const post = (url, body) => {
+  if (globalToken.token) {
+    headers["Authorization"] = `Bearer ${globalToken.token}`;
+  }
 
-    if (globalToken.token) {
-      headers["Authorization"] = `Bearer ${globalToken.token}`;
-    }
-
-    const payload = {
-      method: type,
-      headers,
-    };
-
-    if (body) {
-      payload["body"] = JSON.stringify(body);
-    }
-
-    return axios(url, payload)
-      .then(handleRequestError)
-      .then(({ data }) => {
-        if (data.code !== 0) {
-          throw new Error(data.message);
-        }
-        return data.data || {};
-      })
-      .catch((err) => {
-        throw new Error(err.message || "请求失败");
-      });
-  };
+  return axios
+    .post(url, body, { headers })
+    .then(handleRequestError)
+    .then(({ data }) => {
+      if (data.code !== 0) {
+        throw new Error(data.message);
+      }
+      return data.data || {};
+    })
+    .catch((err) => {
+      throw new Error(err.message || "请求失败");
+    });
 };
 
-const requestFactoryWithParams = (type) => {
-  return (url, params) => {
-    const urlPath = params ? `${url}?${qs.stringify(params)}` : url;
+export const get = (url, params) => {
+  const urlPath = params ? `${url}?${qs.stringify(params)}` : url;
+  if (globalToken.token) {
+    headers["Authorization"] = `Bearer ${globalToken.token}`;
+  }
+  console.log(urlPath);
 
-    // if (__DEV__) {
-    //   console.info(`${type} ${urlPath}`);
-    // }
-
-    if (globalToken.token) {
-      headers["Authorization"] = `Bearer ${globalToken.token}`;
-    }
-
-    const payload = {
-      method: type,
-      headers,
-    };
-
-    return axios(urlPath, payload)
-      .then(handleRequestError)
-      .then(({ data }) => {
-        if (data.code !== 0) {
-          throw new Error(data.message);
-        }
-        return data.data || {};
-      })
-      .catch((err) => {
-        throw new Error(err.message || "请求失败");
-      });
-  };
+  return axios
+    .get(urlPath, { headers })
+    .then(handleRequestError)
+    .then(({ data }) => {
+      if (data.code !== 0) {
+        throw new Error(data.message);
+      }
+      return data.data || {};
+    })
+    .catch((err) => {
+      throw new Error(err.message || "请求失败");
+    });
 };
-
-export const get = requestFactoryWithParams("GET");
-
-export const post = requestFactoryWithBody("POST");
-
-export const put = requestFactoryWithBody("PUT");
-
-export const deleteReq = requestFactoryWithParams("DELETE");

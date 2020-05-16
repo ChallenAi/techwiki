@@ -6,7 +6,7 @@ import UserCardSimple from "../UserCard/CardSimple";
 
 // 必须传入width字段先知用户名的最长显示长度，可以用100%或px
 // fontStyles ke xuan
-const UsernameCarded = ({ boxStyles, username, width, fontStyles }) => {
+const UsernameCarded = ({ userId, username, boxStyles, width, fontStyles }) => {
   const [showUserCard, setUserCard] = useState(false);
   const setBuffered = debounce(setUserCard, 150);
   const open = () => setBuffered(true);
@@ -24,6 +24,7 @@ const UsernameCarded = ({ boxStyles, username, width, fontStyles }) => {
       </span>
       {showUserCard && (
         <UserCardSimple
+          userId={userId}
           boxStyles={{ position: "absolute", bottom: 38, left: -185 }}
           onMouseOver={open}
           onMouseLeave={close}

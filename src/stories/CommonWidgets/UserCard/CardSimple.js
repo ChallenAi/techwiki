@@ -3,6 +3,7 @@ import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
 import MoreBtn from "../Menu/MoreBtn";
+import { fetchUserinfo } from "../../../services/user";
 
 const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   const [userinfo, setUser] = useState({
@@ -11,19 +12,26 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   });
   // 模拟获取用户的信息
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setUser({
-        isLoading: false,
-        userId: userId,
-        username: "Challen",
-        avatar: "/images/avatar.png",
-        usertitle: "游戏星球主宰",
-        likeCnt: "54k",
-        followerCnt: "394",
-        expCnt: "53",
-      });
-    }, 1000);
-    return () => clearTimeout(timer);
+    // const timer = setTimeout(() => {
+    //   setUser({
+    //     isLoading: false,
+    //     userId: userId,
+    //     username: "Challen",
+    //     avatar: "/images/avatar.png",
+    //     desc: "游戏星球主宰",
+    //     likeCnt: "54k",
+    //     fansCnt: "394",
+    //     expCnt: "53",
+    //   });
+    // }, 1000);
+    // return () => clearTimeout(timer);
+
+    fetchUserinfo({ user_id: userId })
+      .then((data) => {
+        console.log(data);
+        setUser({ ...data, desc: "游戏星球主宰", isLoading: false });
+      })
+      .catch((err) => console.log(err));
   }, [userId]);
 
   return (
@@ -55,16 +63,14 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
               className={styles.avatar}
             />
             <div className={styles.userinfo}>
-              <span className={styles.username}>{userinfo.username}</span>
-              <span className={styles.usertitle}>{userinfo.usertitle}</span>
+              <span className={styles.username}>{userinfo.name}</span>
+              <span className={styles.usertitle}>{userinfo.desc}</span>
             </div>
             <MoreBtn />
           </section>
           <section className={styles.countbox}>
             <span className={styles.counttext}>{userinfo.likeCnt} 赞</span>
-            <span className={styles.counttext}>
-              {userinfo.followerCnt} 粉丝
-            </span>
+            <span className={styles.counttext}>{userinfo.fansCnt} 粉丝</span>
             <span className={styles.counttext}>{userinfo.expCnt} 碎片</span>
           </section>
           <section className={styles.buttonbox}>

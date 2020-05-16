@@ -41,6 +41,7 @@ const CardSimple = ({ cardInfo }) => {
           —
           <div>
             <UsernameCarded
+              userId={cardInfo.author.userId}
               username={cardInfo.author.name}
               boxStyles={{ marginLeft: 8, maxWidth: 180 }}
               width="100%"

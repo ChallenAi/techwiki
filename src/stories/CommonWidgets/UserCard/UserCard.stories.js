@@ -9,14 +9,14 @@ export default {
 
 export const UserCard = () => (
   <div style={{ margin: "80px 200px" }}>
-    <CardSimple />
+    <CardSimple userId="1" />
   </div>
 );
 
 export const UsernameWithCard = () => (
   <div style={{ margin: "280px 300px" }}>
     <Card boxStyles={{ width: 200, padding: "44px 46px 42px" }}>
-      <UsernameCarded boxStyles={{}} username="Challen" />
+      <UsernameCarded userId="1" boxStyles={{}} username="Challen" />
     </Card>
   </div>
 );
