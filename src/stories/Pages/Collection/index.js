@@ -3,6 +3,8 @@ import Masonry from "react-masonry-css";
 import CollectionCard from "../../CollectionCard/CardSimple";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
 import { fetchRecommendCollections } from "../../../services/recommend";
+import { fetchSearchCollection } from "../../../services/search";
+
 import styles from "./collection.module.css";
 
 const infos = [
@@ -89,10 +91,21 @@ const Collection = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const handleSearch = (keyword) => {
+    fetchSearchCollection({ keyword, type: "collection" })
+      .then((data) => {
+        setcollections(data);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <div className={styles.page}>
       <div className={styles.searchbox}>
-        <SearchSimple />
+        <SearchSimple
+          placeholder="出发! 去那个星球"
+          handleSearch={handleSearch}
+        />
       </div>
       <Masonry
         breakpointCols={breakpointCols}

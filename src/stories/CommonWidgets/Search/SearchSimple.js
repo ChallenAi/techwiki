@@ -1,19 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
 import styles from "./simple.module.css";
 
 import { action } from "@storybook/addon-actions";
 import IosSearch from "react-ionicons/lib/IosSearch";
 
-const SearchSimple = ({ cardInfo }) => (
-  <div className={styles.box} onClick={action("clicked")}>
-    <IosSearch
-      style={{ cursor: "pointer" }}
-      onClick={action("clicked icons")}
-      fontSize="30"
-      color="#8b8b8b"
-    />
-    <input className={styles.input} placeholder="出发! 去那个星球" />
-  </div>
-);
+const SearchSimple = ({ placeholder, handleSearch }) => {
+  const inputRef = useRef();
+  const handleSubmit = () => {
+    handleSearch(inputRef.current.value);
+  };
+  const handleKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      handleSearch(inputRef.current.value);
+    }
+  };
+  return (
+    <div className={styles.box}>
+      <IosSearch
+        style={{ cursor: "pointer" }}
+        onClick={handleSubmit}
+        fontSize="30"
+        color="#8b8b8b"
+      />
+      <input
+        ref={inputRef}
+        className={styles.input}
+        placeholder={placeholder}
+        onKeyDown={handleKeyDown}
+      />
+    </div>
+  );
+};
 
 export default SearchSimple;

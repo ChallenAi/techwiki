@@ -1,16 +1,15 @@
 .collectbox {
   cursor: pointer;
-  width: 17px;
+  width: 18px;
   user-select: none;
 }
 
 .collectbox path {
-  fill: #bbc1e1;
+  fill: #d1d6ee;
   transition: 0.3s linear;
 }
 
 .active path {
-  width: 18px;
   fill: #ea4673;
 }
 
