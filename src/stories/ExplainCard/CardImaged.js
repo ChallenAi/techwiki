@@ -11,6 +11,12 @@ const CardImaged = ({ cardInfo, setCardInfo }) => {
   const toggleLike = () => {
     setCardInfo({ ...cardInfo, isLiked: !cardInfo.isLiked });
   };
+  const menuList = [
+    {
+      name: "举报",
+      fn: () => console.log("举报"),
+    },
+  ];
   return (
     <Card
       boxStyles={{
@@ -29,7 +35,7 @@ const CardImaged = ({ cardInfo, setCardInfo }) => {
       <section className={styles.mainbox}>
         <div className={styles.headerrow}>
           <CardHeader boxStyles={{}} title={cardInfo.word} />
-          <MoreBtn />
+          <MoreBtn menuList={menuList} />
         </div>
         <CardContentView
           boxStyles={{ marginTop: 24 }}

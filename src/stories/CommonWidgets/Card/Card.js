@@ -3,9 +3,10 @@ import styles from "./card.module.css";
 
 // import { action } from "@storybook/addon-actions";
 
-const Card = ({ boxStyles, children }) => {
+const Card = ({ boxStyles, children, handleClick }) => {
   return (
     <article
+      onClick={handleClick || (() => {})}
       style={boxStyles}
       className={styles.card}
       // onDoubleClick={(e) => {

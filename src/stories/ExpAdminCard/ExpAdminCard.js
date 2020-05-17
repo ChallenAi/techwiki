@@ -14,6 +14,20 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
   const toggleLock = () => {
     setCardInfo({ ...cardInfo, isLocked: !cardInfo.isLocked });
   };
+  const menuList = [
+    {
+      name: "编辑",
+      fn: () => console.log("编辑"),
+    },
+    {
+      name: "删除",
+      fn: () => console.log("删除"),
+    },
+    {
+      name: "隐藏",
+      fn: () => console.log("隐藏"),
+    },
+  ];
   return (
     <Card
       boxStyles={{
@@ -41,7 +55,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
           fontSize="20px"
           color={cardInfo.isLocked ? "#8b8b8b" : "#C7C9D0"}
         />
-        <MoreBtn />
+        <MoreBtn menuList={menuList} />
       </div>
       <CardContentView
         boxStyles={{ marginTop: 24 }}

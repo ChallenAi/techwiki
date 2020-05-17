@@ -15,16 +15,18 @@ import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnima
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 
 const CardStandard = ({ cardInfo }) => {
+  const menuList = [
+    {
+      name: "收藏到",
+      fn: () => console.log("收藏到"),
+    },
+    {
+      name: "举报",
+      fn: () => console.log("举报"),
+    },
+  ];
   return (
-    <article
-      className={styles.card}
-      onDoubleClick={(e) => {
-        // console.log(e.target.nodeName);
-        if (e.target.nodeName !== "path" && e.target.nodeName !== "svg") {
-          action("双击(可以切换喜欢/收藏)")();
-        }
-      }}
-    >
+    <article className={styles.card}>
       <section className={styles.userbox}>
         <img
           src="/images/avatarph.jpg"
@@ -43,7 +45,7 @@ const CardStandard = ({ cardInfo }) => {
           />
           <span className={styles.timestring}>{cardInfo.timestring}</span>
         </div>
-        <MoreBtn />
+        <MoreBtn menuList={menuList} />
       </section>
       <CardHeader boxStyles={{}} title={cardInfo.word} />
       <CardContentView

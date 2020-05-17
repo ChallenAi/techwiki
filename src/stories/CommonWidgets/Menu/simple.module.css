@@ -1,7 +1,7 @@
 .list {
   /* 用户信息卡片 1-9， menu 11-19 */
   z-index: 11;
-  width: 200px;
+  width: 160px;
   padding: 0;
   /* border-radius: 5px; */
   background-color: #ffffff;
@@ -17,7 +17,7 @@
 }
 
 .item {
-  width: 200px;
+  width: 160px;
   height: 50px;
   box-sizing: border-box;
   padding-left: 32px;

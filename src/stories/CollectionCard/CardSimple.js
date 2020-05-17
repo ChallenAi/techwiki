@@ -9,6 +9,12 @@ import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 import CollectionFooterView from "../CommonWidgets/CollectionFooterView/CollectionFooterView";
 
 const CardSimple = ({ cardInfo }) => {
+  const menuList = [
+    {
+      name: "举报",
+      fn: () => console.log("举报"),
+    },
+  ];
   return (
     <Card
       boxStyles={{
@@ -31,7 +37,7 @@ const CardSimple = ({ cardInfo }) => {
             }}
             className={styles.logo}
           />
-          <MoreBtn />
+          <MoreBtn menuList={menuList} />
         </div>
         <CardHeader boxStyles={{ marginTop: 5 }} title={cardInfo.name} />
         <CardContentView boxStyles={{}} content={cardInfo.citeContent} />

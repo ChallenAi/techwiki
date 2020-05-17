@@ -12,6 +12,16 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
     setCardInfo({ ...cardInfo, isLiked: !cardInfo.isLiked });
   const toggleCollect = () =>
     setCardInfo({ ...cardInfo, isCollected: !cardInfo.isCollected });
+  const menuList = [
+    {
+      name: "收藏到",
+      fn: () => console.log("收藏到"),
+    },
+    {
+      name: "举报",
+      fn: () => console.log("举报"),
+    },
+  ];
   return (
     <Card
       boxStyles={{
@@ -21,7 +31,7 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
     >
       <div className={styles.headerrow}>
         <CardHeader boxStyles={{}} title={cardInfo.word} />
-        <MoreBtn />
+        <MoreBtn menuList={menuList} />
       </div>
       <CardContentView
         boxStyles={{ marginTop: 24 }}
