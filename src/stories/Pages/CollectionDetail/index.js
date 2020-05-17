@@ -5,6 +5,7 @@ import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
 import { fetchRecommendExps } from "../../../services/recommend";
 import { fetchSearchExp } from "../../../services/search";
 import styles from "./detail.module.css";
+import ExpSwitch from "../../CommonWidgets/ExpSwitch/ExpSwitch";
 
 const infos = [
   {
@@ -125,6 +126,11 @@ const CollectionDetailPage = ({}) => {
       .catch((err) => console.log(err));
   };
 
+  const [switchInfo, setSwitch] = useState({
+    wordId: "-1",
+    show: false,
+  });
+
   return (
     <div className={styles.page}>
       <div className={styles.searchbox}>
@@ -150,9 +156,16 @@ const CollectionDetailPage = ({}) => {
               });
               setexps([...exps]);
             }}
+            handleSwitchExp={(wordId) => setSwitch({ wordId, show: true })}
           />
         ))}
       </Masonry>
+      {switchInfo.show ? (
+        <ExpSwitch
+          wordId={switchInfo.wordId}
+          closeSwitch={() => setSwitch({ ...switchInfo, show: false })}
+        />
+      ) : null}
     </div>
   );
 };

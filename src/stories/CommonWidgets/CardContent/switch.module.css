@@ -1,0 +1,12 @@
+.content {
+  /* margin-top: 24px; */
+  font-size: 17px;
+  line-height: 27px;
+  color: #8b8b8b;
+  user-select: none;
+  cursor: pointer;
+}
+
+.content:hover {
+  background-color: #f8f8f8;
+}

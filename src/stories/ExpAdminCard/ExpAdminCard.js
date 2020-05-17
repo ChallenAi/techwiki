@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import styles from "./admin.module.css";
 import IosLock from "react-ionicons/lib/MdLock";
 import MdSync from "react-ionicons/lib/MdSync";
-import { action } from "@storybook/addon-actions";
 
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
-import CardContentView from "../CommonWidgets/CardContent/CardContentView";
+import CardContentSwitch from "../CommonWidgets/CardContent/CardContentSwitch";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 
-const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
+const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
   const toggleLock = () => {
     setCardInfo({ ...cardInfo, isLocked: !cardInfo.isLocked });
   };
@@ -32,7 +31,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
     <Card
       boxStyles={{
         boxSizing: "border-box",
-        padding: "44px 46px 42px",
+        padding: "44px 0px 42px",
       }}
     >
       <div className={styles.headerrow}>
@@ -57,11 +56,15 @@ const ExpAdminCard = ({ cardInfo, setCardInfo }) => {
         />
         <MoreBtn menuList={menuList} />
       </div>
-      <CardContentView
-        boxStyles={{ marginTop: 24 }}
+      <CardContentSwitch
+        boxStyles={{ padding: "20px 42px 40px" }}
         content={cardInfo.content}
+        handleClick={() => handleSwitchExp(cardInfo.wordId)}
       />
-      <ExpFooterView boxStyles={{ marginTop: 60 }} infos={cardInfo} />
+      <ExpFooterView
+        boxStyles={{ marginTop: 20, padding: "0px 42px" }}
+        infos={cardInfo}
+      />
     </Card>
   );
 };
