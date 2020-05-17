@@ -10,6 +10,12 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
     isLoading: true,
     userId: userId,
   });
+  const menuList = [
+    {
+      name: "举报",
+      fn: () => console.log("举报"),
+    },
+  ];
   // 模拟获取用户的信息
   useEffect(() => {
     // const timer = setTimeout(() => {
@@ -66,7 +72,7 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
               <span className={styles.username}>{userinfo.name}</span>
               <span className={styles.usertitle}>{userinfo.desc}</span>
             </div>
-            <MoreBtn />
+            <MoreBtn menuList={menuList} />
           </section>
           <section className={styles.countbox}>
             <span className={styles.counttext}>{userinfo.likeCnt} 赞</span>
