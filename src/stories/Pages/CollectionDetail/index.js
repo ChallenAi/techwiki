@@ -10,6 +10,7 @@ import ExpSwitch from "../../CommonWidgets/ExpSwitch/ExpSwitch";
 const infos = [
   {
     expId: 1,
+    wordId: 1,
     word: "ACM",
     content: "“大学生程序设计竞赛。关键词：算法，编程，竞赛”",
     coverImg: "",
@@ -25,6 +26,7 @@ const infos = [
   },
   {
     expId: 2,
+    wordId: 2,
     word: "Taylor Swift",
     content:
       "“我知道有很多粉丝会坐在我公寓对面那条街上的餐厅里蹲点，但是我仍然会走进去那个咖啡。”“那他们不会扑上来吗？ ”“会啊，其实和他们拍照只要20秒钟，因为这就是我日常生活，和粉丝们合影只是停留一分钟而已。他们给与了我意想不到的人生，为他们挤出这一分钟是理所应当的。“",
@@ -41,6 +43,7 @@ const infos = [
   },
   {
     expId: 3,
+    wordId: 3,
     word: "通货膨胀",
     content:
       "“货币供给大于需求，导致的货币贬值，物价持续而普遍的上涨的现象。也就是所谓的钱变的不值钱了。”",
@@ -59,6 +62,7 @@ const infos = [
 
   {
     expId: 5,
+    wordId: 4,
     word: "机器学习",
     content:
       "“机器就是电脑，让电脑自己学习识别图片上面的内容就是机器学习，学会后，模型能自动分辨图片上的物体，分类图片上是小狗还是车”",
@@ -75,6 +79,7 @@ const infos = [
   },
   {
     expId: 6,
+    wordId: 5,
     word: "IPO",
     content:
       "“上市为什么能造富？\n上市后公司估值提高，所以公司拥有者能分到很多钱。“",
@@ -94,6 +99,7 @@ const infos = [
   },
   {
     expId: 7,
+    wordId: 6,
     word: "黎明杀机",
     content: "“一个朴实农场主与四个狡猾偷电贼的故事“",
     coverImg: "",
