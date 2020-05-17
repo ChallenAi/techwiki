@@ -6,6 +6,7 @@ import MdSync from "react-ionicons/lib/MdSync";
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
+import CardContentView from "../CommonWidgets/CardContent/CardContentView";
 import CardContentSwitch from "../CommonWidgets/CardContent/CardContentSwitch";
 import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
 
@@ -56,11 +57,18 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
         />
         <MoreBtn menuList={menuList} />
       </div>
-      <CardContentSwitch
-        boxStyles={{ padding: "20px 42px 40px" }}
-        content={cardInfo.content}
-        handleClick={() => handleSwitchExp(cardInfo.wordId)}
-      />
+      {cardInfo.isLocked ? (
+        <CardContentView
+          boxStyles={{ padding: "20px 42px 40px" }}
+          content={cardInfo.content}
+        />
+      ) : (
+        <CardContentSwitch
+          boxStyles={{ padding: "20px 42px 40px" }}
+          content={cardInfo.content}
+          handleClick={() => handleSwitchExp(cardInfo.wordId)}
+        />
+      )}
       <ExpFooterView
         boxStyles={{ marginTop: 20, padding: "0px 42px" }}
         infos={cardInfo}
