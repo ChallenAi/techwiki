@@ -80,11 +80,18 @@ const ExpSwitch = ({ wordId, closeSwitch }) => {
                   boxStyles={{ marginTop: 24 }}
                   content={exp.content}
                 />
-                <ExpFooterView boxStyles={{ marginTop: 60 }} infos={exp} />
+                <ExpFooterView
+                  boxStyles={{ marginTop: 60 }}
+                  infos={exp}
+                  disableUserCard={true}
+                />
               </div>
               <div className={styles.right}>
                 <svg
-                  onClick={action("删除")}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    action("删除")();
+                  }}
                   className={styles.deleteicon}
                   viewBox="0 0 1024 1024"
                   xmlns="http://www.w3.org/2000/svg"

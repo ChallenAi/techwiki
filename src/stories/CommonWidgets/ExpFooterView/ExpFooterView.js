@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import styles from "./footer.module.css";
 
+import Username from "../UserCard/Username";
 import UsernameCarded from "../UserCard/UsernameCarded";
 
-const ExpFooterView = ({ boxStyles, infos }) => {
+const ExpFooterView = ({ boxStyles, infos, disableUserCard }) => {
   return (
     <section style={boxStyles} className={styles.footer}>
       <div className={`${styles.footerbox} ${styles.collectbox}`}>
@@ -16,12 +17,21 @@ const ExpFooterView = ({ boxStyles, infos }) => {
       </div>
       <div className={`${styles.footerbox} ${styles.usernamebox}`}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>
-        <UsernameCarded
-          userId={infos.author.userId}
-          username={infos.author.name}
-          boxStyles={{ marginLeft: 7 }}
-          width="100%"
-        />
+        {disableUserCard ? (
+          <Username
+            userId={infos.author.userId}
+            username={infos.author.name}
+            boxStyles={{ marginLeft: 7 }}
+            width="100%"
+          />
+        ) : (
+          <UsernameCarded
+            userId={infos.author.userId}
+            username={infos.author.name}
+            boxStyles={{ marginLeft: 7 }}
+            width="100%"
+          />
+        )}
       </div>
     </section>
   );
