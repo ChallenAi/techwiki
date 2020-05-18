@@ -13,7 +13,7 @@ export const ExplainFooterAnimated = () => {
 
   return (
     <div style={{ margin: "280px 300px" }}>
-      {infosList.map((infos) => (
+      {d.list.map((infos) => (
         <Card key={infos.expId} boxStyles={{ marginBottom: 40 }}>
           <ExpFooterAnimated
             boxStyles={{ padding: "44px 46px 42px" }}

@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
-import CardContentView from "../CommonWidgets/CardContent/CardContentView";
+import { CardContentViewMarked } from "../CommonWidgets/CardContent";
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 import CollectionFooterView from "../CommonWidgets/CollectionFooterView/CollectionFooterView";
 import { CodeBlock, CodeInline } from "../CommonWidgets/CodeBlock";
@@ -46,20 +46,7 @@ const CardSimple = ({ cardInfo }) => {
           <MoreBtn menuList={menuList} />
         </div>
         <CardHeader boxStyles={{ marginTop: 5 }} title={cardInfo.name} />
-        {/* <CardContentView boxStyles={{}} content={cardInfo.citeContent} />\ */}
-        <ReactMarkdown
-          source={cardInfo.citeContent}
-          allowedTypes={[
-            "text",
-            "break",
-            "paragraph",
-            "strong",
-            "inlineCode",
-            "code",
-          ]}
-          // unwrapDisallowed={true}
-          renderers={{ code: CodeBlock, inlineCode: CodeInline }}
-        />
+        <CardContentViewMarked boxStyles={{}} content={cardInfo.citeContent} />
       </section>
       <section className={styles.part}>
         <div className={styles.gotoright}>

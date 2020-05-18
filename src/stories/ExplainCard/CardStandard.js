@@ -10,7 +10,7 @@ import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
-import CardContentView from "../CommonWidgets/CardContent/CardContentView";
+import { CardContentView } from "../CommonWidgets/CardContent";
 import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 

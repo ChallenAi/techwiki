@@ -4,7 +4,7 @@ import styles from "./animated.module.css";
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
-import CardContentView from "../CommonWidgets/CardContent/CardContentView";
+import { CardContentView } from "../CommonWidgets/CardContent";
 import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
 
 const CardAnimated = ({ cardInfo, setCardInfo }) => {

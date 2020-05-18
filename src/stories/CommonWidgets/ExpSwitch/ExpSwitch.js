@@ -3,7 +3,7 @@ import styles from "./switch.module.css";
 
 import { action } from "@storybook/addon-actions";
 import ExpFooterView from "../ExpFooterView/ExpFooterView";
-import CardContentView from "../CardContent/CardContentView";
+import { CardContentView } from "../CardContent";
 import MdTrash from "react-ionicons/lib/MdTrash";
 
 // special
