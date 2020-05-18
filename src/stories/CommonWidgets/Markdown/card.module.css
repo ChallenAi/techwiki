@@ -1,0 +1,32 @@
+.markdowncontainer {
+  font-size: 17px;
+  line-height: 27px;
+  color: #8b8b8b;
+  user-select: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: #f8f8f8;
+}
+
+.markdowncontainer h4 {
+  color: #888;
+  font-weight: 500;
+}
+
+.markdowncontainer ul {
+  font-size: 16px;
+}
+
+.markdowncontainer pre {
+  /* overflow-x: scroll; */
+  user-select: text;
+}
+
+.markdowncontainer code {
+  font-size: 16px;
+}
