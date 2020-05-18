@@ -6,6 +6,7 @@ import ExpFooterView from "../ExpFooterView/ExpFooterView";
 import CardContentView from "../CardContent/CardContentView";
 import MdTrash from "react-ionicons/lib/MdTrash";
 
+// special
 const expsList = [
   {
     expId: 1,

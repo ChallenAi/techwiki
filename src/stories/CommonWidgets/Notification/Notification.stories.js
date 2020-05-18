@@ -1,60 +1,23 @@
 import React, { useState, useEffect } from "react";
 import NotificationSimple from "./NotificationSimple";
 
+import d from "../../mock/notifications.json";
+
 export default {
   title: "Widgets",
   component: NotificationSimple,
 };
 
-const infos = [
-  {
-    notiId: 0,
-    userid: 6,
-    username: "莉莉Ya",
-    avatar: "/images/avatarph.jpg",
-    msg: "固定显示的通知,需要手动移除",
-    link: "/abc",
-    isRunning: false, // 一旦开始运行，会运行一组动画直到结束,运行中的通知条不会被props打断
-  },
-  {
-    notiId: 1,
-    userid: 1,
-    username: "Challen",
-    avatar: "/images/avatar.png",
-    msg: "刚刚关注了你",
-    link: "/abc",
-    isRunning: false,
-  },
-  {
-    notiId: 2,
-    userid: 2,
-    username: "Anna Yates",
-    avatar: "/images/avatar.png",
-    msg: "刚刚收藏了 通货膨胀",
-    link: "/abc",
-    isRunning: false,
-  },
-  {
-    notiId: 3,
-    userid: 3,
-    username: "老是失眠的のの",
-    avatar: "/images/avatarph.jpg",
-    msg: "刚刚赞了 Taylor Swift",
-    link: "/abc",
-    isRunning: false,
-  },
-];
-
 export const Notification = () => {
-  const [notis, setNotis] = useState([infos[0]]);
+  const [notis, setNotis] = useState([d.list[0]]);
   useEffect(() => {
     let counter = 1;
     const timer = setInterval(() => {
-      if (counter >= infos.length) {
+      if (counter >= d.list.length) {
         return;
       }
       setNotis((prevList) => {
-        return [...prevList, { ...infos[counter] }];
+        return [...prevList, { ...d.list[counter] }];
       });
       counter++;
     }, 800);
@@ -79,6 +42,7 @@ export const Notification = () => {
       for (let el of prevList) {
         if (notiId == el.notiId) {
           el.isRunning = true;
+          // 一旦开始运行，会运行一组动画直到结束,运行中的通知条不会被props打断
           break;
         }
       }
