@@ -70,6 +70,18 @@ const infos = [
       name: "Anna Yates",
     },
   },
+  {
+    collectionId: 8,
+    name: "docker命令速查表",
+    citeContent: "“构建新镜像： `docker build -t statusbarimg . `”",
+    image: "",
+    expCnt: "1",
+    memberCnt: "1",
+    author: {
+      userId: 1,
+      name: "Challen",
+    },
+  },
 ];
 
 const Collection = () => {
