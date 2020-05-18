@@ -34,7 +34,7 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
         <MoreBtn menuList={menuList} />
       </div>
       <CardContentView
-        boxStyles={{ marginTop: 24 }}
+        boxStyles={{ marginTop: 27 }}
         content={cardInfo.content}
       />
       <ExpFooterAnimated

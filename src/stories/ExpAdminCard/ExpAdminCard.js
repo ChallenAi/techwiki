@@ -61,12 +61,12 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
       </div>
       {cardInfo.isLocked ? (
         <CardContentViewMarked
-          boxStyles={{ padding: "20px 42px 40px" }}
+          boxStyles={{ padding: "10px 42px 23px" }}
           content={cardInfo.content}
         />
       ) : (
         <CardContentSwitchMarked
-          boxStyles={{ padding: "20px 42px 40px" }}
+          boxStyles={{ padding: "10px 42px 23px" }}
           content={cardInfo.content}
           handleClick={() => handleSwitchExp(cardInfo.wordId)}
         />
