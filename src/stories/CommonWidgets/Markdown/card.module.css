@@ -23,7 +23,7 @@
 }
 
 .markdowncontainer pre {
-  /* font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; */
+  margin: 0px;
   user-select: text;
 }
 
