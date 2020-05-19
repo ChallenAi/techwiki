@@ -23,8 +23,13 @@
 }
 
 .markdowncontainer pre {
-  /* overflow-x: scroll; */
+  /* font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace; */
   user-select: text;
+}
+
+.markdowncontainer pre::-webkit-scrollbar {
+  /* 隐藏滚动条 */
+  display: none;
 }
 
 .markdowncontainer code {

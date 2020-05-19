@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { CodeBlock, CodeInline } from "../CodeBlock";
 import cardStyles from "./card.module.css";
+import articleStyles from "./card.module.css";
 
 export const MarkdownForCard = ({ boxStyles, content }) => (
   <section style={boxStyles} className={cardStyles.markdowncontainer}>

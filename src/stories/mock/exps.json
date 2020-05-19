@@ -100,6 +100,23 @@
         "userId": 3,
         "name": "蓝白胖次套头上"
       }
+    },
+    {
+      "expId": 7,
+      "wordId": 6,
+      "word": "黎明杀机",
+      "content": "代码块示例(需要3斜杆n):  \n```\nconsole.log('hello, world1');\n```",
+      "coverImg": "",
+      "likeCnt": "320",
+      "collectCnt": "36",
+      "timestring": "昨天下午3:10",
+      "isLiked": false,
+      "isCollected": false,
+      "isLocked": false,
+      "author": {
+        "userId": 3,
+        "name": "蓝白胖次套头上"
+      }
     }
   ]
 }
