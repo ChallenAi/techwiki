@@ -1,8 +1,8 @@
 {
   "list": [
     {
-      "notiId": 0,
-      "userid": 6,
+      "notiId": "0",
+      "userid": "6",
       "username": "莉莉Ya",
       "avatar": "/images/avatarph.jpg",
       "msg": "固定显示的通知,需要手动移除",
@@ -10,8 +10,8 @@
       "isRunning": false
     },
     {
-      "notiId": 1,
-      "userid": 1,
+      "notiId": "1",
+      "userid": "1",
       "username": "Challen",
       "avatar": "/images/avatar.png",
       "msg": "刚刚关注了你",
@@ -19,8 +19,8 @@
       "isRunning": false
     },
     {
-      "notiId": 2,
-      "userid": 2,
+      "notiId": "2",
+      "userid": "2",
       "username": "Anna Yates",
       "avatar": "/images/avatar.png",
       "msg": "刚刚收藏了 通货膨胀",
@@ -28,8 +28,8 @@
       "isRunning": false
     },
     {
-      "notiId": 3,
-      "userid": 3,
+      "notiId": "3",
+      "userid": "3",
       "username": "老是失眠的のの",
       "avatar": "/images/avatarph.jpg",
       "msg": "刚刚赞了 Taylor Swift",

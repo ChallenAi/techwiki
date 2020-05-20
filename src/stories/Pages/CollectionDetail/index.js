@@ -7,7 +7,7 @@ import { fetchSearchExp } from "../../../services/search";
 import styles from "./detail.module.css";
 import ExpSwitch from "../../CommonWidgets/ExpSwitch/ExpSwitch";
 
-import d from "../../mock/dockerexps.test.json";
+import d from "../../mock/exps.json";
 
 const CollectionDetailPage = ({}) => {
   const [exps, setexps] = useState(d.list);

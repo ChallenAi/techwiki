@@ -4,7 +4,7 @@ import styles from "./imaged.module.css";
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
-import { CardContentView } from "../CommonWidgets/CardContent";
+import { CardContentViewMarked } from "../CommonWidgets/CardContent";
 import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
 
 const CardImaged = ({ cardInfo, setCardInfo }) => {
@@ -37,7 +37,7 @@ const CardImaged = ({ cardInfo, setCardInfo }) => {
           <CardHeader boxStyles={{}} title={cardInfo.word} />
           <MoreBtn menuList={menuList} />
         </div>
-        <CardContentView
+        <CardContentViewMarked
           boxStyles={{ marginTop: 24 }}
           content={cardInfo.content}
         />
