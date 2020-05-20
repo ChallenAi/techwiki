@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import styles from "./standard.module.css";
 
-import debounce from "lodash/debounce";
-import { action } from "@storybook/addon-actions";
-import IosMore from "react-ionicons/lib/IosMore";
 import MdThumbsUp from "react-ionicons/lib/MdThumbsUp";
-import UserCardSimple from "../CommonWidgets/UserCard/CardSimple";
 
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
@@ -55,7 +51,7 @@ const CardStandard = ({ cardInfo }) => {
       <div className={styles.footerbox}>
         <MdThumbsUp
           style={{ cursor: "pointer" }}
-          onClick={action("赞")}
+          onClick={() => console.log("赞")}
           fontSize="25px"
           color="#5D6BE5"
         />

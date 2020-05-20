@@ -3,7 +3,7 @@ import globalToken from "../utils/token";
 import axios from "axios";
 
 const handleRequestError = (res) => {
-  console.log(res);
+  // console.log(res);
   if (res.status >= 500) {
     const error = new Error("serverError");
     error["type"] = "server";
@@ -53,7 +53,7 @@ export const get = (url, params) => {
   if (globalToken.token) {
     headers["Authorization"] = `Bearer ${globalToken.token}`;
   }
-  console.log(urlPath);
+  // console.log(urlPath);
 
   return axios
     .get(urlPath, { headers })

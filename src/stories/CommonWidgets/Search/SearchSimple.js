@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import styles from "./simple.module.css";
 
-import { action } from "@storybook/addon-actions";
 import IosSearch from "react-ionicons/lib/IosSearch";
 
 const SearchSimple = ({ placeholder, handleSearch }) => {

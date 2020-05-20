@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./simple.module.css";
 
-import { action } from "@storybook/addon-actions";
 import MoreBtn from "../Menu/MoreBtn";
 import { fetchUserinfo } from "../../../services/user";
+import { imgUrlPrefix } from "../../../config/default";
 
 const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   const [userinfo, setUser] = useState({
@@ -61,7 +61,7 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
         <article className={styles.main}>
           <section className={styles.userbox}>
             <img
-              src={userinfo.avatar}
+              src={`${imgUrlPrefix}${userinfo.avatar}`}
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "/images/avatarph.jpg";
@@ -82,14 +82,14 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
           <section className={styles.buttonbox}>
             <button
               className={`${styles.buttons} ${styles.btnfollow}`}
-              onClick={action("关注")}
+              onClick={() => console.log("关注")}
             >
               <div className={styles.btnfollowbg}></div>
               <div className={styles.btnfollowtext}>关注</div>
             </button>
             <button
               className={`${styles.buttons} ${styles.btnmessage}`}
-              onClick={action("发消息")}
+              onClick={() => console.log("发消息")}
             >
               发消息
             </button>

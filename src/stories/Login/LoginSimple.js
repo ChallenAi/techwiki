@@ -1,8 +1,6 @@
 import React from "react";
 import styles from "./simple.module.css";
 
-import { action } from "@storybook/addon-actions";
-
 const LoginSimple = () => (
   <div className={styles.card}>
     <section className={styles.left}>
@@ -13,7 +11,7 @@ const LoginSimple = () => (
         <input className={styles.input} />
         <span className={styles.inputdesc}>密码</span>
         <input className={styles.input} />
-        <button className={styles.btn} onClick={action("clicked")}>
+        <button className={styles.btn} onClick={() => console.log("clicked")}>
           登录
         </button>
       </section>

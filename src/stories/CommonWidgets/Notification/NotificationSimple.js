@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./simple.module.css";
 
-import { action } from "@storybook/addon-actions";
 import IosClose from "react-ionicons/lib/IosClose";
 
 const NotificationSimple = ({
@@ -30,7 +29,7 @@ const NotificationSimple = ({
   return (
     <article
       className={`${styles.box} ${isRunning ? styles.boxactive : ""}`}
-      onClick={action("clicked")}
+      onClick={() => console.log("clicked")}
     >
       <div className={`${styles.progressbar}`}></div>
       <img

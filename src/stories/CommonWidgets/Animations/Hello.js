@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./collect.module.css";
 
 // import debounce from "lodash/debounce";
-// import { action } from "@storybook/addon-actions";
 
 const HelloBtn = ({ active }) => {
   return (

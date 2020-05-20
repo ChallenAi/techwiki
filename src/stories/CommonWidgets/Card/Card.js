@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "./card.module.css";
 
-// import { action } from "@storybook/addon-actions";
-
 const Card = ({ boxStyles, children, handleClick }) => {
   return (
     <article

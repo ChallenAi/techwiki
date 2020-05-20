@@ -1,8 +1,8 @@
 import React from "react";
-import "./base.css";
+import "../../config/base.css";
 
 export default {
-  title: "Welcome",
+  title: "GlobalStyle",
 };
 
 export const SettingBaseStyle = () => (
