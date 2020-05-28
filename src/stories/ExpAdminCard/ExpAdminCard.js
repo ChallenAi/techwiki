@@ -38,7 +38,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
       }}
     >
       <div className={styles.headerrow}>
-        <CardHeader boxStyles={{}} title={cardInfo.word} />
+        <CardHeader boxStyles={{}} title={cardInfo.topicName} />
         {/* <MdSync
           style={{ cursor: "pointer", marginLeft: "auto", marginRight: 36 }}
           onClick={action("保存")}
@@ -68,7 +68,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
         <CardContentSwitchMarked
           boxStyles={{ padding: "10px 42px 23px" }}
           content={cardInfo.content}
-          handleClick={() => handleSwitchExp(cardInfo.wordId)}
+          handleClick={() => handleSwitchExp(cardInfo.topicId)}
         />
       )}
       <ExpFooterView
@@ -82,7 +82,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
 export default ExpAdminCard;
 
 // type cardInfo interface {
-//   expid,
+//   fragmentId,
 //   word,
 //   content,
 //   userid,

@@ -30,7 +30,7 @@ const CardAnimated = ({ cardInfo, setCardInfo }) => {
       }}
     >
       <div className={styles.headerrow}>
-        <CardHeader boxStyles={{}} title={cardInfo.word} />
+        <CardHeader boxStyles={{}} title={cardInfo.topicName} />
         <MoreBtn menuList={menuList} />
       </div>
       <CardContentViewMarked

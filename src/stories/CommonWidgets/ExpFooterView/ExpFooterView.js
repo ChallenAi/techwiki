@@ -3,17 +3,22 @@ import styles from "./footer.module.css";
 
 import Username from "../UserCard/Username";
 import UsernameCarded from "../UserCard/UsernameCarded";
+import { countFormatter } from "../../../utils/formatter";
 
 const ExpFooterView = ({ boxStyles, infos, disableUserCard }) => {
   return (
     <section style={boxStyles} className={styles.footer}>
       <div className={`${styles.footerbox} ${styles.collectbox}`}>
         <div className={`${`${styles.dot} ${styles.dotcollect}`}`}></div>
-        <span className={styles.footertext}>{infos.collectCnt} 引用</span>
+        <span className={styles.footertext}>
+          {countFormatter(infos.cntCollect)} 引用
+        </span>
       </div>
       <div className={`${styles.footerbox} ${styles.likebox}`}>
         <div className={`${styles.dot} ${styles.dotlike}`}></div>
-        <span className={styles.footertext}>{infos.likeCnt} 赞</span>
+        <span className={styles.footertext}>
+          {countFormatter(infos.cntLike)} 赞
+        </span>
       </div>
       <div className={`${styles.footerbox} ${styles.usernamebox}`}>
         <div className={`${styles.dot} ${styles.dotuser}`}></div>

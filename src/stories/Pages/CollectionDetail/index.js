@@ -45,11 +45,11 @@ const CollectionDetailPage = ({}) => {
       >
         {exps.map((info) => (
           <ExpAdminCard
-            key={info.expId}
+            key={info.fragmentId}
             cardInfo={info}
             setCardInfo={(info) => {
               exps.map((el, idx) => {
-                if (el.expId == info.expId) {
+                if (el.fragmentId == info.fragmentId) {
                   exps[idx] = info;
                 }
               });

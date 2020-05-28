@@ -34,7 +34,7 @@ const CardImaged = ({ cardInfo, setCardInfo }) => {
       />
       <section className={styles.mainbox}>
         <div className={styles.headerrow}>
-          <CardHeader boxStyles={{}} title={cardInfo.word} />
+          <CardHeader boxStyles={{}} title={cardInfo.topicName} />
           <MoreBtn menuList={menuList} />
         </div>
         <CardContentViewMarked

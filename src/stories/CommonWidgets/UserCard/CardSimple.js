@@ -4,6 +4,7 @@ import styles from "./simple.module.css";
 import MoreBtn from "../Menu/MoreBtn";
 import { fetchUserinfo } from "../../../services/user";
 import { imgUrlPrefix } from "../../../config/default";
+import { countFormatter } from "../../../utils/formatter";
 
 const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
   const [userinfo, setUser] = useState({
@@ -75,9 +76,15 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
             <MoreBtn menuList={menuList} />
           </section>
           <section className={styles.countbox}>
-            <span className={styles.counttext}>{userinfo.likeCnt} 赞</span>
-            <span className={styles.counttext}>{userinfo.fansCnt} 粉丝</span>
-            <span className={styles.counttext}>{userinfo.expCnt} 碎片</span>
+            <span className={styles.counttext}>
+              {countFormatter(userinfo.cntLike)} 赞
+            </span>
+            <span className={styles.counttext}>
+              {countFormatter(userinfo.cntFans)} 粉丝
+            </span>
+            <span className={styles.counttext}>
+              {countFormatter(userinfo.cntFragment)} 碎片
+            </span>
           </section>
           <section className={styles.buttonbox}>
             <button

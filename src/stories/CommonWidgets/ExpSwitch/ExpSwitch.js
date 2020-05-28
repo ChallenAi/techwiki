@@ -8,7 +8,7 @@ import MdTrash from "react-ionicons/lib/MdTrash";
 // special
 const expsList = [
   {
-    expId: 1,
+    fragmentId: 1,
     wordId: 1,
     word: "ACM",
     content: "“大学生程序设计竞赛。关键词：算法，编程，竞赛”",
@@ -23,7 +23,7 @@ const expsList = [
     },
   },
   {
-    expId: 2,
+    fragmentId: 2,
     wordId: 2,
     word: "Taylor Swift",
     content:
@@ -39,7 +39,7 @@ const expsList = [
     },
   },
   {
-    expId: 3,
+    fragmentId: 3,
     wordId: 3,
     word: "IPO",
     content:
@@ -68,7 +68,7 @@ const ExpSwitch = ({ wordId, closeSwitch }) => {
         <ul className={styles.list}>
           {expsList.map((exp) => (
             <li
-              key={exp.expId}
+              key={exp.fragmentId}
               className={styles.item}
               onClick={(e) => {
                 e.stopPropagation();

@@ -43,7 +43,7 @@ const CardStandard = ({ cardInfo }) => {
         </div>
         <MoreBtn menuList={menuList} />
       </section>
-      <CardHeader boxStyles={{}} title={cardInfo.word} />
+      <CardHeader boxStyles={{}} title={cardInfo.topicName} />
       <CardContentView
         boxStyles={{ marginTop: 20, marginBottom: 40 }}
         content={cardInfo.content}
@@ -64,7 +64,7 @@ const CardStandard = ({ cardInfo }) => {
 export default CardStandard;
 
 // type cardInfo interface {
-//   expid,
+//   fragmentId,
 //   word,
 //   content,
 //   userid,
