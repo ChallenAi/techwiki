@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import FragAdminCard from "./index";
-import d from "../mock/exps.json";
+import d from "../mock/fragments.json";
 
 export default {
   title: "InfoCard",
@@ -8,18 +8,18 @@ export default {
 };
 
 export const AdminExplain = () => {
-  const [exps, setexps] = useState(d.list);
+  const [fragments, setfragments] = useState(d.list);
   return (
     <div style={{ margin: "180px 200px" }}>
       <FragAdminCard
-        cardInfo={exps[0]}
+        cardInfo={fragments[0]}
         setCardInfo={(info) => {
-          exps.map((el, idx) => {
+          fragments.map((el, idx) => {
             if (el.expId == info.expId) {
-              exps[idx] = info;
+              fragments[idx] = info;
             }
           });
-          setexps([...exps]);
+          setfragments([...fragments]);
         }}
       />
     </div>

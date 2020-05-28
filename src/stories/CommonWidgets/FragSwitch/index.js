@@ -9,8 +9,8 @@ import MdTrash from "react-ionicons/lib/MdTrash";
 const expsList = [
   {
     fragmentId: 1,
-    wordId: 1,
-    word: "ACM",
+    topicId: 1,
+    topicName: "ACM",
     content: "“大学生程序设计竞赛。关键词：算法，编程，竞赛”",
     coverImg: "",
     likeCnt: "13k",
@@ -24,8 +24,8 @@ const expsList = [
   },
   {
     fragmentId: 2,
-    wordId: 2,
-    word: "Taylor Swift",
+    topicId: 2,
+    topicName: "Taylor Swift",
     content:
       "“我知道有很多粉丝会坐在我公寓对面那条街上的餐厅里蹲点，但是我仍然会走进去那个咖啡。”“那他们不会扑上来吗？ ”“会啊，其实和他们拍照只要20秒钟，因为这就是我日常生活，和粉丝们合影只是停留一分钟而已。他们给与了我意想不到的人生，为他们挤出这一分钟是理所应当的。“",
     coverImg: "",
@@ -40,8 +40,8 @@ const expsList = [
   },
   {
     fragmentId: 3,
-    wordId: 3,
-    word: "IPO",
+    topicId: 3,
+    topicName: "IPO",
     content:
       "“上市为什么能造富？\n上市后公司估值提高，所以公司拥有者能分到很多钱。“",
     coverImg: "",
@@ -57,10 +57,10 @@ const expsList = [
   },
 ];
 
-const ExpSwitch = ({ wordId, closeSwitch }) => {
+const ExpSwitch = ({ topicId, closeSwitch }) => {
   useEffect(() => {
-    console.log("search exps according word_id");
-  }, [wordId]);
+    console.log("search exps according topic_id");
+  }, [topicId]);
   return (
     <div className={styles.modal} onClick={closeSwitch}>
       <section className={styles.card}>

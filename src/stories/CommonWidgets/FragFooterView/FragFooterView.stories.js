@@ -2,7 +2,7 @@ import React from "react";
 import Card from "../Card/Card";
 import FragFooterView from "./index";
 
-import d from "../../mock/exps.json";
+import d from "../../mock/fragments.json";
 
 export default {
   title: "Widgets.Card",

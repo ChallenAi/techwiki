@@ -2,31 +2,31 @@ import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import ExpAdminCard from "../../FragAdminCard";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
-import { fetchRecommendExps } from "../../../services/recommend";
-import { fetchSearchExp } from "../../../services/search";
+import { fetchRecommendFragments } from "../../../services/recommend";
+import { fetchSearchFragment } from "../../../services/search";
 import styles from "./detail.module.css";
 import FragSwitch from "../../CommonWidgets/FragSwitch";
 
-import d from "../../mock/exps.json";
+import d from "../../mock/fragments.json";
 
 const CollectionDetailPage = ({}) => {
-  const [exps, setexps] = useState(d.list);
+  const [fragments, setfragments] = useState(d.list);
   useEffect(() => {
-    fetchRecommendExps({})
-      .then((data) => setexps(data))
+    fetchRecommendFragments({})
+      .then((data) => setfragments(data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleSearch = (keyword) => {
-    fetchSearchExp({ keyword, type: "exp" })
+    fetchSearchFragment({ keyword, type: "exp" })
       .then((data) => {
-        setexps(data);
+        setfragments(data);
       })
       .catch((err) => console.log(err));
   };
 
   const [switchInfo, setSwitch] = useState({
-    wordId: "-1",
+    topicId: "-1",
     show: false,
   });
 
@@ -43,25 +43,25 @@ const CollectionDetailPage = ({}) => {
         className={styles.masonry}
         columnClassName={styles.col}
       >
-        {exps.map((info) => (
+        {fragments.map((info) => (
           <ExpAdminCard
             key={info.fragmentId}
             cardInfo={info}
             setCardInfo={(info) => {
-              exps.map((el, idx) => {
+              fragments.map((el, idx) => {
                 if (el.fragmentId == info.fragmentId) {
-                  exps[idx] = info;
+                  fragments[idx] = info;
                 }
               });
-              setexps([...exps]);
+              setfragments([...fragments]);
             }}
-            handleSwitchExp={(wordId) => setSwitch({ wordId, show: true })}
+            handleSwitchExp={(topicId) => setSwitch({ topicId, show: true })}
           />
         ))}
       </Masonry>
       {switchInfo.show ? (
         <FragSwitch
-          wordId={switchInfo.wordId}
+          topicId={switchInfo.topicId}
           closeSwitch={() => setSwitch({ ...switchInfo, show: false })}
         />
       ) : null}

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CardAnimated from "./CardAnimated";
 import CardImaged from "./CardImaged";
 import CardStandard from "./CardStandard";
-import d from "../mock/exps.json";
+import d from "../mock/fragments.json";
 
 export default {
   title: "InfoCard",
@@ -10,18 +10,18 @@ export default {
 };
 
 export const AnimatedExplain = () => {
-  const [exps, setexps] = useState(d.list);
+  const [fragments, setfragments] = useState(d.list);
   return (
     <div style={{ margin: "180px 200px" }}>
       <CardAnimated
-        cardInfo={exps[0]}
+        cardInfo={fragments[0]}
         setCardInfo={(info) => {
-          exps.map((el, idx) => {
+          fragments.map((el, idx) => {
             if (el.expId == info.expId) {
-              exps[idx] = info;
+              fragments[idx] = info;
             }
           });
-          setexps([...exps]);
+          setfragments([...fragments]);
         }}
       />
     </div>
@@ -29,18 +29,18 @@ export const AnimatedExplain = () => {
 };
 
 export const ImagedExplain = () => {
-  const [exps, setexps] = useState(d.list);
+  const [fragments, setfragments] = useState(d.list);
   return (
     <div style={{ margin: "180px 200px" }}>
       <CardImaged
-        cardInfo={exps[1]}
+        cardInfo={fragments[1]}
         setCardInfo={(info) => {
-          exps.map((el, idx) => {
+          fragments.map((el, idx) => {
             if (el.expId == info.expId) {
-              exps[idx] = info;
+              fragments[idx] = info;
             }
           });
-          setexps([...exps]);
+          setfragments([...fragments]);
         }}
       />
     </div>

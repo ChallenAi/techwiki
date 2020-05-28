@@ -2,24 +2,24 @@ import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import ExplainCardAnimated from "../../FragmentCard/CardAnimated";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
-import { fetchRecommendExps } from "../../../services/recommend";
-import { fetchSearchExp } from "../../../services/search";
+import { fetchRecommendFragments } from "../../../services/recommend";
+import { fetchSearchFragment } from "../../../services/search";
 import styles from "./explore.module.css";
 
-import d from "../../mock/exps.json";
+import d from "../../mock/fragments.json";
 
 const ExplorePage = ({}) => {
-  const [exps, setexps] = useState(d.list);
+  const [fragments, setFragments] = useState(d.list);
   useEffect(() => {
-    fetchRecommendExps({})
-      .then((data) => setexps(data))
+    fetchRecommendFragments({})
+      .then((data) => setFragments(data))
       .catch((err) => console.log(err));
   }, []);
 
   const handleSearch = (keyword) => {
-    fetchSearchExp({ keyword, type: "exp" })
+    fetchSearchFragment({ keyword, type: "fragment" })
       .then((data) => {
-        setexps(data);
+        setFragments(data);
       })
       .catch((err) => console.log(err));
   };
@@ -37,17 +37,17 @@ const ExplorePage = ({}) => {
         className={styles.masonry}
         columnClassName={styles.col}
       >
-        {exps.map((info) => (
+        {fragments.map((info) => (
           <ExplainCardAnimated
             key={info.fragmentId}
             cardInfo={info}
             setCardInfo={(info) => {
-              exps.map((el, idx) => {
+              fragments.map((el, idx) => {
                 if (el.fragmentId == info.fragmentId) {
-                  exps[idx] = info;
+                  fragments[idx] = info;
                 }
               });
-              setexps([...exps]);
+              setFragments([...fragments]);
             }}
           />
         ))}
