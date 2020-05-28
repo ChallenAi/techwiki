@@ -6,7 +6,12 @@ import LikeIcon from "../Animations/Like";
 import UsernameCarded from "../UserCard/UsernameCarded";
 import { countFormatter } from "../../../utils/formatter";
 
-const ExpFooterAnimated = ({ boxStyles, infos, toggleLike, toggleCollect }) => {
+const FragFooterAnimated = ({
+  boxStyles,
+  infos,
+  toggleLike,
+  toggleCollect,
+}) => {
   return (
     <section style={boxStyles} className={styles.footer}>
       <div
@@ -43,4 +48,4 @@ const ExpFooterAnimated = ({ boxStyles, infos, toggleLike, toggleCollect }) => {
   );
 };
 
-export default ExpFooterAnimated;
+export default FragFooterAnimated;

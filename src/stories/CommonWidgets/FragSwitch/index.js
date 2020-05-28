@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import styles from "./switch.module.css";
 
-import ExpFooterView from "../ExpFooterView/ExpFooterView";
+import FragFooterView from "../FragFooterView";
 import { CardContentView } from "../CardContent";
 import MdTrash from "react-ionicons/lib/MdTrash";
 
@@ -80,7 +80,7 @@ const ExpSwitch = ({ wordId, closeSwitch }) => {
                   boxStyles={{ marginTop: 24 }}
                   content={exp.content}
                 />
-                <ExpFooterView
+                <FragFooterView
                   boxStyles={{ marginTop: 60 }}
                   infos={exp}
                   disableUserCard={true}

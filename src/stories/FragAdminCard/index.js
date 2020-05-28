@@ -10,9 +10,9 @@ import {
   CardContentViewMarked,
   CardContentSwitchMarked,
 } from "../CommonWidgets/CardContent";
-import ExpFooterView from "../CommonWidgets/ExpFooterView/ExpFooterView";
+import FragFooterView from "../CommonWidgets/FragFooterView";
 
-const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
+const FragAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
   const toggleLock = () => {
     setCardInfo({ ...cardInfo, isLocked: !cardInfo.isLocked });
   };
@@ -71,7 +71,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
           handleClick={() => handleSwitchExp(cardInfo.topicId)}
         />
       )}
-      <ExpFooterView
+      <FragFooterView
         boxStyles={{ marginTop: 20, padding: "0px 42px" }}
         infos={cardInfo}
       />
@@ -79,7 +79,7 @@ const ExpAdminCard = ({ cardInfo, setCardInfo, handleSwitchExp }) => {
   );
 };
 
-export default ExpAdminCard;
+export default FragAdminCard;
 
 // type cardInfo interface {
 //   fragmentId,

@@ -5,7 +5,7 @@ import Username from "../UserCard/Username";
 import UsernameCarded from "../UserCard/UsernameCarded";
 import { countFormatter } from "../../../utils/formatter";
 
-const ExpFooterView = ({ boxStyles, infos, disableUserCard }) => {
+const FragFooterView = ({ boxStyles, infos, disableUserCard }) => {
   return (
     <section style={boxStyles} className={styles.footer}>
       <div className={`${styles.footerbox} ${styles.collectbox}`}>
@@ -42,7 +42,7 @@ const ExpFooterView = ({ boxStyles, infos, disableUserCard }) => {
   );
 };
 
-export default ExpFooterView;
+export default FragFooterView;
 
 // const onShowUserCard = (e) => {
 //   // 获取用户名容器的位置，用来计算UserCard的位置, 利用absolute则完全不需要了。。。

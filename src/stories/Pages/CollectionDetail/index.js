@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-import ExpAdminCard from "../../ExpAdminCard/ExpAdminCard";
+import ExpAdminCard from "../../FragAdminCard";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
 import { fetchRecommendExps } from "../../../services/recommend";
 import { fetchSearchExp } from "../../../services/search";
 import styles from "./detail.module.css";
-import ExpSwitch from "../../CommonWidgets/ExpSwitch/ExpSwitch";
+import FragSwitch from "../../CommonWidgets/FragSwitch";
 
 import d from "../../mock/exps.json";
 
@@ -60,7 +60,7 @@ const CollectionDetailPage = ({}) => {
         ))}
       </Masonry>
       {switchInfo.show ? (
-        <ExpSwitch
+        <FragSwitch
           wordId={switchInfo.wordId}
           closeSwitch={() => setSwitch({ ...switchInfo, show: false })}
         />

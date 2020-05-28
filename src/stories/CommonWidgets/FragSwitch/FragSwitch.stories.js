@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import ExpSwitch from "./ExpSwitch";
+import FragSwitch from "./index";
 
 export default {
   title: "Widgets",
 };
 
-export const ExplainSwitch = () => {
+export const FragmentSwitch = () => {
   const [switchInfo, setSwitch] = useState({
     wordId: "1",
     show: true,
   });
   return switchInfo.show ? (
-    <ExpSwitch
+    <FragSwitch
       wordId={switchInfo.wordId}
       closeSwitch={() => setSwitch({ ...switchInfo, show: false })}
     />

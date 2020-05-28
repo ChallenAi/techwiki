@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
-import ExplainCardAnimated from "../../ExplainCard/CardAnimated";
+import ExplainCardAnimated from "../../FragmentCard/CardAnimated";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
 import { fetchRecommendExps } from "../../../services/recommend";
 import { fetchSearchExp } from "../../../services/search";

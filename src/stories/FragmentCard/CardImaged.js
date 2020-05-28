@@ -5,7 +5,7 @@ import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import { CardContentViewMarked } from "../CommonWidgets/CardContent";
-import ExpFooterAnimated from "../CommonWidgets/ExpFooterAnimated/ExpFooterAnimated";
+import FragFooterAnimated from "../CommonWidgets/FragFooterAnimated";
 
 const CardImaged = ({ cardInfo, setCardInfo }) => {
   const toggleLike = () => {
@@ -41,7 +41,7 @@ const CardImaged = ({ cardInfo, setCardInfo }) => {
           boxStyles={{ marginTop: 24 }}
           content={cardInfo.content}
         />
-        <ExpFooterAnimated
+        <FragFooterAnimated
           boxStyles={{ marginTop: 60 }}
           infos={cardInfo}
           toggleLike={toggleLike}

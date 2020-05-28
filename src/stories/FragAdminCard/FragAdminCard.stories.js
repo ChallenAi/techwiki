@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import ExpAdminCard from "./ExpAdminCard";
+import FragAdminCard from "./index";
 import d from "../mock/exps.json";
 
 export default {
   title: "InfoCard",
-  component: [ExpAdminCard],
+  component: [FragAdminCard],
 };
 
 export const AdminExplain = () => {
   const [exps, setexps] = useState(d.list);
   return (
     <div style={{ margin: "180px 200px" }}>
-      <ExpAdminCard
+      <FragAdminCard
         cardInfo={exps[0]}
         setCardInfo={(info) => {
           exps.map((el, idx) => {
