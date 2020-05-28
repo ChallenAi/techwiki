@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import FragAdminCard from "../../FragAdminCard";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
-import { ListFragmentsByCollectionId } from "../../../services/collection";
+import { listFragmentsByCollectionId } from "../../../services/collection";
 import { fetchSearchFragment } from "../../../services/search";
 import styles from "./detail.module.css";
 import FragSwitch from "../../CommonWidgets/FragSwitch";
@@ -12,7 +12,7 @@ import d from "../../mock/fragments.json";
 const CollectionDetailPage = ({}) => {
   const [fragments, setfragments] = useState(d.list);
   useEffect(() => {
-    ListFragmentsByCollectionId({ collection_id: 1 })
+    listFragmentsByCollectionId({ collection_id: 1 })
       .then((data) => setfragments(data))
       .catch((err) => console.log(err));
   }, []);

@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import styles from "./simple.module.css";
-import ReactMarkdown from "react-markdown";
 
 import Card from "../CommonWidgets/Card/Card";
-import CardHeader from "../CommonWidgets/CardHeader";
+import CardHeaderLink from "../CommonWidgets/CardHeader/CardHeaderLink";
 import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import { CardContentViewMarked } from "../CommonWidgets/CardContent";
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 import CollectionFooterView from "../CommonWidgets/CollectionFooterView/CollectionFooterView";
-import { imgUrlPrefix } from "../../config";
+import { imgUrlPrefix } from "../../config/default";
 
 const CardSimple = ({ cardInfo }) => {
   const menuList = [
@@ -45,7 +44,11 @@ const CardSimple = ({ cardInfo }) => {
           />
           <MoreBtn menuList={menuList} />
         </div>
-        <CardHeader boxStyles={{ marginTop: 5 }} title={cardInfo.name} />
+        <CardHeaderLink
+          boxStyles={{ marginTop: 5 }}
+          title={cardInfo.name}
+          LinkHref={`collection/${cardInfo.collectionId}`}
+        />
         <CardContentViewMarked boxStyles={{}} content={cardInfo.citeContent} />
       </section>
       <section className={styles.part}>

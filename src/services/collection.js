@@ -3,5 +3,5 @@ import { get } from "../utils/request";
 import { openUrlPrefix } from "../config/default";
 
 // data: {collectionId}
-export const ListFragmentsByCollectionId = (data) =>
+export const listFragmentsByCollectionId = (data) =>
   get(`${openUrlPrefix}/fragments`, data);

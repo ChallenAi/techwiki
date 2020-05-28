@@ -8,7 +8,7 @@ import { fetchSearchCollection } from "../../../services/search";
 import styles from "./collection.module.css";
 import data from "../../mock/collections.json";
 
-const Collection = () => {
+const Collections = () => {
   const [collections, setcollections] = useState(data.list);
   const breakpointCols = {
     default: 3,
@@ -57,4 +57,4 @@ const Collection = () => {
   );
 };
 
-export default Collection;
+export default Collections;
