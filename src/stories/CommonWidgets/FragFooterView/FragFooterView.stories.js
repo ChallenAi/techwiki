@@ -8,7 +8,7 @@ export default {
   title: "Widgets.Card",
 };
 
-export const ExplainFooterView = () => (
+export const FragmentFooterView = () => (
   <div style={{ margin: "280px 300px" }}>
     {d.list.map((infos) => (
       <Card key={infos.expId} boxStyles={{ marginBottom: 40 }}>
