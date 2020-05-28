@@ -8,7 +8,7 @@ import MoreBtn from "../CommonWidgets/Menu/MoreBtn";
 import { CardContentViewMarked } from "../CommonWidgets/CardContent";
 import UsernameCarded from "../CommonWidgets/UserCard/UsernameCarded";
 import CollectionFooterView from "../CommonWidgets/CollectionFooterView/CollectionFooterView";
-import { CodeBlock, CodeInline } from "../CommonWidgets/CodeBlock";
+import { imgUrlPrefix } from "../../config";
 
 const CardSimple = ({ cardInfo }) => {
   const menuList = [
@@ -36,7 +36,7 @@ const CardSimple = ({ cardInfo }) => {
       <section className={styles.part}>
         <div className={styles.logorow}>
           <img
-            src="/images/logot.png"
+            src={`${imgUrlPrefix}/images/logot.png`}
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "/images/logot.png";
