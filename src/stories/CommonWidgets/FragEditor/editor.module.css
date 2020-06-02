@@ -1,0 +1,89 @@
+.bgmodal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.arrow {
+  width: 100px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 23px;
+  color: #4e4e4e;
+}
+
+.card {
+  width: 520px;
+  /* max-width: 720px; */
+  max-height: 90vh;
+  box-sizing: border-box;
+  padding: 44px 0px 42px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  /* box-shadow: 0 10px 69px rgba(0, 0, 0, 0.05); */
+
+  box-shadow: 8px 14px 38px rgba(39, 44, 49, 0.06),
+    1px 3px 8px rgba(39, 44, 49, 0.03);
+  transition: all 0.5s ease;
+  /* overflow: hidden; */
+}
+
+.headerrow {
+  padding: 0px 42px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.mainhashinput {
+  /* color: #4e4e4e; */
+  width: 100%;
+  outline: none;
+  border: none;
+  font-size: 23px;
+  color: #4e4e4e;
+  font-weight: medium;
+}
+
+.mainhashinput:focus {
+  color: #000000;
+}
+
+.mainhashinput::placeholder {
+  font-size: 23px;
+  color: #8b8b8b;
+}
+
+.contentinput {
+  resize: none;
+  width: 520px;
+  max-height: 80vh;
+  padding: 10px 42px 23px;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-size: 17px;
+  line-height: 27px;
+  color: #8b8b8b;
+  overflow-y: auto;
+}
+
+.contentinput:focus {
+  color: #000000;
+}

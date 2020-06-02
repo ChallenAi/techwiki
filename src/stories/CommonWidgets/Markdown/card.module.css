@@ -3,6 +3,7 @@
   line-height: 27px;
   color: #8b8b8b;
   user-select: none;
+  overflow-y: auto;
 }
 
 .clickable {
