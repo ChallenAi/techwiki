@@ -1,5 +1,5 @@
 import qs from "query-string";
-import globalToken from "../utils/token";
+// import globalToken from "../utils/token";
 import axios from "axios";
 
 const handleRequestError = (res) => {
@@ -30,9 +30,9 @@ const headers = {
 };
 
 export const post = (url, body) => {
-  if (globalToken.token) {
-    headers["Authorization"] = `Bearer ${globalToken.token}`;
-  }
+  // if (globalToken.token) {
+  //   headers["Authorization"] = `Bearer ${globalToken.token}`;
+  // }
 
   return axios
     .post(url, body, { headers })
@@ -50,9 +50,9 @@ export const post = (url, body) => {
 
 export const get = (url, params) => {
   const urlPath = params ? `${url}?${qs.stringify(params)}` : url;
-  if (globalToken.token) {
-    headers["Authorization"] = `Bearer ${globalToken.token}`;
-  }
+  // if (globalToken.token) {
+  //   headers["Authorization"] = `Bearer ${globalToken.token}`;
+  // }
   // console.log(urlPath);
 
   return axios

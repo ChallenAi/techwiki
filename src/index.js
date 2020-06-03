@@ -1,10 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
+import ExplorePage from "./stories/Pages/Explore";
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <React.StrictMode>
-    <div>hello world</div>
+    <ExplorePage />
   </React.StrictMode>,
   document.getElementById("root")
 );

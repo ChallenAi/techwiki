@@ -54,3 +54,9 @@ module.exports = {
   }}
   className={styles.cover}
   />
+
+- react-syntax-highlighter 里引用了 highlighter.js 中所有语言的高亮，导致 bundle 变大(+800kb)，可以换成 import { LightAsync as SyntaxHighlighter } from "react-syntax-highlighter"; 这样就会切割成每个语言一个小 bundle.js
+
+- 分析 build 以后的 bundle 大小构成： npm i source-map-explorer, "analyze": "source-map-explorer 'build/static/js/\*.js'"
+
+- 简单的 ssr = hydrate + renderToString(<Element />, data)

@@ -4,9 +4,6 @@
   "private": true,
   "proxy": "http://localhost:7002",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "lodash": "^4.17.15",
     "react": "^16.13.1",
@@ -22,6 +19,7 @@
     "redux-promise-middleware": "^6.1.2"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +44,7 @@
   },
   "devDependencies": {
     "@storybook/preset-create-react-app": "^2.1.1",
-    "@storybook/react": "^5.3.18"
+    "@storybook/react": "^5.3.18",
+    "source-map-explorer": "^2.4.2"
   }
 }
