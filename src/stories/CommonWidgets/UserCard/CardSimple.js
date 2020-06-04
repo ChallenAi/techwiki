@@ -63,6 +63,7 @@ const CardSimple = ({ userId, boxStyles, onMouseOver, onMouseLeave }) => {
           <section className={styles.userbox}>
             <img
               src={`${imgUrlPrefix}${userinfo.avatar}`}
+              alt=""
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "/images/avatarph.jpg";

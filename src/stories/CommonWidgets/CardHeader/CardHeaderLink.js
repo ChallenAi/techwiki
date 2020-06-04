@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./header.module.css";
-import Link from "../../../../deps/Link";
+import { Link } from "react-router-dom";
 
 const CardHeaderLink = ({ boxStyles, title, LinkHref }) => {
   return (
-    <Link href={LinkHref}>
+    <Link to={LinkHref}>
       <header
         style={{ ...boxStyles, cursor: "pointer" }}
         className={styles.header}

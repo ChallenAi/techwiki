@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import { CodeBlock, CodeInline } from "../CodeBlock";
 import cardStyles from "./card.module.css";

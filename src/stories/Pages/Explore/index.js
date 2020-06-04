@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Masonry from "react-masonry-css";
 import ExplainCardAnimated from "../../FragmentCard/CardAnimated";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
-import { fetchRecommendFragments } from "../../../services/recommend";
 import { fetchSearchFragment } from "../../../services/search";
 import styles from "./explore.module.css";
+// import { fetchRecommendFragments } from "../../../services/recommend";
 
-import d from "../../mock/fragments.json";
+const ExplorePage = ({ data }) => {
+  const [fragments, setFragments] = useState(data ? data : []);
 
-const ExplorePage = ({}) => {
-  const [fragments, setFragments] = useState(d.list);
-  useEffect(() => {
-    fetchRecommendFragments({})
-      .then((data) => setFragments(data))
-      .catch((err) => console.log(err));
-  }, []);
+  // useEffect(() => {
+  //   if (!data) {
+  //     fetchRecommendFragments({})
+  //       .then((data) => setFragments(data))
+  //       .catch((err) => console.log(err));
+  //   }
+  // }, [data]);
 
   const handleSearch = (keyword) => {
     fetchSearchFragment({ keyword, type: "fragment" })
@@ -42,8 +43,8 @@ const ExplorePage = ({}) => {
             key={info.fragmentId}
             cardInfo={info}
             setCardInfo={(info) => {
-              fragments.map((el, idx) => {
-                if (el.fragmentId == info.fragmentId) {
+              fragments.forEach((el, idx) => {
+                if (el.fragmentId === info.fragmentId) {
                   fragments[idx] = info;
                 }
               });

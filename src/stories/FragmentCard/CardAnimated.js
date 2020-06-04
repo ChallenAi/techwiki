@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./animated.module.css";
 
 import Card from "../CommonWidgets/Card/Card";

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./simple.module.css";
 
 import Card from "../CommonWidgets/Card/Card";
@@ -36,6 +36,7 @@ const CardSimple = ({ cardInfo }) => {
         <div className={styles.logorow}>
           <img
             src={`${imgUrlPrefix}/images/logot.png`}
+            alt=""
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "/images/logot.png";

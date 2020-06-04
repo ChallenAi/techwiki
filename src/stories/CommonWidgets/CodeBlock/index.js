@@ -1,13 +1,14 @@
 import React from "react";
 import { LightAsync as SyntaxHighlighter } from "react-syntax-highlighter";
 import arduinoLight from "./styles/arduinolight";
+import supportedLanguage from "./supportedLanguage";
 // 因为next.js无法解析node_modules内部es6问题，把style直接调出来了，下面是原来的路径，如果需要更新，请用原来的路径
 // import { githubGist } from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import { coy } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 export function CodeBlock({ language, value }) {
   if (!value) return null;
-  if (!language) language = "text";
+  if (!language || !supportedLanguage.has(language)) language = "text";
   return (
     <SyntaxHighlighter
       language={language}

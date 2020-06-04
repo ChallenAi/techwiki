@@ -1,11 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
-import ExplorePage from "./stories/Pages/Explore";
+import Routes from "./Routes";
+import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.hydrate(
   <React.StrictMode>
-    <ExplorePage />
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
