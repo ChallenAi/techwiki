@@ -48,8 +48,8 @@ const CollectionDetailPage = ({ match }) => {
             key={info.fragmentId}
             cardInfo={info}
             setCardInfo={(info) => {
-              fragments.map((el, idx) => {
-                if (el.fragmentId == info.fragmentId) {
+              fragments.forEach((el, idx) => {
+                if (el.fragmentId === info.fragmentId) {
                   fragments[idx] = info;
                 }
               });

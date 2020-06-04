@@ -3,7 +3,7 @@ import styles from "./switch.module.css";
 
 import FragFooterView from "../FragFooterView";
 import { CardContentView } from "../CardContent";
-import MdTrash from "react-ionicons/lib/MdTrash";
+// import MdTrash from "react-ionicons/lib/MdTrash";
 
 // special
 const expsList = [

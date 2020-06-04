@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./admin.module.css";
 import IosLock from "react-ionicons/lib/MdLock";
-import MdSync from "react-ionicons/lib/MdSync";
+// import MdSync from "react-ionicons/lib/MdSync";
 
 import Card from "../CommonWidgets/Card/Card";
 import CardHeader from "../CommonWidgets/CardHeader";
