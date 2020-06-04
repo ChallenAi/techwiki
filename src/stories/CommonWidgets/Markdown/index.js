@@ -4,6 +4,16 @@ import { CodeBlock, CodeInline } from "../CodeBlock";
 import cardStyles from "./card.module.css";
 import articleStyles from "./card.module.css";
 
+const paragraphRendererWithoutPreTag = (props) => {
+  // console.log(props.children);
+  const hasCode = !!props.children.find(
+    (child) =>
+      typeof child === "object" &&
+      (child.type.name === "CodeInline" || child.type.name === "CodeBlock")
+  );
+  return hasCode ? <div {...props} /> : <p {...props} />;
+};
+
 export const MarkdownForCard = ({ boxStyles, content }) => (
   <section style={boxStyles} className={cardStyles.markdowncontainer}>
     <ReactMarkdown
@@ -18,7 +28,11 @@ export const MarkdownForCard = ({ boxStyles, content }) => (
       //   "code",
       // ]}
       // unwrapDisallowed={true}
-      renderers={{ code: CodeBlock, inlineCode: CodeInline }}
+      renderers={{
+        code: CodeBlock,
+        inlineCode: CodeInline,
+        paragraph: paragraphRendererWithoutPreTag,
+      }}
     />
   </section>
 );

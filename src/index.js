@@ -3,8 +3,9 @@ import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import Routes from "./Routes";
 import { BrowserRouter } from "react-router-dom";
+import "./config/base.css";
 
-ReactDOM.hydrate(
+ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes />

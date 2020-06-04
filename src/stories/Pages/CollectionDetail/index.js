@@ -7,15 +7,15 @@ import { fetchSearchFragment } from "../../../services/search";
 import styles from "./detail.module.css";
 import FragSwitch from "../../CommonWidgets/FragSwitch";
 
-import d from "../../mock/fragments.json";
+// import d from "../../mock/fragments.json";
 
-const CollectionDetailPage = ({}) => {
-  const [fragments, setfragments] = useState(d.list);
+const CollectionDetailPage = ({ match }) => {
+  const [fragments, setfragments] = useState([]);
   useEffect(() => {
-    listFragmentsByCollectionId({ collection_id: 1 })
+    listFragmentsByCollectionId({ collection_id: match.params.id })
       .then((data) => setfragments(data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [match.params.id]);
 
   const handleSearch = (keyword) => {
     fetchSearchFragment({ keyword, type: "exp" })

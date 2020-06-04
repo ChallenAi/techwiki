@@ -72,7 +72,7 @@ const ExpSwitch = ({ topicId, closeSwitch }) => {
               className={styles.item}
               onClick={(e) => {
                 e.stopPropagation();
-                action("选择碎片")();
+                console.log("选择碎片")();
               }}
             >
               <div className={styles.left}>
@@ -90,7 +90,7 @@ const ExpSwitch = ({ topicId, closeSwitch }) => {
                 <svg
                   onClick={(e) => {
                     e.stopPropagation();
-                    action("删除")();
+                    console.log("删除")();
                   }}
                   className={styles.deleteicon}
                   viewBox="0 0 1024 1024"
