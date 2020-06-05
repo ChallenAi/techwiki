@@ -6,6 +6,7 @@ import { listFragmentsByCollectionId } from "../../../services/collection";
 import { fetchSearchFragment } from "../../../services/search";
 import styles from "./detail.module.css";
 import FragSwitch from "../../CommonWidgets/FragSwitch";
+import CollectionHeader from "../../CommonWidgets/CollectionHeader";
 
 // import d from "../../mock/fragments.json";
 
@@ -32,6 +33,7 @@ const CollectionDetailPage = ({ match }) => {
 
   return (
     <div className={styles.page}>
+      <CollectionHeader />
       <div className={styles.searchbox}>
         <SearchSimple
           placeholder="出发! 去寻找碎片"

@@ -1,0 +1,28 @@
+.box {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 200px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.linkitem {
+  margin-right: 20px;
+  list-style: none;
+}

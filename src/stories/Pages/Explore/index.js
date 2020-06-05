@@ -5,6 +5,7 @@ import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
 import { fetchSearchFragment } from "../../../services/search";
 import styles from "./explore.module.css";
 import { fetchRecommendFragments } from "../../../services/recommend";
+import Header from "../../CommonWidgets/Header";
 
 const ExplorePage = ({ data }) => {
   const [fragments, setFragments] = useState(data ? data : []);
@@ -27,6 +28,7 @@ const ExplorePage = ({ data }) => {
 
   return (
     <div className={styles.page}>
+      <Header />
       <div className={styles.searchbox}>
         <SearchSimple
           placeholder="出发! 去寻找碎片"

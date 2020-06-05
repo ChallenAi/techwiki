@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Masonry from "react-masonry-css";
 import CollectionCard from "../../CollectionCard/CardSimple";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
+import Header from "../../CommonWidgets/Header";
 import { fetchRecommendCollections } from "../../../services/recommend";
 import { fetchSearchCollection } from "../../../services/search";
 
@@ -37,6 +38,7 @@ const Collections = () => {
 
   return (
     <div className={styles.page}>
+      <Header />
       <div className={styles.searchbox}>
         <SearchSimple
           placeholder="出发! 去那个星球"
