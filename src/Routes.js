@@ -14,25 +14,6 @@ import Login from "./stories/Pages/Login/LoginSimple";
 import Messages from "./stories/Pages/Messages";
 import token from "./utils/token";
 
-const PrivateRoute = ({ path, exact, component }) => (
-  <Route
-    path={path}
-    exact={exact}
-    render={({ location }) =>
-      token.data ? (
-        component
-      ) : (
-        <Redirect
-          to={{
-            pathname: "/login",
-            state: { from: location },
-          }}
-        />
-      )
-    }
-  />
-);
-
 export default () => (
   <Switch>
     <Route path="/" exact={true} component={ExplorePage} />
@@ -40,23 +21,11 @@ export default () => (
     <Route path="/collection/:id" exact={true} component={CollectionDetail} />
     <Route path="/user/:id" exact={true} component={Profile} />
     <Route path="/login" exact={true} component={Login} />
-    <PrivateRoute path="/mine" exact={true} component={MineIndex} />
-    <PrivateRoute
-      path="/mine/fragments"
-      exact={true}
-      component={MineFragments}
-    />
-    <PrivateRoute
-      path="/mine/collections"
-      exact={true}
-      component={MineCollections}
-    />
-    <PrivateRoute
-      path="/mine/favourites"
-      exact={true}
-      component={MineFavourites}
-    />
-    <PrivateRoute path="/mine/messages" exact={true} component={Messages} />
+    <Route path="/mine" exact={true} render={({ location }) => token.data ? <MineIndex /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
+    <Route path="/mine/fragments" exact={true} render={({ location }) => token.data ? <MineFragments /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
+    <Route path="/mine/collections" exact={true} render={({ location }) => token.data ? <MineCollections /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
+    <Route path="/mine/favourites" exact={true} render={({ location }) => token.data ? <MineFavourites /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
+    <Route path="/mine/messages" exact={true} render={({ location }) => token.data ? <Messages /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
     <Route component={NotFound} />
   </Switch>
 );
