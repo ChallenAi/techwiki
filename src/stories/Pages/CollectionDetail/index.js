@@ -33,7 +33,7 @@ const CollectionDetailPage = ({ match }) => {
 
   return (
     <div className={styles.page}>
-      <CollectionHeader />
+      <CollectionHeader collectionId={match.params.id} />
       <div className={styles.searchbox}>
         <SearchSimple
           placeholder="出发! 去寻找碎片"

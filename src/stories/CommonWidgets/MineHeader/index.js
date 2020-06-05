@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
-import { fetchUserDetail } from "../../../services/user";
+import { fetchMineinfo } from "../../../services/user";
 
 const MineHeader = () => {
   const [mineInfos, setmineInfos] = useState({ isLoading: false });
   useEffect(() => {
     // global_my_user_id
-    fetchUserDetail({ user_id: 1 })
+    fetchMineinfo()
       .then((data) => setmineInfos(data))
       .catch((err) => console.log(err));
   }, []);
@@ -20,11 +20,11 @@ const MineHeader = () => {
       <div>标签</div>
       <div>搜索他的*</div>
       <div>碎片数 {mineInfos.cntFragment}</div>
-      <div>星球数 {mineInfos.cntFragment}</div>
-      <div>关注数 {mineInfos.cntFragment}</div>
-      <div>粉丝数 {mineInfos.cntFragment}</div>
-      <div>获赞数 {mineInfos.cntFragment}</div>
-      <div>引用数 {mineInfos.cntFragment}</div>
+      <div>星球数 {mineInfos.cntCollect}</div>
+      <div>关注数 {mineInfos.cntFollowing}</div>
+      <div>粉丝数 {mineInfos.cntFans}</div>
+      <div>获赞数 {mineInfos.cntLike}</div>
+      <div>引用数 {mineInfos.cntCite}</div>
       <div>搜索我的*</div>
     </div>
   );
