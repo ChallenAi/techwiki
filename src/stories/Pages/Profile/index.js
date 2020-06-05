@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./profile.module.css";
+import ProfileHeader from "../../CommonWidgets/ProfileHeader";
 
 const Profile = ({ match }) => {
-  const [user, setuser] = useState({});
-  //   useEffect(() => {
-  //     getUserById({ user_id: match.params.id })
-  //       .then((data) => setuser(data))
-  //       .catch((err) => console.log(err));
-  //   }, [match.params.id]);
-
   return (
     <article className={styles.box}>
-      user profile, user_id: {match.params.id}
-      他的统计（关注，粉丝，获赞，引用，收藏），他的星球，他的碎片，他的收藏，他的标签，(他的动态)，搜索他的*，个人认证或等级
+      <ProfileHeader userId={match.params.id} />
+      <div>TA的动态</div>
+      <div>TA的碎片</div>
+      <div>TA的星球</div>
+      <div>TA的收藏</div>
+      <div>TA的星球</div>
     </article>
   );
 };

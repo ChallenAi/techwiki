@@ -3,13 +3,6 @@ import MineHeader from "../../CommonWidgets/MineHeader";
 import styles from "./mine.module.css";
 
 const MineIndex = () => {
-  const [user, setuser] = useState({});
-  //   useEffect(() => {
-  //     getUserById({ user_id: match.params.id })
-  //       .then((data) => setuser(data))
-  //       .catch((err) => console.log(err));
-  //   }, [match.params.id]);
-
   return (
     <article className={styles.box}>
       <MineHeader />
