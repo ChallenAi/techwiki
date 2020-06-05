@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import styles from "./header.module.css";
 import { fetchMineinfo } from "../../../services/user";
+import cache from "../../../utils/cache";
 
 const MineHeader = () => {
-  const [mineInfos, setmineInfos] = useState({ isLoading: false });
+  const [mineInfos, setmineInfos] = useState({
+    ...cache.mine,
+    isLoading: false,
+  });
   useEffect(() => {
-    // global_my_user_id
-    fetchMineinfo()
-      .then((data) => setmineInfos(data))
-      .catch((err) => console.log(err));
+    if (cache.mine.userId == null) {
+      fetchMineinfo()
+        .then((data) => setmineInfos(data))
+        .catch((err) => console.log(err));
+    }
   }, []);
 
   return (

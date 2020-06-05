@@ -1,5 +1,5 @@
 import qs from "query-string";
-// import globalToken from "../utils/token";
+import token from "../utils/token";
 import axios from "axios";
 
 const handleRequestError = (res) => {
@@ -30,29 +30,31 @@ const headers = {
 };
 
 export const post = (url, body) => {
-  // if (globalToken.token) {
-  //   headers["Authorization"] = `Bearer ${globalToken.token}`;
-  // }
+  if (token.data) {
+    headers["Authorization"] = token.data;
+  }
 
   return axios
     .post(url, body, { headers })
     .then(handleRequestError)
     .then(({ data }) => {
       if (data.code !== 0) {
+        console.log(data);
         throw new Error(data.message);
       }
       return data.data || {};
-    })
-    .catch((err) => {
-      throw new Error(err.message || "请求失败");
     });
+  // .catch((err) => {
+  //   console.log(err);
+  //   throw new Error(err.message || "请求失败");
+  // });
 };
 
 export const get = (url, params) => {
   const urlPath = params ? `${url}?${qs.stringify(params)}` : url;
-  // if (globalToken.token) {
-  //   headers["Authorization"] = `Bearer ${globalToken.token}`;
-  // }
+  if (token.data) {
+    headers["Authorization"] = token.data;
+  }
   // console.log(urlPath);
 
   return axios
@@ -60,11 +62,12 @@ export const get = (url, params) => {
     .then(handleRequestError)
     .then(({ data }) => {
       if (data.code !== 0) {
+        console.log(data);
         throw new Error(data.message);
       }
       return data.data || {};
-    })
-    .catch((err) => {
-      throw new Error(err.message || "请求失败");
     });
+  // .catch((err) => {
+  //   throw new Error(err.message || "请求失败");
+  // });
 };

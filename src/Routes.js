@@ -10,6 +10,7 @@ import MineIndex from "./stories/Pages/MineIndex";
 import MineFragments from "./stories/Pages/MineFragments";
 import MineCollections from "./stories/Pages/MineCollections";
 import MineFavourites from "./stories/Pages/MineFavourites";
+import Login from "./stories/Pages/Login/LoginSimple";
 import Messages from "./stories/Pages/Messages";
 
 export default () => (
@@ -23,6 +24,7 @@ export default () => (
     <Route path="/mine/collections" exact={true} component={MineCollections} />
     <Route path="/mine/favourites" exact={true} component={MineFavourites} />
     <Route path="/mine/messages" exact={true} component={Messages} />
+    <Route path="/login" exact={true} component={Login} />
     <Route component={NotFound} />
   </Switch>
 );

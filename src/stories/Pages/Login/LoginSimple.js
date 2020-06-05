@@ -1,20 +1,29 @@
 import React, { useRef } from "react";
-import { loginSms } from "../../services/auth";
+import { loginSms } from "../../../services/auth";
 import styles from "./simple.module.css";
+import { useHistory, useLocation } from "react-router-dom";
 
 const LoginSimple = () => {
   const phoneNumRef = useRef();
   const smsRef = useRef();
 
+  const history = useHistory();
+  const location = useLocation();
+  const { from } = location.state || { from: { pathname: "/" } };
+
   const handleLogin = () => {
     const phoneNum = phoneNumRef.current.value;
     const smsCode = smsRef.current.value;
-
     loginSms({ phoneNum, smsCode })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
+      .then(() => history.replace(from))
+      .catch((err) => {
+        console.log(err);
+        if (err["type"] == "auth") {
+          // alert smsCode error
+        } else {
+          // alert server error
+        }
+      });
   };
 
   return (

@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import styles from "./header.module.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { logout } from "../../../services/auth";
+import token from "../../../utils/token";
+import cache from "../../../utils/cache";
 
 const Header = () => {
+  const history = useHistory();
+  const handleLogout = () => {
+    logout();
+    history.push("/");
+  };
   return (
     <div className={styles.box}>
       <ul className={styles.left}>
@@ -24,7 +32,16 @@ const Header = () => {
       </ul>
       <ul className={styles.right}>
         <li className={styles.linkitem}>
-          <Link to="/mine">我的/登录</Link>
+          {token.data ? (
+            <Link to="/mine">{cache.mine.name}</Link>
+          ) : (
+            <Link to="/login">登录</Link>
+          )}
+        </li>
+        <li className={styles.linkitem}>
+          <div style={{ cursor: "pointer" }} onClick={handleLogout}>
+            退出(测试)
+          </div>
         </li>
         <li className={styles.linkitem}>
           <Link to="/mine/messages">消息</Link>
