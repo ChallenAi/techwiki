@@ -30,29 +30,31 @@ const Header = () => {
           <Link to="/inspiration">灵感</Link>
         </li>
       </ul>
-      <ul className={styles.right}>
-        <li className={styles.linkitem}>
-          {token.data ? (
+      {token.data ? (
+        <ul className={styles.right}>
+          <li className={styles.linkitem}>
             <Link to="/mine">{cache.mine.name}</Link>
-          ) : (
-            <Link to="/login">登录</Link>
-          )}
-        </li>
-        <li className={styles.linkitem}>
-          <div style={{ cursor: "pointer" }} onClick={handleLogout}>
-            退出(测试)
-          </div>
-        </li>
-        <li className={styles.linkitem}>
-          <Link to="/mine/messages">消息</Link>
-        </li>
-        <li className={styles.linkitem}>
-          <Link to="/mine/favourites">收藏</Link>
-        </li>
-        <li className={styles.linkitem}>
-          <Link to="/mine/history">历史</Link>
-        </li>
-      </ul>
+          </li>
+          <li className={styles.linkitem}>
+            <div style={{ cursor: "pointer" }} onClick={handleLogout}>
+              退出(测试)
+            </div>
+          </li>
+          <li className={styles.linkitem}>
+            <Link to="/mine/messages">消息</Link>
+          </li>
+          <li className={styles.linkitem}>
+            <Link to="/mine/favourites">收藏</Link>
+          </li>
+          <li className={styles.linkitem}>
+            <Link to="/mine/history">历史</Link>
+          </li>
+        </ul>
+      ) : (
+        <div className={styles.right}>
+          <Link to="/login">登录</Link>
+        </div>
+      )}
     </div>
   );
 };

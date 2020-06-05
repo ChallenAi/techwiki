@@ -9,9 +9,14 @@ const MineHeader = () => {
     isLoading: false,
   });
   useEffect(() => {
+    // 理论上登录后(不管是sms还是cookie-ssr登录)永远有缓存，即这个fetch永远不会运行
+    // 抓取是为了防止潜在错误
     if (cache.mine.userId == null) {
       fetchMineinfo()
-        .then((data) => setmineInfos(data))
+        .then((data) => {
+          setmineInfos(data);
+          cache.mine = data;
+        })
         .catch((err) => console.log(err));
     }
   }, []);
