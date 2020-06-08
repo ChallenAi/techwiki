@@ -45,6 +45,7 @@ const Collections = () => {
           handleSearch={handleSearch}
         />
       </div>
+      <div>+热门星球</div>
       <Masonry
         breakpointCols={breakpointCols}
         // breakpointCols={4}

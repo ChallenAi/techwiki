@@ -6,8 +6,4 @@ export default {
   component: LoginSimple,
 };
 
-export const Simple = () => (
-  <div style={{ margin: "80px 200px" }}>
-    <LoginSimple />
-  </div>
-);
+export const Simple = () => <LoginSimple />;

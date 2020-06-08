@@ -21,13 +21,13 @@ const Header = () => {
           <Link to="/fragments">碎片</Link>
         </li> */}
         <li className={styles.linkitem}>
-          <Link to="/collections">星球</Link>
+          <Link to="/special">专题</Link>
         </li>
         <li className={styles.linkitem}>
-          <Link to="/articles">文章</Link>
+          <Link to="/roundtable">圆桌</Link>
         </li>
         <li className={styles.linkitem}>
-          <Link to="/inspiration">灵感</Link>
+          <Link to="/column">文章</Link>
         </li>
       </ul>
       {token.data ? (
@@ -49,11 +49,19 @@ const Header = () => {
           <li className={styles.linkitem}>
             <Link to="/mine/history">历史</Link>
           </li>
+          <li className={styles.linkitem}>
+            <Link to="/inspiration">灵感</Link>
+          </li>
         </ul>
       ) : (
-        <div className={styles.right}>
-          <Link to="/login">登录</Link>
-        </div>
+        <ul className={styles.right}>
+          <li className={styles.linkitem}>
+            <Link to="/login">登录</Link>
+          </li>
+          <li className={styles.linkitem}>
+            <Link to="/inspiration">灵感</Link>
+          </li>
+        </ul>
       )}
     </div>
   );

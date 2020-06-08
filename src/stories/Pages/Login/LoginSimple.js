@@ -27,24 +27,26 @@ const LoginSimple = () => {
   };
 
   return (
-    <div className={styles.card}>
-      <section className={styles.left}>
-        <header className={styles.welcome}>欢迎回来</header>
-        <span className={styles.desc}>使用手机号或微信登录</span>
-        <section className={styles.inputform}>
-          <span className={styles.inputdesc}>手机号码</span>
-          <input className={styles.input} ref={phoneNumRef} />
-          <span className={styles.inputdesc}>验证码</span>
-          <input className={styles.input} ref={smsRef} />
-          <button className={styles.btn} onClick={handleLogin}>
-            登录
-          </button>
+    <div className={styles.page}>
+      <div className={styles.card}>
+        <section className={styles.left}>
+          <header className={styles.welcome}>欢迎回来</header>
+          <span className={styles.desc}>使用手机号或微信登录</span>
+          <section className={styles.inputform}>
+            <span className={styles.inputdesc}>手机号码</span>
+            <input className={styles.input} ref={phoneNumRef} />
+            <span className={styles.inputdesc}>验证码</span>
+            <input className={styles.input} ref={smsRef} />
+            <button className={styles.btn} onClick={handleLogin}>
+              登录
+            </button>
+          </section>
         </section>
-      </section>
-      <section className={styles.right}>
-        <div className={styles.qrcode}></div>
-        <span className={styles.qrdesc}>App扫码登录</span>
-      </section>
+        <section className={styles.right}>
+          <div className={styles.qrcode}></div>
+          <span className={styles.qrdesc}>App扫码登录</span>
+        </section>
+      </div>
     </div>
   );
 };
