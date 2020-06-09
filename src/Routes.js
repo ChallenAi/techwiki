@@ -11,6 +11,9 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import NotFound from "./stories/Pages/NotFound";
 import Index from "./stories/Pages/Index";
 import Profile from "./stories/Pages/Profile";
+import ProfileFragments from "./stories/Pages/ProfileFragments";
+import ProfileCollections from "./stories/Pages/ProfileCollections";
+import ProfileFavourites from "./stories/Pages/ProfileFavourites";
 import MineIndex from "./stories/Pages/MineIndex";
 import MineFragments from "./stories/Pages/MineFragments";
 import MineCollections from "./stories/Pages/MineCollections";
@@ -30,6 +33,9 @@ export default () => (
     <Route path="/collections" exact={true} component={Collections} />
     <Route path="/collection/:id" exact={true} component={CollectionDetail} />
     <Route path="/user/:id" exact={true} component={Profile} />
+    <Route path="/user/:id/fragments" exact={true} component={ProfileFragments} />
+    <Route path="/user/:id/collections" exact={true} component={ProfileCollections} />
+    <Route path="/user/:id/favourites" exact={true} component={ProfileFavourites} />
     <Route path="/login" exact={true} component={Login} />
     <Route path="/inspiration" exact={true} render={({ location }) => token.data ? <Inspiration /> : <Redirect to={{ pathname: "/login", state: { from: location } }} />} />
     <Route path="/mine" exact={true} render={({ location }) => token.data ? <MineIndex /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />

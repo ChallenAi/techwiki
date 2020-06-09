@@ -9,3 +9,6 @@ export const listFragmentsByCollectionId = (data) =>
 // data: {collection_id}
 export const fetchCollectioninfo = (data) =>
   get(`${openUrlPrefix}/collection`, data);
+
+export const fetchCollectionsByUserId = (data) =>
+  get(`${openUrlPrefix}/collections`, data);
