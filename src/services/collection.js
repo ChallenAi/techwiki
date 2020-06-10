@@ -1,6 +1,6 @@
 import { get } from "../utils/request";
 
-import { openUrlPrefix } from "../config/default";
+import { privateUrlPrefix, openUrlPrefix } from "../config/default";
 
 // data: {collectionId}
 export const listFragmentsByCollectionId = (data) =>
@@ -10,5 +10,8 @@ export const listFragmentsByCollectionId = (data) =>
 export const fetchCollectioninfo = (data) =>
   get(`${openUrlPrefix}/collection`, data);
 
-export const fetchCollectionsByUserId = (data) =>
+export const fetchMineCollections = () =>
+  get(`${privateUrlPrefix}/mine/collections`);
+
+export const fetchUserCollections = (data) =>
   get(`${openUrlPrefix}/collections`, data);

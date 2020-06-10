@@ -48,7 +48,7 @@ const CardSimple = ({ cardInfo }) => {
         <CardHeaderLink
           boxStyles={{ marginTop: 5 }}
           title={cardInfo.name}
-          LinkHref={`collection/${cardInfo.collectionId}`}
+          LinkHref={`/collection/${cardInfo.collectionId}`}
         />
         <CardContentViewMarked boxStyles={{}} content={cardInfo.citeContent} />
       </section>

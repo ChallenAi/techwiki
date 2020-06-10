@@ -5,4 +5,4 @@ import { openUrlPrefix, privateUrlPrefix } from "../config/default";
 // data: {user_id}
 export const fetchUserinfo = (data) => get(`${openUrlPrefix}/user`, data);
 
-export const fetchMineinfo = (data) => get(`${privateUrlPrefix}/mine`);
+export const fetchMineinfo = () => get(`${privateUrlPrefix}/mine`);

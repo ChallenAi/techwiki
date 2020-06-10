@@ -3,7 +3,7 @@ import Masonry from "react-masonry-css";
 import CollectionCard from "../../CollectionCard/CardSimple";
 import ProfileHeader from "../../CommonWidgets/ProfileHeader";
 import SearchSimple from "../../CommonWidgets/Search/SearchSimple";
-import { fetchCollectionsByUserId } from "../../../services/collection";
+import { fetchUserCollections } from "../../../services/collection";
 import { fetchSearchCollection } from "../../../services/search";
 
 import styles from "./collection.module.css";
@@ -20,7 +20,7 @@ const ProfileCollection = ({ match }) => {
   };
 
   useEffect(() => {
-    fetchCollectionsByUserId({ user_id: match.params.id })
+    fetchUserCollections({ user_id: match.params.id })
       .then((data) => {
         setcollections(data);
       })
@@ -38,12 +38,6 @@ const ProfileCollection = ({ match }) => {
   return (
     <div className={styles.page}>
       <ProfileHeader userId={match.params.id} />
-      <div className={styles.searchbox}>
-        <SearchSimple
-          placeholder="出发! 去那个星球"
-          handleSearch={handleSearch}
-        />
-      </div>
       <Masonry
         breakpointCols={breakpointCols}
         // breakpointCols={4}
