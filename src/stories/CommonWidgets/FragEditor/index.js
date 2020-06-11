@@ -4,8 +4,11 @@ import CardHeader from "../CardHeader";
 import MoreBtn from "../Menu/MoreBtn";
 import { CardContentViewMarked } from "../CardContent";
 import FragFooterView from "../FragFooterView";
+import MdCheckmark from "react-ionicons/lib/MdCheckmark";
+import MdImage from "react-ionicons/lib/MdImage";
+import MdArrowRoundForward from "react-ionicons/lib/MdArrowRoundForward";
 
-export const Editor = ({ boxStyles, content }) => {
+const Editor = ({ boxStyles, content }) => {
   const [fragment, setfragment] = useState({
     mainHashTag: "",
     content: content,
@@ -20,7 +23,7 @@ export const Editor = ({ boxStyles, content }) => {
   const inputRef = useRef();
   useLayoutEffect(() => {
     inputRef.current.style.height = "inherit";
-    inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+    inputRef.current.style.height = `${inputRef.current.scrollHeight + 10}px`;
   }, [fragment.content]);
 
   const handleChangeHashTag = (e) => {
@@ -39,7 +42,7 @@ export const Editor = ({ boxStyles, content }) => {
         <article
           style={{
             boxSizing: "border-box",
-            padding: "44px 0px 42px",
+            padding: "34px 0px 42px",
           }}
           className={styles.card}
         >
@@ -49,7 +52,29 @@ export const Editor = ({ boxStyles, content }) => {
               placeholder="碎片名"
               onChange={handleChangeHashTag}
             />
-            <MoreBtn menuList={[]} />
+            <MdImage
+              style={{
+                cursor: "pointer",
+                marginLeft: "auto",
+                marginLeft: 20,
+                marginRight: 38,
+                userSelect: "none",
+              }}
+              // onClick={toggleLock}
+              fontSize="24px"
+              color={true ? "#8b8b8b" : "#C7C9D0"}
+            />
+            <MdCheckmark
+              style={{
+                cursor: "pointer",
+                marginLeft: "auto",
+                marginRight: 12,
+                userSelect: "none",
+              }}
+              // onClick={toggleLock}
+              fontSize="24px"
+              color={true ? "#8b8b8b" : "#C7C9D0"}
+            />
           </div>
           <textarea
             ref={inputRef}
@@ -62,7 +87,9 @@ export const Editor = ({ boxStyles, content }) => {
             infos={fragment}
           />
         </article>
-        <div className={styles.arrow}>=></div>
+        <div className={styles.arrow}>
+          <MdArrowRoundForward fontSize="24px" color="#8b8b8b" />
+        </div>
         <article
           style={{
             boxSizing: "border-box",
@@ -79,7 +106,12 @@ export const Editor = ({ boxStyles, content }) => {
             <MoreBtn menuList={[]} />
           </div>
           <CardContentViewMarked
-            boxStyles={{ padding: "10px 42px 23px", maxHeight: "80vh" }}
+            boxStyles={{
+              margin: "10px 0px",
+              padding: "0px 42px 13px",
+              maxHeight: "75vh",
+              minHeight: "96px",
+            }}
             content={fragment.content}
           />
           <FragFooterView
@@ -91,3 +123,4 @@ export const Editor = ({ boxStyles, content }) => {
     </section>
   );
 };
+export default Editor;

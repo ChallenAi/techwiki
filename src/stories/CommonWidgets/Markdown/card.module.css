@@ -6,6 +6,11 @@
   overflow-y: auto;
 }
 
+.markdowncontainer p {
+  /* 防止溢出 */
+  word-break: break-all;
+}
+
 .clickable {
   cursor: pointer;
 }

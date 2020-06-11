@@ -23,8 +23,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 23px;
-  color: #4e4e4e;
+  user-select: none;
 }
 
 .card {
@@ -44,21 +43,27 @@
 }
 
 .headerrow {
-  padding: 0px 42px;
+  padding: 0px 32px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .mainhashinput {
-  /* color: #4e4e4e; */
   width: 100%;
+  padding: 10px;
+  border-radius: 4px;
   outline: none;
-  border: none;
+  border: 1px solid #ffffff;
   font-size: 23px;
   color: #4e4e4e;
   font-weight: medium;
+  transition: all 0.3s ease;
+}
+.mainhashinput:hover {
+  /* background-color: #fafafa; */
+  border: 1px solid #00a1d6;
 }
 
 .mainhashinput:focus {
@@ -72,18 +77,26 @@
 
 .contentinput {
   resize: none;
-  width: 520px;
-  max-height: 80vh;
-  padding: 10px 42px 23px;
+  /* width: 520px; */
+  width: 454px;
+  border-radius: 4px;
+  max-height: 75vh;
+  margin: 10px 33px 13px;
+  padding: 10px;
   box-sizing: border-box;
   outline: none;
-  border: none;
+  border: 1px solid #ffffff;
   font-size: 17px;
   line-height: 27px;
   color: #8b8b8b;
   overflow-y: auto;
+  transition: all 0.3s ease;
 }
 
 .contentinput:focus {
   color: #000000;
+}
+
+.contentinput:hover {
+  border: 1px solid #00a1d6;
 }

@@ -20,6 +20,7 @@ import MineCollections from "./stories/Pages/MineCollections";
 import MineFavourites from "./stories/Pages/MineFavourites";
 import Login from "./stories/Pages/Login/LoginSimple";
 import Messages from "./stories/Pages/Messages";
+import AddFragment from "./stories/Pages/AddFragment";
 import token from "./utils/token";
 
 export default () => (
@@ -37,6 +38,7 @@ export default () => (
     <Route path="/user/:id/collections" exact={true} component={ProfileCollections} />
     <Route path="/user/:id/favourites" exact={true} component={ProfileFavourites} />
     <Route path="/login" exact={true} component={Login} />
+    <Route path="/addfragment" exact={true} render={({ location }) => token.data ? <AddFragment /> : <Redirect to={{ pathname: "/login", state: { from: location } }} />} />
     <Route path="/inspiration" exact={true} render={({ location }) => token.data ? <Inspiration /> : <Redirect to={{ pathname: "/login", state: { from: location } }} />} />
     <Route path="/mine" exact={true} render={({ location }) => token.data ? <MineIndex /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
     <Route path="/mine/fragments" exact={true} render={({ location }) => token.data ? <MineFragments /> : <Redirect to={{ pathname: "/login", state: { from: location } }} /> } />
