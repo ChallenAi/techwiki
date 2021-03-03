@@ -6,4 +6,4 @@ export default {
   title: "Pages",
 };
 
-export const CollectionDetail = () => <CollectionDetailPage />;
+export const CollectionDetail = () => <CollectionDetailPage match={{params: {id: "1"}}} />;

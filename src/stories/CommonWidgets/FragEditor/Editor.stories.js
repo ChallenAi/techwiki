@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Editor } from "./index";
+import React from "react";
+import Editor from "./index";
 
 export default {
   title: "Widgets",

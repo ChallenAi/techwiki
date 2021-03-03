@@ -85,6 +85,7 @@ const Editor = ({ boxStyles, content }) => {
           <FragFooterView
             boxStyles={{ marginTop: 20, padding: "0px 42px" }}
             infos={fragment}
+            disableUserCard={true}
           />
         </article>
         <div className={styles.arrow}>
@@ -117,6 +118,7 @@ const Editor = ({ boxStyles, content }) => {
           <FragFooterView
             boxStyles={{ marginTop: 20, padding: "0px 42px" }}
             infos={fragment}
+            disableUserCard={true}
           />
         </article>
       </div>
