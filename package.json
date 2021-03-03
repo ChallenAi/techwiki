@@ -10,7 +10,6 @@
     "react-ionicons": "^3.1.4",
     "react-markdown": "^4.3.1",
     "react-masonry-css": "^1.0.14",
-    "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-syntax-highlighter": "^12.2.1",
@@ -45,6 +44,7 @@
     "@storybook/react": "^5.3.18",
     "source-map-explorer": "^2.4.2",
     "redux": "^4.0.5",
+    "react-redux": "^7.2.0",
     "redux-logger": "^3.0.6",
     "redux-promise-middleware": "^6.1.2"
   }

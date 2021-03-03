@@ -52,6 +52,7 @@ export const post = (url, body) => {
 
 export const get = (url, params) => {
   const urlPath = params ? `${url}?${qs.stringify(params)}` : url;
+  console.log(urlPath);
   if (token.data) {
     headers["Authorization"] = token.data;
   }
