@@ -42,10 +42,10 @@
   "devDependencies": {
     "@storybook/preset-create-react-app": "^2.1.1",
     "@storybook/react": "^5.3.18",
-    "source-map-explorer": "^2.4.2",
-    "redux": "^4.0.5",
     "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-promise-middleware": "^6.1.2"
+    "redux-promise-middleware": "^6.1.2",
+    "source-map-explorer": "^2.4.2"
   }
 }

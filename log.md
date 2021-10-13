@@ -36,7 +36,7 @@ module.exports = {
   npm install --save react-ionicons
   https://github.com/zamarrowski/react-ionicons
   图标搜索参考
-  https://zamarrowski.github.io/react-ionicons/
+  https://react-ionicons.netlify.app/
 
 - storybook 的图片问题
   图片放 public 文件夹，直接这样引用就可以了

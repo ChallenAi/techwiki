@@ -53,9 +53,9 @@
       - 快速排序
         - 随便找一个数 A，把其余数分两部分，一半比 A 大，一半比 A 小，重复分割大的和小的那部分，分到最后分光了就完事了
       - express
-        - #express 中间件: bodyparser()
+        - express 中间件: bodyparser()
       - react
-        - #react 状态： show/hide helloworld 示例
+        - react 状态： show/hide helloworld 示例
 
     - 厨娘小沫的笔记
       - 香菇鸡汤
@@ -66,4 +66,4 @@
   - 专题
   - 圆桌活动
   - 文章
-  - #hashtag
+  - \#hashtag
