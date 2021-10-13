@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { loginSms } from "../../../services/auth";
+import { getSms, loginSms } from "../../../services/auth";
 import styles from "./simple.module.css";
 import { useHistory, useLocation } from "react-router-dom";
 // import { ChevronDownOutline } from 'react-ionicons';
@@ -14,9 +14,10 @@ const LoginSimple = () => {
   const location = useLocation();
   const { from } = location.state || { from: { pathname: "/" } };
   const [smsTicking, setSmsTicking] = useState(-1);
+  const [warningMsg, setWarningMsg] = useState("");
 
   useEffect(() => {
-    // clearInterval(itHandler);
+    clearInterval(itHandler);
   }, []);
 
   // useEffect(() => {
@@ -29,6 +30,15 @@ const LoginSimple = () => {
     if (smsTicking >= 0) {
       return;
     }
+    const phoneNum = phoneNumRef.current.value;
+    if (phoneNum.length == 0) {
+      setWarningMsg("手机号不能为空哦"); 
+      return;
+    }
+    if (phoneNum.length != 11 || phoneNum[0] != '1') {
+      setWarningMsg("手机号码格式不正确");
+      return;
+    }
     // clearInterval(itHandler);
     setSmsTicking(60);
     itHandler = setInterval(() => {
@@ -39,6 +49,12 @@ const LoginSimple = () => {
         return --t
       });
     }, 1000);
+
+    getSms({ phoneNum })
+    .catch((err) => {
+      console.log(err);
+      setWarningMsg("服务器错误，请稍后重试！")
+    });
   };
 
   const handleLogin = () => {
@@ -75,14 +91,19 @@ const LoginSimple = () => {
               </div>
               <input
                 placeholder="填写常用手机号"
+                maxLength="11"
                 className={styles.input}
+                onInput={e => {e.target.value = e.target.value.replace(/[^\d]/g,'')}}
                 ref={phoneNumRef}
               />
             </div>
+            <div className={styles.warning}>{warningMsg}</div>
             <div className={styles.inputrow}>
               <input
                 placeholder="请输入短信验证码"
+                maxLength="6"
                 className={styles.input}
+                onInput={e => {e.target.value = e.target.value.replace(/[^\d]/g,'')}}
                 ref={smsRef}
               />
               <button className={`${smsTicking >= 0 ? styles.smsdisabled : styles.smsactive} ${styles.smsbtn}`} onClick={handleSmsTick}>

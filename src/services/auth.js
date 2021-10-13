@@ -7,7 +7,7 @@ import { openUrlPrefix } from "../config/default";
 const cookies = new Cookies();
 
 // data: {phone_num}
-export const sendSms = (data) => get(`${openUrlPrefix}/send_sms`, data);
+export const getSms = (data) => get(`${openUrlPrefix}/get_sms`, data);
 
 // data: {phoneNum, smsCode}
 export const loginSms = (data) =>

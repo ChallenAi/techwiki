@@ -38,14 +38,14 @@
 }
 
 .inputform {
-  margin-top: 30px;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .inputrow {
-  margin-bottom: 15px;
+  margin-top: 15px;
   width: 377px;
   height: 40px;
   display: flex;
@@ -76,13 +76,21 @@
   outline: none;
   border: 1px solid #dcdfe6;
   /* background-color: #fafafa; */
-  font-size: 18px;
-  color: #000000;
-  transition: border-color .2s ease-in-out;
-    transition-property: border-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+  font-size: 17px;
+  color: #333;
+  transition: border-color 0.2s ease-in-out;
+  transition-property: border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
+}
+
+.warning {
+  margin-top: 6px;
+  color: #f66495;
+  font-size: 12px;
+  height: 14px;
+  user-select: none;
 }
 
 .input::placeholder {
@@ -91,7 +99,7 @@
 }
 
 .input:hover {
-  border: 1px solid hsl(197,calc(var(--saturation-factor, 1)*100%),47.8%);;
+  border: 1px solid hsl(197, calc(var(--saturation-factor, 1) * 100%), 47.8%);
 }
 
 .smsbtn {
@@ -101,7 +109,7 @@
   width: 160px;
   height: 40px;
   border-radius: 3px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .smsactive:hover {
@@ -116,7 +124,7 @@
 }
 
 .smsdisabled {
-  cursor:;
+  cursor: ;
   background-color: rgb(239, 239, 239);
   color: #606266;
 }
@@ -133,7 +141,7 @@
   font-size: 16px;
   color: #ffffff;
   user-select: none;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .btn:hover {
@@ -142,7 +150,7 @@
 
 .rememberrow {
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 35px;
   margin-bottom: 2px;
   display: flex;
   align-items: center;
